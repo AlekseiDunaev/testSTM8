@@ -1,4 +1,4 @@
-/build/
+/build/*
 !/build/*.ihx
 !/build/*.elf
-/.vscode/
+/.vscode/*
