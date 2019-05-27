@@ -1,0 +1,2573 @@
+
+./build/testSPLBasic.ihx:     формат файла ihex
+
+
+Дизассемблирование раздела .sec1:
+
+0000808f <.sec1>:
+    808f:	35 00 54 00 	mov 0x5400,#0x00
+    8093:	35 00 54 01 	mov 0x5401,#0x00
+    8097:	35 00 54 02 	mov 0x5402,#0x00
+    809b:	35 00 54 03 	mov 0x5403,#0x00
+    809f:	35 00 54 06 	mov 0x5406,#0x00
+    80a3:	35 00 54 07 	mov 0x5407,#0x00
+    80a7:	35 ff 54 08 	mov 0x5408,#0xff ;0xff
+    80ab:	35 03 54 09 	mov 0x5409,#0x03 ;0x3
+    80af:	35 00 54 0a 	mov 0x540a,#0x00
+    80b3:	35 00 54 0b 	mov 0x540b,#0x00
+    80b7:	35 00 54 0e 	mov 0x540e,#0x00
+    80bb:	35 00 54 0f 	mov 0x540f,#0x00
+    80bf:	81          	ret
+    80c0:	7b 08       	ld A,(0x08,SP) ;0x8
+    80c2:	88          	push A
+    80c3:	7b 05       	ld A,(0x05,SP) ;0x5
+    80c5:	88          	push A
+    80c6:	7b 05       	ld A,(0x05,SP) ;0x5
+    80c8:	88          	push A
+    80c9:	cd 82 00    	call 0x8200 ;0x8200
+    80cc:	5b 03       	addw SP,#0x03 ;0x3
+    80ce:	7b 05       	ld A,(0x05,SP) ;0x5
+    80d0:	88          	push A
+    80d1:	cd 81 5c    	call 0x815c ;0x815c
+    80d4:	84          	pop A
+    80d5:	7b 07       	ld A,(0x07,SP) ;0x7
+    80d7:	88          	push A
+    80d8:	7b 07       	ld A,(0x07,SP) ;0x7
+    80da:	88          	push A
+    80db:	cd 82 3e    	call 0x823e ;0x823e
+    80de:	85          	popw X
+    80df:	7b 0a       	ld A,(0x0a,SP) ;0xa
+    80e1:	88          	push A
+    80e2:	7b 0a       	ld A,(0x0a,SP) ;0xa
+    80e4:	88          	push A
+    80e5:	cd 81 6d    	call 0x816d ;0x816d
+    80e8:	85          	popw X
+    80e9:	c6 54 01    	ld A,0x5401 ;0x5401
+    80ec:	aa 01       	or A,#0x01 ;0x1
+    80ee:	c7 54 01    	ld 0x5401,A ;0x5401
+    80f1:	81          	ret
+    80f2:	c6 54 01    	ld A,0x5401 ;0x5401
+    80f5:	0d 03       	tnz (0x03,SP) ;0x3
+    80f7:	26 03       	jrne 0x80fc ;0x80fc
+    80f9:	cc 81 04    	jp 0x8104 ;0x8104
+    80fc:	aa 01       	or A,#0x01 ;0x1
+    80fe:	c7 54 01    	ld 0x5401,A ;0x5401
+    8101:	cc 81 09    	jp 0x8109 ;0x8109
+    8104:	a4 fe       	and A,#0xfe ;0xfe
+    8106:	c7 54 01    	ld 0x5401,A ;0x5401
+    8109:	81          	ret
+    810a:	c6 54 02    	ld A,0x5402 ;0x5402
+    810d:	0d 03       	tnz (0x03,SP) ;0x3
+    810f:	26 03       	jrne 0x8114 ;0x8114
+    8111:	cc 81 1c    	jp 0x811c ;0x811c
+    8114:	aa 02       	or A,#0x02 ;0x2
+    8116:	c7 54 02    	ld 0x5402,A ;0x5402
+    8119:	cc 81 21    	jp 0x8121 ;0x8121
+    811c:	a4 fd       	and A,#0xfd ;0xfd
+    811e:	c7 54 02    	ld 0x5402,A ;0x5402
+    8121:	81          	ret
+    8122:	c6 54 03    	ld A,0x5403 ;0x5403
+    8125:	0d 03       	tnz (0x03,SP) ;0x3
+    8127:	26 03       	jrne 0x812c ;0x812c
+    8129:	cc 81 34    	jp 0x8134 ;0x8134
+    812c:	aa 80       	or A,#0x80 ;0x80
+    812e:	c7 54 03    	ld 0x5403,A ;0x5403
+    8131:	cc 81 39    	jp 0x8139 ;0x8139
+    8134:	a4 7f       	and A,#0x7f ;0x7f
+    8136:	c7 54 03    	ld 0x5403,A ;0x5403
+    8139:	81          	ret
+    813a:	88          	push A
+    813b:	c6 54 00    	ld A,0x5400 ;0x5400
+    813e:	6b 01       	ld (0x01,SP),A ;0x1
+    8140:	0d 06       	tnz (0x06,SP) ;0x6
+    8142:	26 03       	jrne 0x8147 ;0x8147
+    8144:	cc 81 51    	jp 0x8151 ;0x8151
+    8147:	7b 05       	ld A,(0x05,SP) ;0x5
+    8149:	1a 01       	or A,(0x01,SP) ;0x1
+    814b:	c7 54 00    	ld 0x5400,A ;0x5400
+    814e:	cc 81 5a    	jp 0x815a ;0x815a
+    8151:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8153:	53          	clrw X
+    8154:	9f          	ld A,XL
+    8155:	14 01       	and A,(0x01,SP) ;0x1
+    8157:	c7 54 00    	ld 0x5400,A ;0x5400
+    815a:	84          	pop A
+    815b:	81          	ret
+    815c:	c6 54 01    	ld A,0x5401 ;0x5401
+    815f:	a4 8f       	and A,#0x8f ;0x8f
+    8161:	c7 54 01    	ld 0x5401,A ;0x5401
+    8164:	c6 54 01    	ld A,0x5401 ;0x5401
+    8167:	1a 03       	or A,(0x03,SP) ;0x3
+    8169:	c7 54 01    	ld 0x5401,A ;0x5401
+    816c:	81          	ret
+    816d:	89          	pushw X
+    816e:	7b 05       	ld A,(0x05,SP) ;0x5
+    8170:	4c          	inc A
+    8171:	26 03       	jrne 0x8176 ;0x8176
+    8173:	cc 81 79    	jp 0x8179 ;0x8179
+    8176:	cc 81 9f    	jp 0x819f ;0x819f
+    8179:	c6 54 07    	ld A,0x5407 ;0x5407
+    817c:	0d 06       	tnz (0x06,SP) ;0x6
+    817e:	26 03       	jrne 0x8183 ;0x8183
+    8180:	cc 81 91    	jp 0x8191 ;0x8191
+    8183:	35 00 54 07 	mov 0x5407,#0x00
+    8187:	c6 54 06    	ld A,0x5406 ;0x5406
+    818a:	35 00 54 06 	mov 0x5406,#0x00
+    818e:	cc 81 fe    	jp 0x81fe ;0x81fe
+    8191:	35 ff 54 07 	mov 0x5407,#0xff ;0xff
+    8195:	c6 54 06    	ld A,0x5406 ;0x5406
+    8198:	35 ff 54 06 	mov 0x5406,#0xff ;0xff
+    819c:	cc 81 fe    	jp 0x81fe ;0x81fe
+    819f:	7b 05       	ld A,(0x05,SP) ;0x5
+    81a1:	a1 08       	cp A,#0x08 ;0x8
+    81a3:	25 03       	jrc 0x81a8 ;0x81a8
+    81a5:	cc 81 d2    	jp 0x81d2 ;0x81d2
+    81a8:	c6 54 07    	ld A,0x5407 ;0x5407
+    81ab:	6b 02       	ld (0x02,SP),A ;0x2
+    81ad:	a6 01       	ld A,#0x01 ;0x1
+    81af:	88          	push A
+    81b0:	7b 06       	ld A,(0x06,SP) ;0x6
+    81b2:	27 05       	jreq 0x81b9 ;0x81b9
+    81b4:	08 01       	sll (0x01,SP) ;0x1
+    81b6:	4a          	dec A
+    81b7:	26 fb       	jrne 0x81b4 ;0x81b4
+    81b9:	84          	pop A
+    81ba:	0d 06       	tnz (0x06,SP) ;0x6
+    81bc:	26 03       	jrne 0x81c1 ;0x81c1
+    81be:	cc 81 ca    	jp 0x81ca ;0x81ca
+    81c1:	43          	cpl A
+    81c2:	14 02       	and A,(0x02,SP) ;0x2
+    81c4:	c7 54 07    	ld 0x5407,A ;0x5407
+    81c7:	cc 81 fe    	jp 0x81fe ;0x81fe
+    81ca:	1a 02       	or A,(0x02,SP) ;0x2
+    81cc:	c7 54 07    	ld 0x5407,A ;0x5407
+    81cf:	cc 81 fe    	jp 0x81fe ;0x81fe
+    81d2:	c6 54 06    	ld A,0x5406 ;0x5406
+    81d5:	6b 01       	ld (0x01,SP),A ;0x1
+    81d7:	7b 05       	ld A,(0x05,SP) ;0x5
+    81d9:	a0 08       	sub A,#0x08 ;0x8
+    81db:	97          	ld XL,A
+    81dc:	a6 01       	ld A,#0x01 ;0x1
+    81de:	88          	push A
+    81df:	9f          	ld A,XL
+    81e0:	4d          	tnz A
+    81e1:	27 05       	jreq 0x81e8 ;0x81e8
+    81e3:	08 01       	sll (0x01,SP) ;0x1
+    81e5:	4a          	dec A
+    81e6:	26 fb       	jrne 0x81e3 ;0x81e3
+    81e8:	84          	pop A
+    81e9:	0d 06       	tnz (0x06,SP) ;0x6
+    81eb:	26 03       	jrne 0x81f0 ;0x81f0
+    81ed:	cc 81 f9    	jp 0x81f9 ;0x81f9
+    81f0:	43          	cpl A
+    81f1:	14 01       	and A,(0x01,SP) ;0x1
+    81f3:	c7 54 06    	ld 0x5406,A ;0x5406
+    81f6:	cc 81 fe    	jp 0x81fe ;0x81fe
+    81f9:	1a 01       	or A,(0x01,SP) ;0x1
+    81fb:	c7 54 06    	ld 0x5406,A ;0x5406
+    81fe:	85          	popw X
+    81ff:	81          	ret
+    8200:	c6 54 02    	ld A,0x5402 ;0x5402
+    8203:	a4 f7       	and A,#0xf7 ;0xf7
+    8205:	c7 54 02    	ld 0x5402,A ;0x5402
+    8208:	c6 54 02    	ld A,0x5402 ;0x5402
+    820b:	1a 05       	or A,(0x05,SP) ;0x5
+    820d:	c7 54 02    	ld 0x5402,A ;0x5402
+    8210:	c6 54 01    	ld A,0x5401 ;0x5401
+    8213:	88          	push A
+    8214:	7b 04       	ld A,(0x04,SP) ;0x4
+    8216:	4a          	dec A
+    8217:	84          	pop A
+    8218:	26 03       	jrne 0x821d ;0x821d
+    821a:	cc 82 20    	jp 0x8220 ;0x8220
+    821d:	cc 82 28    	jp 0x8228 ;0x8228
+    8220:	aa 02       	or A,#0x02 ;0x2
+    8222:	c7 54 01    	ld 0x5401,A ;0x5401
+    8225:	cc 82 2d    	jp 0x822d ;0x822d
+    8228:	a4 fd       	and A,#0xfd ;0xfd
+    822a:	c7 54 01    	ld 0x5401,A ;0x5401
+    822d:	c6 54 00    	ld A,0x5400 ;0x5400
+    8230:	a4 f0       	and A,#0xf0 ;0xf0
+    8232:	c7 54 00    	ld 0x5400,A ;0x5400
+    8235:	c6 54 00    	ld A,0x5400 ;0x5400
+    8238:	1a 04       	or A,(0x04,SP) ;0x4
+    823a:	c7 54 00    	ld 0x5400,A ;0x5400
+    823d:	81          	ret
+    823e:	c6 54 02    	ld A,0x5402 ;0x5402
+    8241:	a4 cf       	and A,#0xcf ;0xcf
+    8243:	c7 54 02    	ld 0x5402,A ;0x5402
+    8246:	c6 54 02    	ld A,0x5402 ;0x5402
+    8249:	0d 04       	tnz (0x04,SP) ;0x4
+    824b:	26 03       	jrne 0x8250 ;0x8250
+    824d:	cc 82 58    	jp 0x8258 ;0x8258
+    8250:	aa 40       	or A,#0x40 ;0x40
+    8252:	c7 54 02    	ld 0x5402,A ;0x5402
+    8255:	cc 82 5d    	jp 0x825d ;0x825d
+    8258:	a4 bf       	and A,#0xbf ;0xbf
+    825a:	c7 54 02    	ld 0x5402,A ;0x5402
+    825d:	c6 54 02    	ld A,0x5402 ;0x5402
+    8260:	1a 03       	or A,(0x03,SP) ;0x3
+    8262:	c7 54 02    	ld 0x5402,A ;0x5402
+    8265:	81          	ret
+    8266:	c6 54 01    	ld A,0x5401 ;0x5401
+    8269:	aa 01       	or A,#0x01 ;0x1
+    826b:	c7 54 01    	ld 0x5401,A ;0x5401
+    826e:	81          	ret
+    826f:	52 08       	sub SP,#0x08 ;0x8
+    8271:	c6 54 02    	ld A,0x5402 ;0x5402
+    8274:	a5 08       	bcp A,#0x08 ;0x8
+    8276:	26 03       	jrne 0x827b ;0x827b
+    8278:	cc 82 94    	jp 0x8294 ;0x8294
+    827b:	c6 54 05    	ld A,0x5405 ;0x5405
+    827e:	97          	ld XL,A
+    827f:	c6 54 04    	ld A,0x5404 ;0x5404
+    8282:	90 5f       	clrw Y
+    8284:	0f 08       	clr (0x08,SP) ;0x8
+    8286:	0f 05       	clr (0x05,SP) ;0x5
+    8288:	1a 05       	or A,(0x05,SP) ;0x5
+    828a:	95          	ld XH,A
+    828b:	9f          	ld A,XL
+    828c:	1a 08       	or A,(0x08,SP) ;0x8
+    828e:	97          	ld XL,A
+    828f:	1f 03       	ldw (0x03,SP),X ;0x3
+    8291:	cc 82 b2    	jp 0x82b2 ;0x82b2
+    8294:	c6 54 04    	ld A,0x5404 ;0x5404
+    8297:	5f          	clrw X
+    8298:	97          	ld XL,A
+    8299:	51          	exgw X,Y
+    829a:	c6 54 05    	ld A,0x5405 ;0x5405
+    829d:	5f          	clrw X
+    829e:	97          	ld XL,A
+    829f:	58          	sllw X
+    82a0:	58          	sllw X
+    82a1:	58          	sllw X
+    82a2:	58          	sllw X
+    82a3:	58          	sllw X
+    82a4:	58          	sllw X
+    82a5:	1f 01       	ldw (0x01,SP),X ;0x1
+    82a7:	4f          	clr A
+    82a8:	1a 02       	or A,(0x02,SP) ;0x2
+    82aa:	97          	ld XL,A
+    82ab:	90 9f       	ld A,YL
+    82ad:	1a 01       	or A,(0x01,SP) ;0x1
+    82af:	95          	ld XH,A
+    82b0:	1f 03       	ldw (0x03,SP),X ;0x3
+    82b2:	1e 03       	ldw X,(0x03,SP) ;0x3
+    82b4:	5b 08       	addw SP,#0x08 ;0x8
+    82b6:	81          	ret
+    82b7:	89          	pushw X
+    82b8:	7b 05       	ld A,(0x05,SP) ;0x5
+    82ba:	a1 08       	cp A,#0x08 ;0x8
+    82bc:	25 03       	jrc 0x82c1 ;0x82c1
+    82be:	cc 82 eb    	jp 0x82eb ;0x82eb
+    82c1:	c6 54 0f    	ld A,0x540f ;0x540f
+    82c4:	6b 02       	ld (0x02,SP),A ;0x2
+    82c6:	a6 01       	ld A,#0x01 ;0x1
+    82c8:	88          	push A
+    82c9:	7b 06       	ld A,(0x06,SP) ;0x6
+    82cb:	27 05       	jreq 0x82d2 ;0x82d2
+    82cd:	08 01       	sll (0x01,SP) ;0x1
+    82cf:	4a          	dec A
+    82d0:	26 fb       	jrne 0x82cd ;0x82cd
+    82d2:	84          	pop A
+    82d3:	0d 06       	tnz (0x06,SP) ;0x6
+    82d5:	26 03       	jrne 0x82da ;0x82da
+    82d7:	cc 82 e2    	jp 0x82e2 ;0x82e2
+    82da:	1a 02       	or A,(0x02,SP) ;0x2
+    82dc:	c7 54 0f    	ld 0x540f,A ;0x540f
+    82df:	cc 83 17    	jp 0x8317 ;0x8317
+    82e2:	43          	cpl A
+    82e3:	14 02       	and A,(0x02,SP) ;0x2
+    82e5:	c7 54 0f    	ld 0x540f,A ;0x540f
+    82e8:	cc 83 17    	jp 0x8317 ;0x8317
+    82eb:	c6 54 0e    	ld A,0x540e ;0x540e
+    82ee:	6b 01       	ld (0x01,SP),A ;0x1
+    82f0:	7b 05       	ld A,(0x05,SP) ;0x5
+    82f2:	a0 08       	sub A,#0x08 ;0x8
+    82f4:	97          	ld XL,A
+    82f5:	a6 01       	ld A,#0x01 ;0x1
+    82f7:	88          	push A
+    82f8:	9f          	ld A,XL
+    82f9:	4d          	tnz A
+    82fa:	27 05       	jreq 0x8301 ;0x8301
+    82fc:	08 01       	sll (0x01,SP) ;0x1
+    82fe:	4a          	dec A
+    82ff:	26 fb       	jrne 0x82fc ;0x82fc
+    8301:	84          	pop A
+    8302:	0d 06       	tnz (0x06,SP) ;0x6
+    8304:	26 03       	jrne 0x8309 ;0x8309
+    8306:	cc 83 11    	jp 0x8311 ;0x8311
+    8309:	1a 01       	or A,(0x01,SP) ;0x1
+    830b:	c7 54 0e    	ld 0x540e,A ;0x540e
+    830e:	cc 83 17    	jp 0x8317 ;0x8317
+    8311:	43          	cpl A
+    8312:	14 01       	and A,(0x01,SP) ;0x1
+    8314:	c7 54 0e    	ld 0x540e,A ;0x540e
+    8317:	85          	popw X
+    8318:	81          	ret
+    8319:	1e 03       	ldw X,(0x03,SP) ;0x3
+    831b:	54          	srlw X
+    831c:	54          	srlw X
+    831d:	9f          	ld A,XL
+    831e:	c7 54 08    	ld 0x5408,A ;0x5408
+    8321:	7b 04       	ld A,(0x04,SP) ;0x4
+    8323:	c7 54 09    	ld 0x5409,A ;0x5409
+    8326:	81          	ret
+    8327:	7b 04       	ld A,(0x04,SP) ;0x4
+    8329:	c7 54 0b    	ld 0x540b,A ;0x540b
+    832c:	1e 03       	ldw X,(0x03,SP) ;0x3
+    832e:	54          	srlw X
+    832f:	54          	srlw X
+    8330:	9f          	ld A,XL
+    8331:	c7 54 0a    	ld 0x540a,A ;0x540a
+    8334:	81          	ret
+    8335:	52 0b       	sub SP,#0x0b ;0xb
+    8337:	c6 54 02    	ld A,0x5402 ;0x5402
+    833a:	6b 0b       	ld (0x0b,SP),A ;0xb
+    833c:	7b 0e       	ld A,(0x0e,SP) ;0xe
+    833e:	48          	sll A
+    833f:	5f          	clrw X
+    8340:	97          	ld XL,A
+    8341:	51          	exgw X,Y
+    8342:	93          	ldw X,Y
+    8343:	1c 53 e1    	addw X,#0x53e1 ;0x53e1
+    8346:	72 a9 53 e0 	addw Y,#0x53e0 ;0x53e0
+    834a:	f6          	ld A,(X)
+    834b:	97          	ld XL,A
+    834c:	90 f6       	ld A,(Y)
+    834e:	90 5f       	clrw Y
+    8350:	88          	push A
+    8351:	7b 0c       	ld A,(0x0c,SP) ;0xc
+    8353:	a5 08       	bcp A,#0x08 ;0x8
+    8355:	84          	pop A
+    8356:	26 03       	jrne 0x835b ;0x835b
+    8358:	cc 83 6b    	jp 0x836b ;0x836b
+    835b:	0f 04       	clr (0x04,SP) ;0x4
+    835d:	0f 01       	clr (0x01,SP) ;0x1
+    835f:	1a 01       	or A,(0x01,SP) ;0x1
+    8361:	95          	ld XH,A
+    8362:	9f          	ld A,XL
+    8363:	1a 04       	or A,(0x04,SP) ;0x4
+    8365:	97          	ld XL,A
+    8366:	1f 09       	ldw (0x09,SP),X ;0x9
+    8368:	cc 83 85    	jp 0x8385 ;0x8385
+    836b:	02          	rlwa X,A
+    836c:	4f          	clr A
+    836d:	01          	rrwa X,A
+    836e:	58          	sllw X
+    836f:	58          	sllw X
+    8370:	58          	sllw X
+    8371:	58          	sllw X
+    8372:	58          	sllw X
+    8373:	58          	sllw X
+    8374:	1f 07       	ldw (0x07,SP),X ;0x7
+    8376:	97          	ld XL,A
+    8377:	4f          	clr A
+    8378:	1a 08       	or A,(0x08,SP) ;0x8
+    837a:	6b 06       	ld (0x06,SP),A ;0x6
+    837c:	9f          	ld A,XL
+    837d:	1a 07       	or A,(0x07,SP) ;0x7
+    837f:	6b 09       	ld (0x09,SP),A ;0x9
+    8381:	7b 06       	ld A,(0x06,SP) ;0x6
+    8383:	6b 0a       	ld (0x0a,SP),A ;0xa
+    8385:	1e 09       	ldw X,(0x09,SP) ;0x9
+    8387:	5b 0b       	addw SP,#0x0b ;0xb
+    8389:	81          	ret
+    838a:	89          	pushw X
+    838b:	7b 05       	ld A,(0x05,SP) ;0x5
+    838d:	a1 08       	cp A,#0x08 ;0x8
+    838f:	25 03       	jrc 0x8394 ;0x8394
+    8391:	cc 83 ab    	jp 0x83ab ;0x83ab
+    8394:	c6 54 0d    	ld A,0x540d ;0x540d
+    8397:	88          	push A
+    8398:	a6 01       	ld A,#0x01 ;0x1
+    839a:	6b 03       	ld (0x03,SP),A ;0x3
+    839c:	7b 06       	ld A,(0x06,SP) ;0x6
+    839e:	27 05       	jreq 0x83a5 ;0x83a5
+    83a0:	08 03       	sll (0x03,SP) ;0x3
+    83a2:	4a          	dec A
+    83a3:	26 fb       	jrne 0x83a0 ;0x83a0
+    83a5:	84          	pop A
+    83a6:	14 02       	and A,(0x02,SP) ;0x2
+    83a8:	cc 83 c4    	jp 0x83c4 ;0x83c4
+    83ab:	c6 54 0c    	ld A,0x540c ;0x540c
+    83ae:	97          	ld XL,A
+    83af:	7b 05       	ld A,(0x05,SP) ;0x5
+    83b1:	a0 08       	sub A,#0x08 ;0x8
+    83b3:	88          	push A
+    83b4:	a6 01       	ld A,#0x01 ;0x1
+    83b6:	6b 02       	ld (0x02,SP),A ;0x2
+    83b8:	84          	pop A
+    83b9:	4d          	tnz A
+    83ba:	27 05       	jreq 0x83c1 ;0x83c1
+    83bc:	08 01       	sll (0x01,SP) ;0x1
+    83be:	4a          	dec A
+    83bf:	26 fb       	jrne 0x83bc ;0x83bc
+    83c1:	9f          	ld A,XL
+    83c2:	14 01       	and A,(0x01,SP) ;0x1
+    83c4:	85          	popw X
+    83c5:	81          	ret
+    83c6:	52 04       	sub SP,#0x04 ;0x4
+    83c8:	7b 07       	ld A,(0x07,SP) ;0x7
+    83ca:	0f 03       	clr (0x03,SP) ;0x3
+    83cc:	88          	push A
+    83cd:	a4 0f       	and A,#0x0f ;0xf
+    83cf:	97          	ld XL,A
+    83d0:	4f          	clr A
+    83d1:	95          	ld XH,A
+    83d2:	84          	pop A
+    83d3:	5a          	decw X
+    83d4:	26 03       	jrne 0x83d9 ;0x83d9
+    83d6:	cc 83 dc    	jp 0x83dc ;0x83dc
+    83d9:	cc 83 e4    	jp 0x83e4 ;0x83e4
+    83dc:	c6 54 03    	ld A,0x5403 ;0x5403
+    83df:	a4 40       	and A,#0x40 ;0x40
+    83e1:	cc 84 37    	jp 0x8437 ;0x8437
+    83e4:	a4 f0       	and A,#0xf0 ;0xf0
+    83e6:	97          	ld XL,A
+    83e7:	4f          	clr A
+    83e8:	95          	ld XH,A
+    83e9:	a3 00 10    	cpw X,#0x0010 ;0x10
+    83ec:	26 03       	jrne 0x83f1 ;0x83f1
+    83ee:	cc 83 f4    	jp 0x83f4 ;0x83f4
+    83f1:	cc 84 32    	jp 0x8432 ;0x8432
+    83f4:	7b 07       	ld A,(0x07,SP) ;0x7
+    83f6:	a4 0f       	and A,#0x0f ;0xf
+    83f8:	97          	ld XL,A
+    83f9:	9f          	ld A,XL
+    83fa:	a1 08       	cp A,#0x08 ;0x8
+    83fc:	25 03       	jrc 0x8401 ;0x8401
+    83fe:	cc 84 18    	jp 0x8418 ;0x8418
+    8401:	c6 54 0d    	ld A,0x540d ;0x540d
+    8404:	6b 02       	ld (0x02,SP),A ;0x2
+    8406:	a6 01       	ld A,#0x01 ;0x1
+    8408:	88          	push A
+    8409:	9f          	ld A,XL
+    840a:	4d          	tnz A
+    840b:	27 05       	jreq 0x8412 ;0x8412
+    840d:	08 01       	sll (0x01,SP) ;0x1
+    840f:	4a          	dec A
+    8410:	26 fb       	jrne 0x840d ;0x840d
+    8412:	84          	pop A
+    8413:	14 02       	and A,(0x02,SP) ;0x2
+    8415:	cc 84 37    	jp 0x8437 ;0x8437
+    8418:	c6 54 0c    	ld A,0x540c ;0x540c
+    841b:	6b 01       	ld (0x01,SP),A ;0x1
+    841d:	1d 00 08    	subw X,#0x0008 ;0x8
+    8420:	a6 01       	ld A,#0x01 ;0x1
+    8422:	88          	push A
+    8423:	9f          	ld A,XL
+    8424:	4d          	tnz A
+    8425:	27 05       	jreq 0x842c ;0x842c
+    8427:	08 01       	sll (0x01,SP) ;0x1
+    8429:	4a          	dec A
+    842a:	26 fb       	jrne 0x8427 ;0x8427
+    842c:	84          	pop A
+    842d:	14 01       	and A,(0x01,SP) ;0x1
+    842f:	cc 84 37    	jp 0x8437 ;0x8437
+    8432:	c6 54 00    	ld A,0x5400 ;0x5400
+    8435:	14 07       	and A,(0x07,SP) ;0x7
+    8437:	5b 04       	addw SP,#0x04 ;0x4
+    8439:	81          	ret
+    843a:	52 05       	sub SP,#0x05 ;0x5
+    843c:	7b 08       	ld A,(0x08,SP) ;0x8
+    843e:	0f 04       	clr (0x04,SP) ;0x4
+    8440:	88          	push A
+    8441:	a4 0f       	and A,#0x0f ;0xf
+    8443:	97          	ld XL,A
+    8444:	4f          	clr A
+    8445:	95          	ld XH,A
+    8446:	84          	pop A
+    8447:	5a          	decw X
+    8448:	26 03       	jrne 0x844d ;0x844d
+    844a:	cc 84 50    	jp 0x8450 ;0x8450
+    844d:	cc 84 5b    	jp 0x845b ;0x845b
+    8450:	c6 54 03    	ld A,0x5403 ;0x5403
+    8453:	a4 bf       	and A,#0xbf ;0xbf
+    8455:	c7 54 03    	ld 0x5403,A ;0x5403
+    8458:	cc 84 be    	jp 0x84be ;0x84be
+    845b:	a4 f0       	and A,#0xf0 ;0xf0
+    845d:	97          	ld XL,A
+    845e:	4f          	clr A
+    845f:	95          	ld XH,A
+    8460:	a3 00 10    	cpw X,#0x0010 ;0x10
+    8463:	26 03       	jrne 0x8468 ;0x8468
+    8465:	cc 84 6b    	jp 0x846b ;0x846b
+    8468:	cc 84 b1    	jp 0x84b1 ;0x84b1
+    846b:	7b 08       	ld A,(0x08,SP) ;0x8
+    846d:	a4 0f       	and A,#0x0f ;0xf
+    846f:	97          	ld XL,A
+    8470:	9f          	ld A,XL
+    8471:	a1 08       	cp A,#0x08 ;0x8
+    8473:	25 03       	jrc 0x8478 ;0x8478
+    8475:	cc 84 93    	jp 0x8493 ;0x8493
+    8478:	c6 54 0d    	ld A,0x540d ;0x540d
+    847b:	6b 03       	ld (0x03,SP),A ;0x3
+    847d:	a6 01       	ld A,#0x01 ;0x1
+    847f:	88          	push A
+    8480:	9f          	ld A,XL
+    8481:	4d          	tnz A
+    8482:	27 05       	jreq 0x8489 ;0x8489
+    8484:	08 01       	sll (0x01,SP) ;0x1
+    8486:	4a          	dec A
+    8487:	26 fb       	jrne 0x8484 ;0x8484
+    8489:	84          	pop A
+    848a:	43          	cpl A
+    848b:	14 03       	and A,(0x03,SP) ;0x3
+    848d:	c7 54 0d    	ld 0x540d,A ;0x540d
+    8490:	cc 84 be    	jp 0x84be ;0x84be
+    8493:	c6 54 0c    	ld A,0x540c ;0x540c
+    8496:	6b 02       	ld (0x02,SP),A ;0x2
+    8498:	1d 00 08    	subw X,#0x0008 ;0x8
+    849b:	a6 01       	ld A,#0x01 ;0x1
+    849d:	88          	push A
+    849e:	9f          	ld A,XL
+    849f:	4d          	tnz A
+    84a0:	27 05       	jreq 0x84a7 ;0x84a7
+    84a2:	08 01       	sll (0x01,SP) ;0x1
+    84a4:	4a          	dec A
+    84a5:	26 fb       	jrne 0x84a2 ;0x84a2
+    84a7:	84          	pop A
+    84a8:	43          	cpl A
+    84a9:	14 02       	and A,(0x02,SP) ;0x2
+    84ab:	c7 54 0c    	ld 0x540c,A ;0x540c
+    84ae:	cc 84 be    	jp 0x84be ;0x84be
+    84b1:	c6 54 00    	ld A,0x5400 ;0x5400
+    84b4:	6b 01       	ld (0x01,SP),A ;0x1
+    84b6:	7b 08       	ld A,(0x08,SP) ;0x8
+    84b8:	43          	cpl A
+    84b9:	14 01       	and A,(0x01,SP) ;0x1
+    84bb:	c7 54 00    	ld 0x5400,A ;0x5400
+    84be:	5b 05       	addw SP,#0x05 ;0x5
+    84c0:	81          	ret
+    84c1:	52 03       	sub SP,#0x03 ;0x3
+    84c3:	7b 07       	ld A,(0x07,SP) ;0x7
+    84c5:	a4 f0       	and A,#0xf0 ;0xf0
+    84c7:	97          	ld XL,A
+    84c8:	4f          	clr A
+    84c9:	95          	ld XH,A
+    84ca:	7b 07       	ld A,(0x07,SP) ;0x7
+    84cc:	a3 00 10    	cpw X,#0x0010 ;0x10
+    84cf:	26 03       	jrne 0x84d4 ;0x84d4
+    84d1:	cc 84 d7    	jp 0x84d7 ;0x84d7
+    84d4:	cc 85 13    	jp 0x8513 ;0x8513
+    84d7:	a4 0f       	and A,#0x0f ;0xf
+    84d9:	97          	ld XL,A
+    84da:	9f          	ld A,XL
+    84db:	a1 08       	cp A,#0x08 ;0x8
+    84dd:	25 03       	jrc 0x84e2 ;0x84e2
+    84df:	cc 84 f9    	jp 0x84f9 ;0x84f9
+    84e2:	c6 54 0d    	ld A,0x540d ;0x540d
+    84e5:	88          	push A
+    84e6:	a6 01       	ld A,#0x01 ;0x1
+    84e8:	6b 04       	ld (0x04,SP),A ;0x4
+    84ea:	9f          	ld A,XL
+    84eb:	4d          	tnz A
+    84ec:	27 05       	jreq 0x84f3 ;0x84f3
+    84ee:	08 04       	sll (0x04,SP) ;0x4
+    84f0:	4a          	dec A
+    84f1:	26 fb       	jrne 0x84ee ;0x84ee
+    84f3:	84          	pop A
+    84f4:	14 03       	and A,(0x03,SP) ;0x3
+    84f6:	cc 85 1d    	jp 0x851d ;0x851d
+    84f9:	c6 54 0c    	ld A,0x540c ;0x540c
+    84fc:	6b 02       	ld (0x02,SP),A ;0x2
+    84fe:	1d 00 08    	subw X,#0x0008 ;0x8
+    8501:	a6 01       	ld A,#0x01 ;0x1
+    8503:	88          	push A
+    8504:	9f          	ld A,XL
+    8505:	4d          	tnz A
+    8506:	27 05       	jreq 0x850d ;0x850d
+    8508:	08 01       	sll (0x01,SP) ;0x1
+    850a:	4a          	dec A
+    850b:	26 fb       	jrne 0x8508 ;0x8508
+    850d:	84          	pop A
+    850e:	14 02       	and A,(0x02,SP) ;0x2
+    8510:	cc 85 1d    	jp 0x851d ;0x851d
+    8513:	ae 54 00    	ldw X,#0x5400 ;0x5400
+    8516:	88          	push A
+    8517:	f6          	ld A,(X)
+    8518:	6b 02       	ld (0x02,SP),A ;0x2
+    851a:	84          	pop A
+    851b:	14 01       	and A,(0x01,SP) ;0x1
+    851d:	5b 03       	addw SP,#0x03 ;0x3
+    851f:	81          	ret
+    8520:	89          	pushw X
+    8521:	7b 06       	ld A,(0x06,SP) ;0x6
+    8523:	a4 f0       	and A,#0xf0 ;0xf0
+    8525:	97          	ld XL,A
+    8526:	4f          	clr A
+    8527:	95          	ld XH,A
+    8528:	a3 00 10    	cpw X,#0x0010 ;0x10
+    852b:	26 03       	jrne 0x8530 ;0x8530
+    852d:	cc 85 33    	jp 0x8533 ;0x8533
+    8530:	cc 85 79    	jp 0x8579 ;0x8579
+    8533:	7b 06       	ld A,(0x06,SP) ;0x6
+    8535:	a4 0f       	and A,#0x0f ;0xf
+    8537:	97          	ld XL,A
+    8538:	9f          	ld A,XL
+    8539:	a1 08       	cp A,#0x08 ;0x8
+    853b:	25 03       	jrc 0x8540 ;0x8540
+    853d:	cc 85 5b    	jp 0x855b ;0x855b
+    8540:	c6 54 0d    	ld A,0x540d ;0x540d
+    8543:	6b 02       	ld (0x02,SP),A ;0x2
+    8545:	a6 01       	ld A,#0x01 ;0x1
+    8547:	88          	push A
+    8548:	9f          	ld A,XL
+    8549:	4d          	tnz A
+    854a:	27 05       	jreq 0x8551 ;0x8551
+    854c:	08 01       	sll (0x01,SP) ;0x1
+    854e:	4a          	dec A
+    854f:	26 fb       	jrne 0x854c ;0x854c
+    8551:	84          	pop A
+    8552:	43          	cpl A
+    8553:	14 02       	and A,(0x02,SP) ;0x2
+    8555:	c7 54 0d    	ld 0x540d,A ;0x540d
+    8558:	cc 85 86    	jp 0x8586 ;0x8586
+    855b:	c6 54 0c    	ld A,0x540c ;0x540c
+    855e:	6b 01       	ld (0x01,SP),A ;0x1
+    8560:	1d 00 08    	subw X,#0x0008 ;0x8
+    8563:	a6 01       	ld A,#0x01 ;0x1
+    8565:	88          	push A
+    8566:	9f          	ld A,XL
+    8567:	4d          	tnz A
+    8568:	27 05       	jreq 0x856f ;0x856f
+    856a:	08 01       	sll (0x01,SP) ;0x1
+    856c:	4a          	dec A
+    856d:	26 fb       	jrne 0x856a ;0x856a
+    856f:	84          	pop A
+    8570:	43          	cpl A
+    8571:	14 01       	and A,(0x01,SP) ;0x1
+    8573:	c7 54 0c    	ld 0x540c,A ;0x540c
+    8576:	cc 85 86    	jp 0x8586 ;0x8586
+    8579:	c6 54 00    	ld A,0x5400 ;0x5400
+    857c:	1e 05       	ldw X,(0x05,SP) ;0x5
+    857e:	53          	clrw X
+    857f:	89          	pushw X
+    8580:	14 02       	and A,(0x02,SP) ;0x2
+    8582:	85          	popw X
+    8583:	c7 54 00    	ld 0x5400,A ;0x5400
+    8586:	85          	popw X
+    8587:	81          	ret
+    8588:	35 01 50 c0 	mov 0x50c0,#0x01 ;0x1
+    858c:	35 00 50 c1 	mov 0x50c1,#0x00
+    8590:	35 e1 50 c4 	mov 0x50c4,#0xe1 ;0xe1
+    8594:	35 00 50 c5 	mov 0x50c5,#0x00
+    8598:	35 18 50 c6 	mov 0x50c6,#0x18 ;0x18
+    859c:	35 ff 50 c7 	mov 0x50c7,#0xff ;0xff
+    85a0:	35 ff 50 ca 	mov 0x50ca,#0xff ;0xff
+    85a4:	35 00 50 c8 	mov 0x50c8,#0x00
+    85a8:	35 00 50 c9 	mov 0x50c9,#0x00
+    85ac:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    85af:	44          	srl A
+    85b0:	24 03       	jrnc 0x85b5 ;0x85b5
+    85b2:	cc 85 ac    	jp 0x85ac ;0x85ac
+    85b5:	35 00 50 c9 	mov 0x50c9,#0x00
+    85b9:	35 00 50 cc 	mov 0x50cc,#0x00
+    85bd:	35 00 50 cd 	mov 0x50cd,#0x00
+    85c1:	81          	ret
+    85c2:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    85c5:	0d 03       	tnz (0x03,SP) ;0x3
+    85c7:	26 03       	jrne 0x85cc ;0x85cc
+    85c9:	cc 85 d4    	jp 0x85d4 ;0x85d4
+    85cc:	aa 04       	or A,#0x04 ;0x4
+    85ce:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    85d1:	cc 85 d9    	jp 0x85d9 ;0x85d9
+    85d4:	a4 fb       	and A,#0xfb ;0xfb
+    85d6:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    85d9:	81          	ret
+    85da:	c6 50 c1    	ld A,0x50c1 ;0x50c1
+    85dd:	0d 03       	tnz (0x03,SP) ;0x3
+    85df:	26 03       	jrne 0x85e4 ;0x85e4
+    85e1:	cc 85 ec    	jp 0x85ec ;0x85ec
+    85e4:	aa 01       	or A,#0x01 ;0x1
+    85e6:	c7 50 c1    	ld 0x50c1,A ;0x50c1
+    85e9:	cc 85 f1    	jp 0x85f1 ;0x85f1
+    85ec:	a4 fe       	and A,#0xfe ;0xfe
+    85ee:	c7 50 c1    	ld 0x50c1,A ;0x50c1
+    85f1:	81          	ret
+    85f2:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    85f5:	0d 03       	tnz (0x03,SP) ;0x3
+    85f7:	26 03       	jrne 0x85fc ;0x85fc
+    85f9:	cc 86 04    	jp 0x8604 ;0x8604
+    85fc:	aa 01       	or A,#0x01 ;0x1
+    85fe:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8601:	cc 86 09    	jp 0x8609 ;0x8609
+    8604:	a4 fe       	and A,#0xfe ;0xfe
+    8606:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8609:	81          	ret
+    860a:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    860d:	0d 03       	tnz (0x03,SP) ;0x3
+    860f:	26 03       	jrne 0x8614 ;0x8614
+    8611:	cc 86 1c    	jp 0x861c ;0x861c
+    8614:	aa 08       	or A,#0x08 ;0x8
+    8616:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8619:	cc 86 21    	jp 0x8621 ;0x8621
+    861c:	a4 f7       	and A,#0xf7 ;0xf7
+    861e:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8621:	81          	ret
+    8622:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    8625:	0d 03       	tnz (0x03,SP) ;0x3
+    8627:	26 03       	jrne 0x862c ;0x862c
+    8629:	cc 86 34    	jp 0x8634 ;0x8634
+    862c:	aa 01       	or A,#0x01 ;0x1
+    862e:	c7 50 c9    	ld 0x50c9,A ;0x50c9
+    8631:	cc 86 39    	jp 0x8639 ;0x8639
+    8634:	a4 fe       	and A,#0xfe ;0xfe
+    8636:	c7 50 c9    	ld 0x50c9,A ;0x50c9
+    8639:	81          	ret
+    863a:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    863d:	0d 03       	tnz (0x03,SP) ;0x3
+    863f:	26 03       	jrne 0x8644 ;0x8644
+    8641:	cc 86 4c    	jp 0x864c ;0x864c
+    8644:	aa 02       	or A,#0x02 ;0x2
+    8646:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8649:	cc 86 51    	jp 0x8651 ;0x8651
+    864c:	a4 fd       	and A,#0xfd ;0xfd
+    864e:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8651:	81          	ret
+    8652:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    8655:	0d 03       	tnz (0x03,SP) ;0x3
+    8657:	26 03       	jrne 0x865c ;0x865c
+    8659:	cc 86 64    	jp 0x8664 ;0x8664
+    865c:	aa 20       	or A,#0x20 ;0x20
+    865e:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8661:	cc 86 69    	jp 0x8669 ;0x8669
+    8664:	a4 df       	and A,#0xdf ;0xdf
+    8666:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8669:	81          	ret
+    866a:	89          	pushw X
+    866b:	7b 05       	ld A,(0x05,SP) ;0x5
+    866d:	a4 0f       	and A,#0x0f ;0xf
+    866f:	88          	push A
+    8670:	a6 01       	ld A,#0x01 ;0x1
+    8672:	6b 03       	ld (0x03,SP),A ;0x3
+    8674:	84          	pop A
+    8675:	4d          	tnz A
+    8676:	27 05       	jreq 0x867d ;0x867d
+    8678:	08 02       	sll (0x02,SP) ;0x2
+    867a:	4a          	dec A
+    867b:	26 fb       	jrne 0x8678 ;0x8678
+    867d:	7b 02       	ld A,(0x02,SP) ;0x2
+    867f:	43          	cpl A
+    8680:	6b 01       	ld (0x01,SP),A ;0x1
+    8682:	7b 05       	ld A,(0x05,SP) ;0x5
+    8684:	a5 10       	bcp A,#0x10 ;0x10
+    8686:	27 03       	jreq 0x868b ;0x868b
+    8688:	cc 86 a5    	jp 0x86a5 ;0x86a5
+    868b:	c6 50 c7    	ld A,0x50c7 ;0x50c7
+    868e:	0d 06       	tnz (0x06,SP) ;0x6
+    8690:	26 03       	jrne 0x8695 ;0x8695
+    8692:	cc 86 9d    	jp 0x869d ;0x869d
+    8695:	1a 02       	or A,(0x02,SP) ;0x2
+    8697:	c7 50 c7    	ld 0x50c7,A ;0x50c7
+    869a:	cc 86 bc    	jp 0x86bc ;0x86bc
+    869d:	14 01       	and A,(0x01,SP) ;0x1
+    869f:	c7 50 c7    	ld 0x50c7,A ;0x50c7
+    86a2:	cc 86 bc    	jp 0x86bc ;0x86bc
+    86a5:	c6 50 ca    	ld A,0x50ca ;0x50ca
+    86a8:	0d 06       	tnz (0x06,SP) ;0x6
+    86aa:	26 03       	jrne 0x86af ;0x86af
+    86ac:	cc 86 b7    	jp 0x86b7 ;0x86b7
+    86af:	1a 02       	or A,(0x02,SP) ;0x2
+    86b1:	c7 50 ca    	ld 0x50ca,A ;0x50ca
+    86b4:	cc 86 bc    	jp 0x86bc ;0x86bc
+    86b7:	14 01       	and A,(0x01,SP) ;0x1
+    86b9:	c7 50 ca    	ld 0x50ca,A ;0x50ca
+    86bc:	85          	popw X
+    86bd:	81          	ret
+    86be:	c6 50 c3    	ld A,0x50c3 ;0x50c3
+    86c1:	90 97       	ld YL,A
+    86c3:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    86c6:	88          	push A
+    86c7:	7b 04       	ld A,(0x04,SP) ;0x4
+    86c9:	4a          	dec A
+    86ca:	84          	pop A
+    86cb:	26 03       	jrne 0x86d0 ;0x86d0
+    86cd:	cc 86 d3    	jp 0x86d3 ;0x86d3
+    86d0:	cc 87 1b    	jp 0x871b ;0x871b
+    86d3:	aa 02       	or A,#0x02 ;0x2
+    86d5:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    86d8:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    86db:	0d 05       	tnz (0x05,SP) ;0x5
+    86dd:	26 03       	jrne 0x86e2 ;0x86e2
+    86df:	cc 86 ea    	jp 0x86ea ;0x86ea
+    86e2:	aa 04       	or A,#0x04 ;0x4
+    86e4:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    86e7:	cc 86 ef    	jp 0x86ef ;0x86ef
+    86ea:	a4 fb       	and A,#0xfb ;0xfb
+    86ec:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    86ef:	ae 50 c4    	ldw X,#0x50c4 ;0x50c4
+    86f2:	7b 04       	ld A,(0x04,SP) ;0x4
+    86f4:	f7          	ld (X),A
+    86f5:	5f          	clrw X
+    86f6:	5a          	decw X
+    86f7:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    86fa:	44          	srl A
+    86fb:	25 03       	jrc 0x8700 ;0x8700
+    86fd:	cc 87 0a    	jp 0x870a ;0x870a
+    8700:	5d          	tnzw X
+    8701:	26 03       	jrne 0x8706 ;0x8706
+    8703:	cc 87 0a    	jp 0x870a ;0x870a
+    8706:	5a          	decw X
+    8707:	cc 86 f7    	jp 0x86f7 ;0x86f7
+    870a:	5d          	tnzw X
+    870b:	26 03       	jrne 0x8710 ;0x8710
+    870d:	cc 87 16    	jp 0x8716 ;0x8716
+    8710:	a6 01       	ld A,#0x01 ;0x1
+    8712:	97          	ld XL,A
+    8713:	cc 87 61    	jp 0x8761 ;0x8761
+    8716:	4f          	clr A
+    8717:	97          	ld XL,A
+    8718:	cc 87 61    	jp 0x8761 ;0x8761
+    871b:	0d 05       	tnz (0x05,SP) ;0x5
+    871d:	26 03       	jrne 0x8722 ;0x8722
+    871f:	cc 87 2a    	jp 0x872a ;0x872a
+    8722:	aa 04       	or A,#0x04 ;0x4
+    8724:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8727:	cc 87 2f    	jp 0x872f ;0x872f
+    872a:	a4 fb       	and A,#0xfb ;0xfb
+    872c:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    872f:	ae 50 c4    	ldw X,#0x50c4 ;0x50c4
+    8732:	7b 04       	ld A,(0x04,SP) ;0x4
+    8734:	f7          	ld (X),A
+    8735:	5f          	clrw X
+    8736:	5a          	decw X
+    8737:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    873a:	a5 08       	bcp A,#0x08 ;0x8
+    873c:	26 03       	jrne 0x8741 ;0x8741
+    873e:	cc 87 4b    	jp 0x874b ;0x874b
+    8741:	5d          	tnzw X
+    8742:	26 03       	jrne 0x8747 ;0x8747
+    8744:	cc 87 4b    	jp 0x874b ;0x874b
+    8747:	5a          	decw X
+    8748:	cc 87 37    	jp 0x8737 ;0x8737
+    874b:	5d          	tnzw X
+    874c:	26 03       	jrne 0x8751 ;0x8751
+    874e:	cc 87 5f    	jp 0x875f ;0x875f
+    8751:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    8754:	aa 02       	or A,#0x02 ;0x2
+    8756:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8759:	a6 01       	ld A,#0x01 ;0x1
+    875b:	97          	ld XL,A
+    875c:	cc 87 61    	jp 0x8761 ;0x8761
+    875f:	4f          	clr A
+    8760:	97          	ld XL,A
+    8761:	9f          	ld A,XL
+    8762:	4d          	tnz A
+    8763:	26 03       	jrne 0x8768 ;0x8768
+    8765:	cc 87 bf    	jp 0x87bf ;0x87bf
+    8768:	0d 06       	tnz (0x06,SP) ;0x6
+    876a:	27 03       	jreq 0x876f ;0x876f
+    876c:	cc 87 86    	jp 0x8786 ;0x8786
+    876f:	90 9f       	ld A,YL
+    8771:	a1 e1       	cp A,#0xe1 ;0xe1
+    8773:	26 03       	jrne 0x8778 ;0x8778
+    8775:	cc 87 7b    	jp 0x877b ;0x877b
+    8778:	cc 87 86    	jp 0x8786 ;0x8786
+    877b:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    877e:	a4 fe       	and A,#0xfe ;0xfe
+    8780:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    8783:	cc 87 bf    	jp 0x87bf ;0x87bf
+    8786:	0d 06       	tnz (0x06,SP) ;0x6
+    8788:	27 03       	jreq 0x878d ;0x878d
+    878a:	cc 87 a4    	jp 0x87a4 ;0x87a4
+    878d:	90 9f       	ld A,YL
+    878f:	a1 d2       	cp A,#0xd2 ;0xd2
+    8791:	26 03       	jrne 0x8796 ;0x8796
+    8793:	cc 87 99    	jp 0x8799 ;0x8799
+    8796:	cc 87 a4    	jp 0x87a4 ;0x87a4
+    8799:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    879c:	a4 f7       	and A,#0xf7 ;0xf7
+    879e:	c7 50 c0    	ld 0x50c0,A ;0x50c0
+    87a1:	cc 87 bf    	jp 0x87bf ;0x87bf
+    87a4:	0d 06       	tnz (0x06,SP) ;0x6
+    87a6:	27 03       	jreq 0x87ab ;0x87ab
+    87a8:	cc 87 bf    	jp 0x87bf ;0x87bf
+    87ab:	90 9f       	ld A,YL
+    87ad:	a1 b4       	cp A,#0xb4 ;0xb4
+    87af:	26 03       	jrne 0x87b4 ;0x87b4
+    87b1:	cc 87 b7    	jp 0x87b7 ;0x87b7
+    87b4:	cc 87 bf    	jp 0x87bf ;0x87bf
+    87b7:	c6 50 c1    	ld A,0x50c1 ;0x50c1
+    87ba:	a4 fe       	and A,#0xfe ;0xfe
+    87bc:	c7 50 c1    	ld 0x50c1,A ;0x50c1
+    87bf:	9f          	ld A,XL
+    87c0:	81          	ret
+    87c1:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    87c4:	a4 e7       	and A,#0xe7 ;0xe7
+    87c6:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    87c9:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    87cc:	1a 03       	or A,(0x03,SP) ;0x3
+    87ce:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    87d1:	81          	ret
+    87d2:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    87d5:	a4 e1       	and A,#0xe1 ;0xe1
+    87d7:	c7 50 c9    	ld 0x50c9,A ;0x50c9
+    87da:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    87dd:	1a 03       	or A,(0x03,SP) ;0x3
+    87df:	c7 50 c9    	ld 0x50c9,A ;0x50c9
+    87e2:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    87e5:	aa 01       	or A,#0x01 ;0x1
+    87e7:	c7 50 c9    	ld 0x50c9,A ;0x50c9
+    87ea:	81          	ret
+    87eb:	88          	push A
+    87ec:	7b 04       	ld A,(0x04,SP) ;0x4
+    87ee:	a1 0c       	cp A,#0x0c ;0xc
+    87f0:	26 07       	jrne 0x87f9 ;0x87f9
+    87f2:	a6 01       	ld A,#0x01 ;0x1
+    87f4:	6b 01       	ld (0x01,SP),A ;0x1
+    87f6:	cc 87 fb    	jp 0x87fb ;0x87fb
+    87f9:	0f 01       	clr (0x01,SP) ;0x1
+    87fb:	7b 04       	ld A,(0x04,SP) ;0x4
+    87fd:	a1 1c       	cp A,#0x1c ;0x1c
+    87ff:	26 05       	jrne 0x8806 ;0x8806
+    8801:	a6 01       	ld A,#0x01 ;0x1
+    8803:	cc 88 07    	jp 0x8807 ;0x8807
+    8806:	4f          	clr A
+    8807:	0d 05       	tnz (0x05,SP) ;0x5
+    8809:	26 03       	jrne 0x880e ;0x880e
+    880b:	cc 88 31    	jp 0x8831 ;0x8831
+    880e:	0d 01       	tnz (0x01,SP) ;0x1
+    8810:	27 03       	jreq 0x8815 ;0x8815
+    8812:	cc 88 26    	jp 0x8826 ;0x8826
+    8815:	4d          	tnz A
+    8816:	26 03       	jrne 0x881b ;0x881b
+    8818:	cc 88 51    	jp 0x8851 ;0x8851
+    881b:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    881e:	aa 04       	or A,#0x04 ;0x4
+    8820:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8823:	cc 88 51    	jp 0x8851 ;0x8851
+    8826:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    8829:	aa 04       	or A,#0x04 ;0x4
+    882b:	c7 50 c8    	ld 0x50c8,A ;0x50c8
+    882e:	cc 88 51    	jp 0x8851 ;0x8851
+    8831:	0d 01       	tnz (0x01,SP) ;0x1
+    8833:	27 03       	jreq 0x8838 ;0x8838
+    8835:	cc 88 49    	jp 0x8849 ;0x8849
+    8838:	4d          	tnz A
+    8839:	26 03       	jrne 0x883e ;0x883e
+    883b:	cc 88 51    	jp 0x8851 ;0x8851
+    883e:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    8841:	a4 fb       	and A,#0xfb ;0xfb
+    8843:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8846:	cc 88 51    	jp 0x8851 ;0x8851
+    8849:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    884c:	a4 fb       	and A,#0xfb ;0xfb
+    884e:	c7 50 c8    	ld 0x50c8,A ;0x50c8
+    8851:	84          	pop A
+    8852:	81          	ret
+    8853:	89          	pushw X
+    8854:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    8857:	0d 05       	tnz (0x05,SP) ;0x5
+    8859:	2a 03       	jrpl 0x885e ;0x885e
+    885b:	cc 88 74    	jp 0x8874 ;0x8874
+    885e:	a4 e7       	and A,#0xe7 ;0xe7
+    8860:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    8863:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    8866:	6b 02       	ld (0x02,SP),A ;0x2
+    8868:	7b 05       	ld A,(0x05,SP) ;0x5
+    886a:	a4 18       	and A,#0x18 ;0x18
+    886c:	1a 02       	or A,(0x02,SP) ;0x2
+    886e:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    8871:	cc 88 87    	jp 0x8887 ;0x8887
+    8874:	a4 f8       	and A,#0xf8 ;0xf8
+    8876:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    8879:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    887c:	6b 01       	ld (0x01,SP),A ;0x1
+    887e:	7b 05       	ld A,(0x05,SP) ;0x5
+    8880:	a4 07       	and A,#0x07 ;0x7
+    8882:	1a 01       	or A,(0x01,SP) ;0x1
+    8884:	c7 50 c6    	ld 0x50c6,A ;0x50c6
+    8887:	85          	popw X
+    8888:	81          	ret
+    8889:	c6 50 cd    	ld A,0x50cd ;0x50cd
+    888c:	0d 03       	tnz (0x03,SP) ;0x3
+    888e:	26 03       	jrne 0x8893 ;0x8893
+    8890:	cc 88 9b    	jp 0x889b ;0x889b
+    8893:	aa 01       	or A,#0x01 ;0x1
+    8895:	c7 50 cd    	ld 0x50cd,A ;0x50cd
+    8898:	cc 88 a0    	jp 0x88a0 ;0x88a0
+    889b:	a4 fe       	and A,#0xfe ;0xfe
+    889d:	c7 50 cd    	ld 0x50cd,A ;0x50cd
+    88a0:	81          	ret
+    88a1:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    88a4:	aa 01       	or A,#0x01 ;0x1
+    88a6:	c7 50 c8    	ld 0x50c8,A ;0x50c8
+    88a9:	81          	ret
+    88aa:	c6 50 c3    	ld A,0x50c3 ;0x50c3
+    88ad:	81          	ret
+    88ae:	52 05       	sub SP,#0x05 ;0x5
+    88b0:	c6 50 c3    	ld A,0x50c3 ;0x50c3
+    88b3:	6b 01       	ld (0x01,SP),A ;0x1
+    88b5:	7b 01       	ld A,(0x01,SP) ;0x1
+    88b7:	a1 e1       	cp A,#0xe1 ;0xe1
+    88b9:	26 03       	jrne 0x88be ;0x88be
+    88bb:	cc 88 c1    	jp 0x88c1 ;0x88c1
+    88be:	cc 88 e8    	jp 0x88e8 ;0x88e8
+    88c1:	c6 50 c6    	ld A,0x50c6 ;0x50c6
+    88c4:	a4 18       	and A,#0x18 ;0x18
+    88c6:	44          	srl A
+    88c7:	44          	srl A
+    88c8:	44          	srl A
+    88c9:	5f          	clrw X
+    88ca:	97          	ld XL,A
+    88cb:	1c 80 88    	addw X,#0x8088 ;0x8088
+    88ce:	f6          	ld A,(X)
+    88cf:	5f          	clrw X
+    88d0:	97          	ld XL,A
+    88d1:	90 5f       	clrw Y
+    88d3:	89          	pushw X
+    88d4:	90 89       	pushw Y
+    88d6:	4b 00       	push #0x00
+    88d8:	4b 24       	push #0x24 ;0x24
+    88da:	4b f4       	push #0xf4 ;0xf4
+    88dc:	4b 00       	push #0x00
+    88de:	cd 94 02    	call 0x9402 ;0x9402
+    88e1:	5b 08       	addw SP,#0x08 ;0x8
+    88e3:	1f 04       	ldw (0x04,SP),X ;0x4
+    88e5:	cc 89 09    	jp 0x8909 ;0x8909
+    88e8:	7b 01       	ld A,(0x01,SP) ;0x1
+    88ea:	a1 d2       	cp A,#0xd2 ;0xd2
+    88ec:	26 03       	jrne 0x88f1 ;0x88f1
+    88ee:	cc 88 f4    	jp 0x88f4 ;0x88f4
+    88f1:	cc 89 00    	jp 0x8900 ;0x8900
+    88f4:	ae f4 00    	ldw X,#0xf400 ;0xf400
+    88f7:	1f 04       	ldw (0x04,SP),X ;0x4
+    88f9:	90 ae 00 01 	ldw Y,#0x0001 ;0x1
+    88fd:	cc 89 09    	jp 0x8909 ;0x8909
+    8900:	ae 24 00    	ldw X,#0x2400 ;0x2400
+    8903:	1f 04       	ldw (0x04,SP),X ;0x4
+    8905:	90 ae 00 f4 	ldw Y,#0x00f4 ;0xf4
+    8909:	1e 04       	ldw X,(0x04,SP) ;0x4
+    890b:	5b 05       	addw SP,#0x05 ;0x5
+    890d:	81          	ret
+    890e:	c6 50 cc    	ld A,0x50cc ;0x50cc
+    8911:	a4 f8       	and A,#0xf8 ;0xf8
+    8913:	1a 03       	or A,(0x03,SP) ;0x3
+    8915:	c7 50 cc    	ld 0x50cc,A ;0x50cc
+    8918:	81          	ret
+    8919:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    891c:	a4 fe       	and A,#0xfe ;0xfe
+    891e:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    8921:	81          	ret
+    8922:	88          	push A
+    8923:	4f          	clr A
+    8924:	97          	ld XL,A
+    8925:	7b 04       	ld A,(0x04,SP) ;0x4
+    8927:	95          	ld XH,A
+    8928:	a3 01 00    	cpw X,#0x0100 ;0x100
+    892b:	26 03       	jrne 0x8930 ;0x8930
+    892d:	cc 89 33    	jp 0x8933 ;0x8933
+    8930:	cc 89 39    	jp 0x8939 ;0x8939
+    8933:	c6 50 c0    	ld A,0x50c0 ;0x50c0
+    8936:	cc 89 6f    	jp 0x896f ;0x896f
+    8939:	a3 02 00    	cpw X,#0x0200 ;0x200
+    893c:	26 03       	jrne 0x8941 ;0x8941
+    893e:	cc 89 44    	jp 0x8944 ;0x8944
+    8941:	cc 89 4a    	jp 0x894a ;0x894a
+    8944:	c6 50 c1    	ld A,0x50c1 ;0x50c1
+    8947:	cc 89 6f    	jp 0x896f ;0x896f
+    894a:	a3 03 00    	cpw X,#0x0300 ;0x300
+    894d:	26 03       	jrne 0x8952 ;0x8952
+    894f:	cc 89 55    	jp 0x8955 ;0x8955
+    8952:	cc 89 5b    	jp 0x895b ;0x895b
+    8955:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    8958:	cc 89 6f    	jp 0x896f ;0x896f
+    895b:	a3 04 00    	cpw X,#0x0400 ;0x400
+    895e:	26 03       	jrne 0x8963 ;0x8963
+    8960:	cc 89 66    	jp 0x8966 ;0x8966
+    8963:	cc 89 6c    	jp 0x896c ;0x896c
+    8966:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    8969:	cc 89 6f    	jp 0x896f ;0x896f
+    896c:	c6 50 c9    	ld A,0x50c9 ;0x50c9
+    896f:	88          	push A
+    8970:	7b 06       	ld A,(0x06,SP) ;0x6
+    8972:	6b 02       	ld (0x02,SP),A ;0x2
+    8974:	84          	pop A
+    8975:	14 01       	and A,(0x01,SP) ;0x1
+    8977:	4d          	tnz A
+    8978:	26 03       	jrne 0x897d ;0x897d
+    897a:	cc 89 82    	jp 0x8982 ;0x8982
+    897d:	a6 01       	ld A,#0x01 ;0x1
+    897f:	cc 89 83    	jp 0x8983 ;0x8983
+    8982:	4f          	clr A
+    8983:	5b 01       	addw SP,#0x01 ;0x1
+    8985:	81          	ret
+    8986:	7b 03       	ld A,(0x03,SP) ;0x3
+    8988:	a1 1c       	cp A,#0x1c ;0x1c
+    898a:	26 03       	jrne 0x898f ;0x898f
+    898c:	cc 89 92    	jp 0x8992 ;0x8992
+    898f:	cc 89 aa    	jp 0x89aa ;0x89aa
+    8992:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    8995:	14 03       	and A,(0x03,SP) ;0x3
+    8997:	a1 0c       	cp A,#0x0c ;0xc
+    8999:	26 03       	jrne 0x899e ;0x899e
+    899b:	cc 89 a1    	jp 0x89a1 ;0x89a1
+    899e:	cc 89 a6    	jp 0x89a6 ;0x89a6
+    89a1:	a6 01       	ld A,#0x01 ;0x1
+    89a3:	cc 89 bf    	jp 0x89bf ;0x89bf
+    89a6:	4f          	clr A
+    89a7:	cc 89 bf    	jp 0x89bf ;0x89bf
+    89aa:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    89ad:	14 03       	and A,(0x03,SP) ;0x3
+    89af:	a1 0c       	cp A,#0x0c ;0xc
+    89b1:	26 03       	jrne 0x89b6 ;0x89b6
+    89b3:	cc 89 b9    	jp 0x89b9 ;0x89b9
+    89b6:	cc 89 be    	jp 0x89be ;0x89be
+    89b9:	a6 01       	ld A,#0x01 ;0x1
+    89bb:	cc 89 bf    	jp 0x89bf ;0x89bf
+    89be:	4f          	clr A
+    89bf:	81          	ret
+    89c0:	7b 03       	ld A,(0x03,SP) ;0x3
+    89c2:	a1 0c       	cp A,#0x0c ;0xc
+    89c4:	26 03       	jrne 0x89c9 ;0x89c9
+    89c6:	cc 89 cc    	jp 0x89cc ;0x89cc
+    89c9:	cc 89 d7    	jp 0x89d7 ;0x89d7
+    89cc:	c6 50 c8    	ld A,0x50c8 ;0x50c8
+    89cf:	a4 f7       	and A,#0xf7 ;0xf7
+    89d1:	c7 50 c8    	ld 0x50c8,A ;0x50c8
+    89d4:	cc 89 df    	jp 0x89df ;0x89df
+    89d7:	c6 50 c5    	ld A,0x50c5 ;0x50c5
+    89da:	a4 f7       	and A,#0xf7 ;0xf7
+    89dc:	c7 50 c5    	ld 0x50c5,A ;0x50c5
+    89df:	81          	ret
+
+Дизассемблирование раздела .sec2:
+
+00008088 <.sec2>:
+    8088:	01          	rrwa X,A
+    8089:	02          	rlwa X,A
+    808a:	04 08       	srl (0x08,SP) ;0x8
+
+Дизассемблирование раздела .sec3:
+
+000089e0 <.sec3>:
+    89e0:	16 03       	ldw Y,(0x03,SP) ;0x3
+    89e2:	90 7f       	clr (Y)
+    89e4:	93          	ldw X,Y
+    89e5:	5c          	incw X
+    89e6:	5c          	incw X
+    89e7:	7f          	clr (X)
+    89e8:	93          	ldw X,Y
+    89e9:	1c 00 03    	addw X,#0x0003 ;0x3
+    89ec:	7f          	clr (X)
+    89ed:	93          	ldw X,Y
+    89ee:	1c 00 04    	addw X,#0x0004 ;0x4
+    89f1:	7f          	clr (X)
+    89f2:	81          	ret
+    89f3:	52 05       	sub SP,#0x05 ;0x5
+    89f5:	16 08       	ldw Y,(0x08,SP) ;0x8
+    89f7:	93          	ldw X,Y
+    89f8:	1c 00 04    	addw X,#0x0004 ;0x4
+    89fb:	1f 04       	ldw (0x04,SP),X ;0x4
+    89fd:	1e 04       	ldw X,(0x04,SP) ;0x4
+    89ff:	f6          	ld A,(X)
+    8a00:	88          	push A
+    8a01:	7b 0b       	ld A,(0x0b,SP) ;0xb
+    8a03:	43          	cpl A
+    8a04:	6b 04       	ld (0x04,SP),A ;0x4
+    8a06:	84          	pop A
+    8a07:	14 03       	and A,(0x03,SP) ;0x3
+    8a09:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8a0b:	f7          	ld (X),A
+    8a0c:	93          	ldw X,Y
+    8a0d:	5c          	incw X
+    8a0e:	5c          	incw X
+    8a0f:	1f 01       	ldw (0x01,SP),X ;0x1
+    8a11:	0d 0b       	tnz (0x0b,SP) ;0xb
+    8a13:	2b 03       	jrmi 0x8a18 ;0x8a18
+    8a15:	cc 8a 3b    	jp 0x8a3b ;0x8a3b
+    8a18:	90 f6       	ld A,(Y)
+    8a1a:	88          	push A
+    8a1b:	7b 0c       	ld A,(0x0c,SP) ;0xc
+    8a1d:	a5 10       	bcp A,#0x10 ;0x10
+    8a1f:	84          	pop A
+    8a20:	26 03       	jrne 0x8a25 ;0x8a25
+    8a22:	cc 8a 2c    	jp 0x8a2c ;0x8a2c
+    8a25:	1a 0a       	or A,(0x0a,SP) ;0xa
+    8a27:	90 f7       	ld (Y),A
+    8a29:	cc 8a 30    	jp 0x8a30 ;0x8a30
+    8a2c:	14 03       	and A,(0x03,SP) ;0x3
+    8a2e:	90 f7       	ld (Y),A
+    8a30:	1e 01       	ldw X,(0x01,SP) ;0x1
+    8a32:	f6          	ld A,(X)
+    8a33:	1a 0a       	or A,(0x0a,SP) ;0xa
+    8a35:	1e 01       	ldw X,(0x01,SP) ;0x1
+    8a37:	f7          	ld (X),A
+    8a38:	cc 8a 43    	jp 0x8a43 ;0x8a43
+    8a3b:	1e 01       	ldw X,(0x01,SP) ;0x1
+    8a3d:	f6          	ld A,(X)
+    8a3e:	14 03       	and A,(0x03,SP) ;0x3
+    8a40:	1e 01       	ldw X,(0x01,SP) ;0x1
+    8a42:	f7          	ld (X),A
+    8a43:	93          	ldw X,Y
+    8a44:	1c 00 03    	addw X,#0x0003 ;0x3
+    8a47:	f6          	ld A,(X)
+    8a48:	88          	push A
+    8a49:	7b 0c       	ld A,(0x0c,SP) ;0xc
+    8a4b:	a5 40       	bcp A,#0x40 ;0x40
+    8a4d:	84          	pop A
+    8a4e:	26 03       	jrne 0x8a53 ;0x8a53
+    8a50:	cc 8a 59    	jp 0x8a59 ;0x8a59
+    8a53:	1a 0a       	or A,(0x0a,SP) ;0xa
+    8a55:	f7          	ld (X),A
+    8a56:	cc 8a 5c    	jp 0x8a5c ;0x8a5c
+    8a59:	14 03       	and A,(0x03,SP) ;0x3
+    8a5b:	f7          	ld (X),A
+    8a5c:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8a5e:	f6          	ld A,(X)
+    8a5f:	88          	push A
+    8a60:	7b 0c       	ld A,(0x0c,SP) ;0xc
+    8a62:	a5 20       	bcp A,#0x20 ;0x20
+    8a64:	84          	pop A
+    8a65:	26 03       	jrne 0x8a6a ;0x8a6a
+    8a67:	cc 8a 72    	jp 0x8a72 ;0x8a72
+    8a6a:	1a 0a       	or A,(0x0a,SP) ;0xa
+    8a6c:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8a6e:	f7          	ld (X),A
+    8a6f:	cc 8a 77    	jp 0x8a77 ;0x8a77
+    8a72:	14 03       	and A,(0x03,SP) ;0x3
+    8a74:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8a76:	f7          	ld (X),A
+    8a77:	5b 05       	addw SP,#0x05 ;0x5
+    8a79:	81          	ret
+    8a7a:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8a7c:	7b 05       	ld A,(0x05,SP) ;0x5
+    8a7e:	f7          	ld (X),A
+    8a7f:	81          	ret
+    8a80:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8a82:	f6          	ld A,(X)
+    8a83:	1a 05       	or A,(0x05,SP) ;0x5
+    8a85:	f7          	ld (X),A
+    8a86:	81          	ret
+    8a87:	88          	push A
+    8a88:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8a8a:	f6          	ld A,(X)
+    8a8b:	6b 01       	ld (0x01,SP),A ;0x1
+    8a8d:	7b 06       	ld A,(0x06,SP) ;0x6
+    8a8f:	43          	cpl A
+    8a90:	14 01       	and A,(0x01,SP) ;0x1
+    8a92:	f7          	ld (X),A
+    8a93:	84          	pop A
+    8a94:	81          	ret
+    8a95:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8a97:	f6          	ld A,(X)
+    8a98:	18 05       	xor A,(0x05,SP) ;0x5
+    8a9a:	f7          	ld (X),A
+    8a9b:	81          	ret
+    8a9c:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8a9e:	f6          	ld A,(X)
+    8a9f:	81          	ret
+    8aa0:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8aa2:	e6 01       	ld A,(0x01,X) ;0x1
+    8aa4:	81          	ret
+    8aa5:	1e 03       	ldw X,(0x03,SP) ;0x3
+    8aa7:	e6 01       	ld A,(0x01,X) ;0x1
+    8aa9:	14 05       	and A,(0x05,SP) ;0x5
+    8aab:	81          	ret
+    8aac:	88          	push A
+    8aad:	1e 04       	ldw X,(0x04,SP) ;0x4
+    8aaf:	1c 00 03    	addw X,#0x0003 ;0x3
+    8ab2:	f6          	ld A,(X)
+    8ab3:	0d 07       	tnz (0x07,SP) ;0x7
+    8ab5:	26 03       	jrne 0x8aba ;0x8aba
+    8ab7:	cc 8a c0    	jp 0x8ac0 ;0x8ac0
+    8aba:	1a 06       	or A,(0x06,SP) ;0x6
+    8abc:	f7          	ld (X),A
+    8abd:	cc 8a ca    	jp 0x8aca ;0x8aca
+    8ac0:	88          	push A
+    8ac1:	7b 07       	ld A,(0x07,SP) ;0x7
+    8ac3:	43          	cpl A
+    8ac4:	6b 02       	ld (0x02,SP),A ;0x2
+    8ac6:	84          	pop A
+    8ac7:	14 01       	and A,(0x01,SP) ;0x1
+    8ac9:	f7          	ld (X),A
+    8aca:	84          	pop A
+    8acb:	81          	ret
+    8acc:	35 00 52 00 	mov 0x5200,#0x00
+    8ad0:	35 00 52 01 	mov 0x5201,#0x00
+    8ad4:	35 00 52 02 	mov 0x5202,#0x00
+    8ad8:	35 02 52 03 	mov 0x5203,#0x02 ;0x2
+    8adc:	35 07 52 05 	mov 0x5205,#0x07 ;0x7
+    8ae0:	81          	ret
+    8ae1:	88          	push A
+    8ae2:	7b 04       	ld A,(0x04,SP) ;0x4
+    8ae4:	1a 05       	or A,(0x05,SP) ;0x5
+    8ae6:	6b 01       	ld (0x01,SP),A ;0x1
+    8ae8:	7b 07       	ld A,(0x07,SP) ;0x7
+    8aea:	1a 08       	or A,(0x08,SP) ;0x8
+    8aec:	1a 01       	or A,(0x01,SP) ;0x1
+    8aee:	c7 52 00    	ld 0x5200,A ;0x5200
+    8af1:	7b 09       	ld A,(0x09,SP) ;0x9
+    8af3:	1a 0a       	or A,(0x0a,SP) ;0xa
+    8af5:	c7 52 01    	ld 0x5201,A ;0x5201
+    8af8:	c6 52 01    	ld A,0x5201 ;0x5201
+    8afb:	88          	push A
+    8afc:	7b 07       	ld A,(0x07,SP) ;0x7
+    8afe:	a1 04       	cp A,#0x04 ;0x4
+    8b00:	84          	pop A
+    8b01:	26 03       	jrne 0x8b06 ;0x8b06
+    8b03:	cc 8b 09    	jp 0x8b09 ;0x8b09
+    8b06:	cc 8b 11    	jp 0x8b11 ;0x8b11
+    8b09:	aa 01       	or A,#0x01 ;0x1
+    8b0b:	c7 52 01    	ld 0x5201,A ;0x5201
+    8b0e:	cc 8b 16    	jp 0x8b16 ;0x8b16
+    8b11:	a4 fe       	and A,#0xfe ;0xfe
+    8b13:	c7 52 01    	ld 0x5201,A ;0x5201
+    8b16:	c6 52 00    	ld A,0x5200 ;0x5200
+    8b19:	1a 06       	or A,(0x06,SP) ;0x6
+    8b1b:	c7 52 00    	ld 0x5200,A ;0x5200
+    8b1e:	ae 52 05    	ldw X,#0x5205 ;0x5205
+    8b21:	7b 0b       	ld A,(0x0b,SP) ;0xb
+    8b23:	f7          	ld (X),A
+    8b24:	84          	pop A
+    8b25:	81          	ret
+    8b26:	c6 52 00    	ld A,0x5200 ;0x5200
+    8b29:	0d 03       	tnz (0x03,SP) ;0x3
+    8b2b:	26 03       	jrne 0x8b30 ;0x8b30
+    8b2d:	cc 8b 38    	jp 0x8b38 ;0x8b38
+    8b30:	aa 40       	or A,#0x40 ;0x40
+    8b32:	c7 52 00    	ld 0x5200,A ;0x5200
+    8b35:	cc 8b 3d    	jp 0x8b3d ;0x8b3d
+    8b38:	a4 bf       	and A,#0xbf ;0xbf
+    8b3a:	c7 52 00    	ld 0x5200,A ;0x5200
+    8b3d:	81          	ret
+    8b3e:	88          	push A
+    8b3f:	7b 04       	ld A,(0x04,SP) ;0x4
+    8b41:	a4 0f       	and A,#0x0f ;0xf
+    8b43:	97          	ld XL,A
+    8b44:	a6 01       	ld A,#0x01 ;0x1
+    8b46:	88          	push A
+    8b47:	9f          	ld A,XL
+    8b48:	4d          	tnz A
+    8b49:	27 05       	jreq 0x8b50 ;0x8b50
+    8b4b:	08 01       	sll (0x01,SP) ;0x1
+    8b4d:	4a          	dec A
+    8b4e:	26 fb       	jrne 0x8b4b ;0x8b4b
+    8b50:	84          	pop A
+    8b51:	ae 52 02    	ldw X,#0x5202 ;0x5202
+    8b54:	88          	push A
+    8b55:	f6          	ld A,(X)
+    8b56:	6b 02       	ld (0x02,SP),A ;0x2
+    8b58:	84          	pop A
+    8b59:	0d 05       	tnz (0x05,SP) ;0x5
+    8b5b:	26 03       	jrne 0x8b60 ;0x8b60
+    8b5d:	cc 8b 68    	jp 0x8b68 ;0x8b68
+    8b60:	1a 01       	or A,(0x01,SP) ;0x1
+    8b62:	c7 52 02    	ld 0x5202,A ;0x5202
+    8b65:	cc 8b 6e    	jp 0x8b6e ;0x8b6e
+    8b68:	43          	cpl A
+    8b69:	14 01       	and A,(0x01,SP) ;0x1
+    8b6b:	c7 52 02    	ld 0x5202,A ;0x5202
+    8b6e:	84          	pop A
+    8b6f:	81          	ret
+    8b70:	ae 52 04    	ldw X,#0x5204 ;0x5204
+    8b73:	7b 03       	ld A,(0x03,SP) ;0x3
+    8b75:	f7          	ld (X),A
+    8b76:	81          	ret
+    8b77:	c6 52 04    	ld A,0x5204 ;0x5204
+    8b7a:	81          	ret
+    8b7b:	c6 52 01    	ld A,0x5201 ;0x5201
+    8b7e:	0d 03       	tnz (0x03,SP) ;0x3
+    8b80:	26 03       	jrne 0x8b85 ;0x8b85
+    8b82:	cc 8b 8d    	jp 0x8b8d ;0x8b8d
+    8b85:	aa 01       	or A,#0x01 ;0x1
+    8b87:	c7 52 01    	ld 0x5201,A ;0x5201
+    8b8a:	cc 8b 92    	jp 0x8b92 ;0x8b92
+    8b8d:	a4 fe       	and A,#0xfe ;0xfe
+    8b8f:	c7 52 01    	ld 0x5201,A ;0x5201
+    8b92:	81          	ret
+    8b93:	c6 52 01    	ld A,0x5201 ;0x5201
+    8b96:	aa 10       	or A,#0x10 ;0x10
+    8b98:	c7 52 01    	ld 0x5201,A ;0x5201
+    8b9b:	81          	ret
+    8b9c:	c6 52 01    	ld A,0x5201 ;0x5201
+    8b9f:	0d 03       	tnz (0x03,SP) ;0x3
+    8ba1:	26 03       	jrne 0x8ba6 ;0x8ba6
+    8ba3:	cc 8b ae    	jp 0x8bae ;0x8bae
+    8ba6:	aa 20       	or A,#0x20 ;0x20
+    8ba8:	c7 52 01    	ld 0x5201,A ;0x5201
+    8bab:	cc 8b b3    	jp 0x8bb3 ;0x8bb3
+    8bae:	a4 df       	and A,#0xdf ;0xdf
+    8bb0:	c7 52 01    	ld 0x5201,A ;0x5201
+    8bb3:	81          	ret
+    8bb4:	0d 03       	tnz (0x03,SP) ;0x3
+    8bb6:	26 03       	jrne 0x8bbb ;0x8bbb
+    8bb8:	cc 8b c1    	jp 0x8bc1 ;0x8bc1
+    8bbb:	c6 52 07    	ld A,0x5207 ;0x5207
+    8bbe:	cc 8b c4    	jp 0x8bc4 ;0x8bc4
+    8bc1:	c6 52 06    	ld A,0x5206 ;0x5206
+    8bc4:	81          	ret
+    8bc5:	4b 01       	push #0x01 ;0x1
+    8bc7:	cd 8b 9c    	call 0x8b9c ;0x8b9c
+    8bca:	84          	pop A
+    8bcb:	4b 01       	push #0x01 ;0x1
+    8bcd:	cd 8b 26    	call 0x8b26 ;0x8b26
+    8bd0:	84          	pop A
+    8bd1:	81          	ret
+    8bd2:	c6 52 05    	ld A,0x5205 ;0x5205
+    8bd5:	81          	ret
+    8bd6:	c6 52 01    	ld A,0x5201 ;0x5201
+    8bd9:	0d 03       	tnz (0x03,SP) ;0x3
+    8bdb:	26 03       	jrne 0x8be0 ;0x8be0
+    8bdd:	cc 8b e8    	jp 0x8be8 ;0x8be8
+    8be0:	aa 40       	or A,#0x40 ;0x40
+    8be2:	c7 52 01    	ld 0x5201,A ;0x5201
+    8be5:	cc 8b ed    	jp 0x8bed ;0x8bed
+    8be8:	a4 bf       	and A,#0xbf ;0xbf
+    8bea:	c7 52 01    	ld 0x5201,A ;0x5201
+    8bed:	81          	ret
+    8bee:	c6 52 03    	ld A,0x5203 ;0x5203
+    8bf1:	14 03       	and A,(0x03,SP) ;0x3
+    8bf3:	4d          	tnz A
+    8bf4:	26 03       	jrne 0x8bf9 ;0x8bf9
+    8bf6:	cc 8b fe    	jp 0x8bfe ;0x8bfe
+    8bf9:	a6 01       	ld A,#0x01 ;0x1
+    8bfb:	cc 8b ff    	jp 0x8bff ;0x8bff
+    8bfe:	4f          	clr A
+    8bff:	81          	ret
+    8c00:	7b 03       	ld A,(0x03,SP) ;0x3
+    8c02:	43          	cpl A
+    8c03:	c7 52 03    	ld 0x5203,A ;0x5203
+    8c06:	81          	ret
+    8c07:	89          	pushw X
+    8c08:	7b 05       	ld A,(0x05,SP) ;0x5
+    8c0a:	a4 0f       	and A,#0x0f ;0xf
+    8c0c:	88          	push A
+    8c0d:	a6 01       	ld A,#0x01 ;0x1
+    8c0f:	6b 03       	ld (0x03,SP),A ;0x3
+    8c11:	84          	pop A
+    8c12:	4d          	tnz A
+    8c13:	27 05       	jreq 0x8c1a ;0x8c1a
+    8c15:	08 02       	sll (0x02,SP) ;0x2
+    8c17:	4a          	dec A
+    8c18:	26 fb       	jrne 0x8c15 ;0x8c15
+    8c1a:	7b 05       	ld A,(0x05,SP) ;0x5
+    8c1c:	4e          	swap A
+    8c1d:	a4 0f       	and A,#0x0f ;0xf
+    8c1f:	88          	push A
+    8c20:	a6 01       	ld A,#0x01 ;0x1
+    8c22:	6b 02       	ld (0x02,SP),A ;0x2
+    8c24:	84          	pop A
+    8c25:	4d          	tnz A
+    8c26:	27 05       	jreq 0x8c2d ;0x8c2d
+    8c28:	08 01       	sll (0x01,SP) ;0x1
+    8c2a:	4a          	dec A
+    8c2b:	26 fb       	jrne 0x8c28 ;0x8c28
+    8c2d:	c6 52 03    	ld A,0x5203 ;0x5203
+    8c30:	14 01       	and A,(0x01,SP) ;0x1
+    8c32:	97          	ld XL,A
+    8c33:	c6 52 02    	ld A,0x5202 ;0x5202
+    8c36:	14 02       	and A,(0x02,SP) ;0x2
+    8c38:	4d          	tnz A
+    8c39:	26 03       	jrne 0x8c3e ;0x8c3e
+    8c3b:	cc 8c 4a    	jp 0x8c4a ;0x8c4a
+    8c3e:	9f          	ld A,XL
+    8c3f:	4d          	tnz A
+    8c40:	26 03       	jrne 0x8c45 ;0x8c45
+    8c42:	cc 8c 4a    	jp 0x8c4a ;0x8c4a
+    8c45:	a6 01       	ld A,#0x01 ;0x1
+    8c47:	cc 8c 4b    	jp 0x8c4b ;0x8c4b
+    8c4a:	4f          	clr A
+    8c4b:	85          	popw X
+    8c4c:	81          	ret
+    8c4d:	7b 03       	ld A,(0x03,SP) ;0x3
+    8c4f:	a4 f0       	and A,#0xf0 ;0xf0
+    8c51:	4e          	swap A
+    8c52:	a4 0f       	and A,#0x0f ;0xf
+    8c54:	97          	ld XL,A
+    8c55:	a6 01       	ld A,#0x01 ;0x1
+    8c57:	88          	push A
+    8c58:	9f          	ld A,XL
+    8c59:	4d          	tnz A
+    8c5a:	27 05       	jreq 0x8c61 ;0x8c61
+    8c5c:	08 01       	sll (0x01,SP) ;0x1
+    8c5e:	4a          	dec A
+    8c5f:	26 fb       	jrne 0x8c5c ;0x8c5c
+    8c61:	84          	pop A
+    8c62:	43          	cpl A
+    8c63:	c7 52 03    	ld 0x5203,A ;0x5203
+    8c66:	81          	ret
+    8c67:	35 00 53 40 	mov 0x5340,#0x00
+    8c6b:	35 00 53 43 	mov 0x5343,#0x00
+    8c6f:	35 00 53 46 	mov 0x5346,#0x00
+    8c73:	35 00 53 47 	mov 0x5347,#0x00
+    8c77:	35 ff 53 48 	mov 0x5348,#0xff ;0xff
+    8c7b:	35 00 53 44 	mov 0x5344,#0x00
+    8c7f:	81          	ret
+    8c80:	ae 53 47    	ldw X,#0x5347 ;0x5347
+    8c83:	7b 03       	ld A,(0x03,SP) ;0x3
+    8c85:	f7          	ld (X),A
+    8c86:	ae 53 48    	ldw X,#0x5348 ;0x5348
+    8c89:	7b 04       	ld A,(0x04,SP) ;0x4
+    8c8b:	f7          	ld (X),A
+    8c8c:	81          	ret
+    8c8d:	c6 53 40    	ld A,0x5340 ;0x5340
+    8c90:	0d 03       	tnz (0x03,SP) ;0x3
+    8c92:	26 03       	jrne 0x8c97 ;0x8c97
+    8c94:	cc 8c 9f    	jp 0x8c9f ;0x8c9f
+    8c97:	aa 01       	or A,#0x01 ;0x1
+    8c99:	c7 53 40    	ld 0x5340,A ;0x5340
+    8c9c:	cc 8c a4    	jp 0x8ca4 ;0x8ca4
+    8c9f:	a4 fe       	and A,#0xfe ;0xfe
+    8ca1:	c7 53 40    	ld 0x5340,A ;0x5340
+    8ca4:	81          	ret
+    8ca5:	88          	push A
+    8ca6:	c6 53 43    	ld A,0x5343 ;0x5343
+    8ca9:	0d 05       	tnz (0x05,SP) ;0x5
+    8cab:	26 03       	jrne 0x8cb0 ;0x8cb0
+    8cad:	cc 8c b8    	jp 0x8cb8 ;0x8cb8
+    8cb0:	1a 04       	or A,(0x04,SP) ;0x4
+    8cb2:	c7 53 43    	ld 0x5343,A ;0x5343
+    8cb5:	cc 8c c4    	jp 0x8cc4 ;0x8cc4
+    8cb8:	88          	push A
+    8cb9:	7b 05       	ld A,(0x05,SP) ;0x5
+    8cbb:	43          	cpl A
+    8cbc:	6b 02       	ld (0x02,SP),A ;0x2
+    8cbe:	84          	pop A
+    8cbf:	14 01       	and A,(0x01,SP) ;0x1
+    8cc1:	c7 53 43    	ld 0x5343,A ;0x5343
+    8cc4:	84          	pop A
+    8cc5:	81          	ret
+    8cc6:	c6 53 40    	ld A,0x5340 ;0x5340
+    8cc9:	0d 03       	tnz (0x03,SP) ;0x3
+    8ccb:	26 03       	jrne 0x8cd0 ;0x8cd0
+    8ccd:	cc 8c d8    	jp 0x8cd8 ;0x8cd8
+    8cd0:	aa 02       	or A,#0x02 ;0x2
+    8cd2:	c7 53 40    	ld 0x5340,A ;0x5340
+    8cd5:	cc 8c dd    	jp 0x8cdd ;0x8cdd
+    8cd8:	a4 fd       	and A,#0xfd ;0xfd
+    8cda:	c7 53 40    	ld 0x5340,A ;0x5340
+    8cdd:	81          	ret
+    8cde:	c6 53 40    	ld A,0x5340 ;0x5340
+    8ce1:	0d 03       	tnz (0x03,SP) ;0x3
+    8ce3:	26 03       	jrne 0x8ce8 ;0x8ce8
+    8ce5:	cc 8c f0    	jp 0x8cf0 ;0x8cf0
+    8ce8:	aa 04       	or A,#0x04 ;0x4
+    8cea:	c7 53 40    	ld 0x5340,A ;0x5340
+    8ced:	cc 8c f5    	jp 0x8cf5 ;0x8cf5
+    8cf0:	a4 fb       	and A,#0xfb ;0xfb
+    8cf2:	c7 53 40    	ld 0x5340,A ;0x5340
+    8cf5:	81          	ret
+    8cf6:	c6 53 40    	ld A,0x5340 ;0x5340
+    8cf9:	0d 03       	tnz (0x03,SP) ;0x3
+    8cfb:	26 03       	jrne 0x8d00 ;0x8d00
+    8cfd:	cc 8d 08    	jp 0x8d08 ;0x8d08
+    8d00:	aa 08       	or A,#0x08 ;0x8
+    8d02:	c7 53 40    	ld 0x5340,A ;0x5340
+    8d05:	cc 8d 0d    	jp 0x8d0d ;0x8d0d
+    8d08:	a4 f7       	and A,#0xf7 ;0xf7
+    8d0a:	c7 53 40    	ld 0x5340,A ;0x5340
+    8d0d:	81          	ret
+    8d0e:	ae 53 47    	ldw X,#0x5347 ;0x5347
+    8d11:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d13:	f7          	ld (X),A
+    8d14:	ae 53 45    	ldw X,#0x5345 ;0x5345
+    8d17:	7b 04       	ld A,(0x04,SP) ;0x4
+    8d19:	f7          	ld (X),A
+    8d1a:	81          	ret
+    8d1b:	c6 53 40    	ld A,0x5340 ;0x5340
+    8d1e:	0d 03       	tnz (0x03,SP) ;0x3
+    8d20:	26 03       	jrne 0x8d25 ;0x8d25
+    8d22:	cc 8d 2d    	jp 0x8d2d ;0x8d2d
+    8d25:	aa 80       	or A,#0x80 ;0x80
+    8d27:	c7 53 40    	ld 0x5340,A ;0x5340
+    8d2a:	cc 8d 32    	jp 0x8d32 ;0x8d32
+    8d2d:	a4 7f       	and A,#0x7f ;0x7f
+    8d2f:	c7 53 40    	ld 0x5340,A ;0x5340
+    8d32:	81          	ret
+    8d33:	ae 53 45    	ldw X,#0x5345 ;0x5345
+    8d36:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d38:	f7          	ld (X),A
+    8d39:	81          	ret
+    8d3a:	ae 53 46    	ldw X,#0x5346 ;0x5346
+    8d3d:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d3f:	f7          	ld (X),A
+    8d40:	81          	ret
+    8d41:	ae 53 48    	ldw X,#0x5348 ;0x5348
+    8d44:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d46:	f7          	ld (X),A
+    8d47:	81          	ret
+    8d48:	c6 53 46    	ld A,0x5346 ;0x5346
+    8d4b:	81          	ret
+    8d4c:	c6 53 47    	ld A,0x5347 ;0x5347
+    8d4f:	81          	ret
+    8d50:	c6 53 44    	ld A,0x5344 ;0x5344
+    8d53:	14 03       	and A,(0x03,SP) ;0x3
+    8d55:	4d          	tnz A
+    8d56:	26 03       	jrne 0x8d5b ;0x8d5b
+    8d58:	cc 8d 60    	jp 0x8d60 ;0x8d60
+    8d5b:	a6 01       	ld A,#0x01 ;0x1
+    8d5d:	cc 8d 61    	jp 0x8d61 ;0x8d61
+    8d60:	4f          	clr A
+    8d61:	81          	ret
+    8d62:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d64:	43          	cpl A
+    8d65:	c7 53 44    	ld 0x5344,A ;0x5344
+    8d68:	81          	ret
+    8d69:	88          	push A
+    8d6a:	c6 53 44    	ld A,0x5344 ;0x5344
+    8d6d:	14 04       	and A,(0x04,SP) ;0x4
+    8d6f:	6b 01       	ld (0x01,SP),A ;0x1
+    8d71:	c6 53 43    	ld A,0x5343 ;0x5343
+    8d74:	14 04       	and A,(0x04,SP) ;0x4
+    8d76:	0d 01       	tnz (0x01,SP) ;0x1
+    8d78:	26 03       	jrne 0x8d7d ;0x8d7d
+    8d7a:	cc 8d 88    	jp 0x8d88 ;0x8d88
+    8d7d:	4d          	tnz A
+    8d7e:	26 03       	jrne 0x8d83 ;0x8d83
+    8d80:	cc 8d 88    	jp 0x8d88 ;0x8d88
+    8d83:	a6 01       	ld A,#0x01 ;0x1
+    8d85:	cc 8d 89    	jp 0x8d89 ;0x8d89
+    8d88:	4f          	clr A
+    8d89:	5b 01       	addw SP,#0x01 ;0x1
+    8d8b:	81          	ret
+    8d8c:	7b 03       	ld A,(0x03,SP) ;0x3
+    8d8e:	43          	cpl A
+    8d8f:	c7 53 44    	ld 0x5344,A ;0x5344
+    8d92:	81          	ret
+    8d93:	4b e0       	push #0xe0 ;0xe0
+    8d95:	4b 10       	push #0x10 ;0x10
+    8d97:	4b 05       	push #0x05 ;0x5
+    8d99:	4b 50       	push #0x50 ;0x50
+    8d9b:	cd 89 f3    	call 0x89f3 ;0x89f3
+    8d9e:	5b 04       	addw SP,#0x04 ;0x4
+    8da0:	4b e0       	push #0xe0 ;0xe0
+    8da2:	4b 08       	push #0x08 ;0x8
+    8da4:	4b 0a       	push #0x0a ;0xa
+    8da6:	4b 50       	push #0x50 ;0x50
+    8da8:	cd 89 f3    	call 0x89f3 ;0x89f3
+    8dab:	5b 04       	addw SP,#0x04 ;0x4
+    8dad:	4b e0       	push #0xe0 ;0xe0
+    8daf:	4b 20       	push #0x20 ;0x20
+    8db1:	4b 05       	push #0x05 ;0x5
+    8db3:	4b 50       	push #0x50 ;0x50
+    8db5:	cd 89 f3    	call 0x89f3 ;0x89f3
+    8db8:	5b 04       	addw SP,#0x04 ;0x4
+    8dba:	4b e0       	push #0xe0 ;0xe0
+    8dbc:	4b 08       	push #0x08 ;0x8
+    8dbe:	4b 0a       	push #0x0a ;0xa
+    8dc0:	4b 50       	push #0x50 ;0x50
+    8dc2:	cd 89 f3    	call 0x89f3 ;0x89f3
+    8dc5:	5b 04       	addw SP,#0x04 ;0x4
+    8dc7:	4b e0       	push #0xe0 ;0xe0
+    8dc9:	4b 10       	push #0x10 ;0x10
+    8dcb:	4b 0a       	push #0x0a ;0xa
+    8dcd:	4b 50       	push #0x50 ;0x50
+    8dcf:	cd 89 f3    	call 0x89f3 ;0x89f3
+    8dd2:	5b 04       	addw SP,#0x04 ;0x4
+    8dd4:	81          	ret
+    8dd5:	4b 80       	push #0x80 ;0x80
+    8dd7:	cd 8b ee    	call 0x8bee ;0x8bee
+    8dda:	5b 01       	addw SP,#0x01 ;0x1
+    8ddc:	4d          	tnz A
+    8ddd:	27 03       	jreq 0x8de2 ;0x8de2
+    8ddf:	cc 8d d5    	jp 0x8dd5 ;0x8dd5
+    8de2:	4b 08       	push #0x08 ;0x8
+    8de4:	4b 0a       	push #0x0a ;0xa
+    8de6:	4b 50       	push #0x50 ;0x50
+    8de8:	cd 8a 87    	call 0x8a87 ;0x8a87
+    8deb:	5b 03       	addw SP,#0x03 ;0x3
+    8ded:	4b 10       	push #0x10 ;0x10
+    8def:	4b 05       	push #0x05 ;0x5
+    8df1:	4b 50       	push #0x50 ;0x50
+    8df3:	cd 8a 87    	call 0x8a87 ;0x8a87
+    8df6:	5b 03       	addw SP,#0x03 ;0x3
+    8df8:	7b 04       	ld A,(0x04,SP) ;0x4
+    8dfa:	88          	push A
+    8dfb:	cd 8b 70    	call 0x8b70 ;0x8b70
+    8dfe:	84          	pop A
+    8dff:	4b 02       	push #0x02 ;0x2
+    8e01:	cd 8b ee    	call 0x8bee ;0x8bee
+    8e04:	5b 01       	addw SP,#0x01 ;0x1
+    8e06:	4d          	tnz A
+    8e07:	26 03       	jrne 0x8e0c ;0x8e0c
+    8e09:	cc 8d ff    	jp 0x8dff ;0x8dff
+    8e0c:	4b 08       	push #0x08 ;0x8
+    8e0e:	4b 0a       	push #0x0a ;0xa
+    8e10:	4b 50       	push #0x50 ;0x50
+    8e12:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e15:	5b 03       	addw SP,#0x03 ;0x3
+    8e17:	4b 10       	push #0x10 ;0x10
+    8e19:	4b 05       	push #0x05 ;0x5
+    8e1b:	4b 50       	push #0x50 ;0x50
+    8e1d:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e20:	5b 03       	addw SP,#0x03 ;0x3
+    8e22:	81          	ret
+    8e23:	4b 80       	push #0x80 ;0x80
+    8e25:	cd 8b ee    	call 0x8bee ;0x8bee
+    8e28:	5b 01       	addw SP,#0x01 ;0x1
+    8e2a:	4d          	tnz A
+    8e2b:	27 03       	jreq 0x8e30 ;0x8e30
+    8e2d:	cc 8e 23    	jp 0x8e23 ;0x8e23
+    8e30:	4b 08       	push #0x08 ;0x8
+    8e32:	4b 0a       	push #0x0a ;0xa
+    8e34:	4b 50       	push #0x50 ;0x50
+    8e36:	cd 8a 87    	call 0x8a87 ;0x8a87
+    8e39:	5b 03       	addw SP,#0x03 ;0x3
+    8e3b:	4b 10       	push #0x10 ;0x10
+    8e3d:	4b 05       	push #0x05 ;0x5
+    8e3f:	4b 50       	push #0x50 ;0x50
+    8e41:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e44:	5b 03       	addw SP,#0x03 ;0x3
+    8e46:	7b 04       	ld A,(0x04,SP) ;0x4
+    8e48:	88          	push A
+    8e49:	cd 8b 70    	call 0x8b70 ;0x8b70
+    8e4c:	84          	pop A
+    8e4d:	4b 02       	push #0x02 ;0x2
+    8e4f:	cd 8b ee    	call 0x8bee ;0x8bee
+    8e52:	5b 01       	addw SP,#0x01 ;0x1
+    8e54:	4d          	tnz A
+    8e55:	26 03       	jrne 0x8e5a ;0x8e5a
+    8e57:	cc 8e 4d    	jp 0x8e4d ;0x8e4d
+    8e5a:	4b 08       	push #0x08 ;0x8
+    8e5c:	4b 0a       	push #0x0a ;0xa
+    8e5e:	4b 50       	push #0x50 ;0x50
+    8e60:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e63:	5b 03       	addw SP,#0x03 ;0x3
+    8e65:	81          	ret
+    8e66:	4b 08       	push #0x08 ;0x8
+    8e68:	4b 0a       	push #0x0a ;0xa
+    8e6a:	4b 50       	push #0x50 ;0x50
+    8e6c:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e6f:	5b 03       	addw SP,#0x03 ;0x3
+    8e71:	4b 20       	push #0x20 ;0x20
+    8e73:	4b 05       	push #0x05 ;0x5
+    8e75:	4b 50       	push #0x50 ;0x50
+    8e77:	cd 8a 87    	call 0x8a87 ;0x8a87
+    8e7a:	5b 03       	addw SP,#0x03 ;0x3
+    8e7c:	4b a0       	push #0xa0 ;0xa0
+    8e7e:	4b 86       	push #0x86 ;0x86
+    8e80:	4b 01       	push #0x01 ;0x1
+    8e82:	4b 00       	push #0x00
+    8e84:	cd 92 4a    	call 0x924a ;0x924a
+    8e87:	5b 04       	addw SP,#0x04 ;0x4
+    8e89:	4b 20       	push #0x20 ;0x20
+    8e8b:	4b 05       	push #0x05 ;0x5
+    8e8d:	4b 50       	push #0x50 ;0x50
+    8e8f:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e92:	5b 03       	addw SP,#0x03 ;0x3
+    8e94:	4b 10       	push #0x10 ;0x10
+    8e96:	4b 0a       	push #0x0a ;0xa
+    8e98:	4b 50       	push #0x50 ;0x50
+    8e9a:	cd 8a 80    	call 0x8a80 ;0x8a80
+    8e9d:	5b 03       	addw SP,#0x03 ;0x3
+    8e9f:	4b a0       	push #0xa0 ;0xa0
+    8ea1:	4b 86       	push #0x86 ;0x86
+    8ea3:	4b 01       	push #0x01 ;0x1
+    8ea5:	4b 00       	push #0x00
+    8ea7:	cd 92 4a    	call 0x924a ;0x924a
+    8eaa:	5b 04       	addw SP,#0x04 ;0x4
+    8eac:	4b 01       	push #0x01 ;0x1
+    8eae:	4b 00       	push #0x00
+    8eb0:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8eb3:	85          	popw X
+    8eb4:	4b a0       	push #0xa0 ;0xa0
+    8eb6:	4b 86       	push #0x86 ;0x86
+    8eb8:	4b 01       	push #0x01 ;0x1
+    8eba:	4b 00       	push #0x00
+    8ebc:	cd 92 4a    	call 0x924a ;0x924a
+    8ebf:	5b 04       	addw SP,#0x04 ;0x4
+    8ec1:	4b cb       	push #0xcb ;0xcb
+    8ec3:	4b 00       	push #0x00
+    8ec5:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8ec8:	85          	popw X
+    8ec9:	4b 39       	push #0x39 ;0x39
+    8ecb:	4b 00       	push #0x00
+    8ecd:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8ed0:	85          	popw X
+    8ed1:	4b 2c       	push #0x2c ;0x2c
+    8ed3:	4b 00       	push #0x00
+    8ed5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8ed8:	85          	popw X
+    8ed9:	5f          	clrw X
+    8eda:	89          	pushw X
+    8edb:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8ede:	85          	popw X
+    8edf:	4b 34       	push #0x34 ;0x34
+    8ee1:	4b 00       	push #0x00
+    8ee3:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8ee6:	85          	popw X
+    8ee7:	4b 02       	push #0x02 ;0x2
+    8ee9:	4b 00       	push #0x00
+    8eeb:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8eee:	85          	popw X
+    8eef:	4b cf       	push #0xcf ;0xcf
+    8ef1:	4b 00       	push #0x00
+    8ef3:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8ef6:	85          	popw X
+    8ef7:	5f          	clrw X
+    8ef8:	89          	pushw X
+    8ef9:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8efc:	85          	popw X
+    8efd:	4b c1       	push #0xc1 ;0xc1
+    8eff:	4b 00       	push #0x00
+    8f01:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f04:	85          	popw X
+    8f05:	4b 30       	push #0x30 ;0x30
+    8f07:	4b 00       	push #0x00
+    8f09:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f0c:	85          	popw X
+    8f0d:	4b e8       	push #0xe8 ;0xe8
+    8f0f:	4b 00       	push #0x00
+    8f11:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f14:	85          	popw X
+    8f15:	4b 85       	push #0x85 ;0x85
+    8f17:	4b 00       	push #0x00
+    8f19:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f1c:	85          	popw X
+    8f1d:	5f          	clrw X
+    8f1e:	89          	pushw X
+    8f1f:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f22:	85          	popw X
+    8f23:	4b 78       	push #0x78 ;0x78
+    8f25:	4b 00       	push #0x00
+    8f27:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f2a:	85          	popw X
+    8f2b:	4b ea       	push #0xea ;0xea
+    8f2d:	4b 00       	push #0x00
+    8f2f:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f32:	85          	popw X
+    8f33:	5f          	clrw X
+    8f34:	89          	pushw X
+    8f35:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f38:	85          	popw X
+    8f39:	5f          	clrw X
+    8f3a:	89          	pushw X
+    8f3b:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f3e:	85          	popw X
+    8f3f:	4b ed       	push #0xed ;0xed
+    8f41:	4b 00       	push #0x00
+    8f43:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f46:	85          	popw X
+    8f47:	4b 64       	push #0x64 ;0x64
+    8f49:	4b 00       	push #0x00
+    8f4b:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f4e:	85          	popw X
+    8f4f:	4b 03       	push #0x03 ;0x3
+    8f51:	4b 00       	push #0x00
+    8f53:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f56:	85          	popw X
+    8f57:	4b 12       	push #0x12 ;0x12
+    8f59:	4b 00       	push #0x00
+    8f5b:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f5e:	85          	popw X
+    8f5f:	4b 81       	push #0x81 ;0x81
+    8f61:	4b 00       	push #0x00
+    8f63:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f66:	85          	popw X
+    8f67:	4b f7       	push #0xf7 ;0xf7
+    8f69:	4b 00       	push #0x00
+    8f6b:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f6e:	85          	popw X
+    8f6f:	4b 20       	push #0x20 ;0x20
+    8f71:	4b 00       	push #0x00
+    8f73:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f76:	85          	popw X
+    8f77:	4b c0       	push #0xc0 ;0xc0
+    8f79:	4b 00       	push #0x00
+    8f7b:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f7e:	85          	popw X
+    8f7f:	4b 23       	push #0x23 ;0x23
+    8f81:	4b 00       	push #0x00
+    8f83:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f86:	85          	popw X
+    8f87:	4b c1       	push #0xc1 ;0xc1
+    8f89:	4b 00       	push #0x00
+    8f8b:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f8e:	85          	popw X
+    8f8f:	4b 10       	push #0x10 ;0x10
+    8f91:	4b 00       	push #0x00
+    8f93:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8f96:	85          	popw X
+    8f97:	4b c5       	push #0xc5 ;0xc5
+    8f99:	4b 00       	push #0x00
+    8f9b:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8f9e:	85          	popw X
+    8f9f:	4b 3e       	push #0x3e ;0x3e
+    8fa1:	4b 00       	push #0x00
+    8fa3:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fa6:	85          	popw X
+    8fa7:	4b 28       	push #0x28 ;0x28
+    8fa9:	4b 00       	push #0x00
+    8fab:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fae:	85          	popw X
+    8faf:	4b c7       	push #0xc7 ;0xc7
+    8fb1:	4b 00       	push #0x00
+    8fb3:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8fb6:	85          	popw X
+    8fb7:	4b 86       	push #0x86 ;0x86
+    8fb9:	4b 00       	push #0x00
+    8fbb:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fbe:	85          	popw X
+    8fbf:	4b 36       	push #0x36 ;0x36
+    8fc1:	4b 00       	push #0x00
+    8fc3:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8fc6:	85          	popw X
+    8fc7:	4b 48       	push #0x48 ;0x48
+    8fc9:	4b 00       	push #0x00
+    8fcb:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fce:	85          	popw X
+    8fcf:	4b 3a       	push #0x3a ;0x3a
+    8fd1:	4b 00       	push #0x00
+    8fd3:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8fd6:	85          	popw X
+    8fd7:	4b 55       	push #0x55 ;0x55
+    8fd9:	4b 00       	push #0x00
+    8fdb:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fde:	85          	popw X
+    8fdf:	4b b1       	push #0xb1 ;0xb1
+    8fe1:	4b 00       	push #0x00
+    8fe3:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8fe6:	85          	popw X
+    8fe7:	5f          	clrw X
+    8fe8:	89          	pushw X
+    8fe9:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8fec:	85          	popw X
+    8fed:	4b 18       	push #0x18 ;0x18
+    8fef:	4b 00       	push #0x00
+    8ff1:	cd 8e 23    	call 0x8e23 ;0x8e23
+    8ff4:	85          	popw X
+    8ff5:	4b b6       	push #0xb6 ;0xb6
+    8ff7:	4b 00       	push #0x00
+    8ff9:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    8ffc:	85          	popw X
+    8ffd:	4b 08       	push #0x08 ;0x8
+    8fff:	4b 00       	push #0x00
+    9001:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9004:	85          	popw X
+    9005:	4b 82       	push #0x82 ;0x82
+    9007:	4b 00       	push #0x00
+    9009:	cd 8e 23    	call 0x8e23 ;0x8e23
+    900c:	85          	popw X
+    900d:	4b 27       	push #0x27 ;0x27
+    900f:	4b 00       	push #0x00
+    9011:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9014:	85          	popw X
+    9015:	4b f2       	push #0xf2 ;0xf2
+    9017:	4b 00       	push #0x00
+    9019:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    901c:	85          	popw X
+    901d:	5f          	clrw X
+    901e:	89          	pushw X
+    901f:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9022:	85          	popw X
+    9023:	4b 2a       	push #0x2a ;0x2a
+    9025:	4b 00       	push #0x00
+    9027:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    902a:	85          	popw X
+    902b:	5f          	clrw X
+    902c:	89          	pushw X
+    902d:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9030:	85          	popw X
+    9031:	5f          	clrw X
+    9032:	89          	pushw X
+    9033:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9036:	85          	popw X
+    9037:	5f          	clrw X
+    9038:	89          	pushw X
+    9039:	cd 8e 23    	call 0x8e23 ;0x8e23
+    903c:	85          	popw X
+    903d:	4b ef       	push #0xef ;0xef
+    903f:	4b 00       	push #0x00
+    9041:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9044:	85          	popw X
+    9045:	4b 2b       	push #0x2b ;0x2b
+    9047:	4b 00       	push #0x00
+    9049:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    904c:	85          	popw X
+    904d:	5f          	clrw X
+    904e:	89          	pushw X
+    904f:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9052:	85          	popw X
+    9053:	5f          	clrw X
+    9054:	89          	pushw X
+    9055:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9058:	85          	popw X
+    9059:	4b 01       	push #0x01 ;0x1
+    905b:	4b 00       	push #0x00
+    905d:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9060:	85          	popw X
+    9061:	4b 3f       	push #0x3f ;0x3f
+    9063:	4b 00       	push #0x00
+    9065:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9068:	85          	popw X
+    9069:	4b 26       	push #0x26 ;0x26
+    906b:	4b 00       	push #0x00
+    906d:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    9070:	85          	popw X
+    9071:	4b 01       	push #0x01 ;0x1
+    9073:	4b 00       	push #0x00
+    9075:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9078:	85          	popw X
+    9079:	4b e0       	push #0xe0 ;0xe0
+    907b:	4b 00       	push #0x00
+    907d:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    9080:	85          	popw X
+    9081:	4b 0f       	push #0x0f ;0xf
+    9083:	4b 00       	push #0x00
+    9085:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9088:	85          	popw X
+    9089:	4b 31       	push #0x31 ;0x31
+    908b:	4b 00       	push #0x00
+    908d:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9090:	85          	popw X
+    9091:	4b 2b       	push #0x2b ;0x2b
+    9093:	4b 00       	push #0x00
+    9095:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9098:	85          	popw X
+    9099:	4b 0c       	push #0x0c ;0xc
+    909b:	4b 00       	push #0x00
+    909d:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90a0:	85          	popw X
+    90a1:	4b 0e       	push #0x0e ;0xe
+    90a3:	4b 00       	push #0x00
+    90a5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90a8:	85          	popw X
+    90a9:	4b 08       	push #0x08 ;0x8
+    90ab:	4b 00       	push #0x00
+    90ad:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90b0:	85          	popw X
+    90b1:	4b 4e       	push #0x4e ;0x4e
+    90b3:	4b 00       	push #0x00
+    90b5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90b8:	85          	popw X
+    90b9:	4b f1       	push #0xf1 ;0xf1
+    90bb:	4b 00       	push #0x00
+    90bd:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90c0:	85          	popw X
+    90c1:	4b 37       	push #0x37 ;0x37
+    90c3:	4b 00       	push #0x00
+    90c5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90c8:	85          	popw X
+    90c9:	4b 07       	push #0x07 ;0x7
+    90cb:	4b 00       	push #0x00
+    90cd:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90d0:	85          	popw X
+    90d1:	4b 10       	push #0x10 ;0x10
+    90d3:	4b 00       	push #0x00
+    90d5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90d8:	85          	popw X
+    90d9:	4b 03       	push #0x03 ;0x3
+    90db:	4b 00       	push #0x00
+    90dd:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90e0:	85          	popw X
+    90e1:	4b 0e       	push #0x0e ;0xe
+    90e3:	4b 00       	push #0x00
+    90e5:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90e8:	85          	popw X
+    90e9:	4b 09       	push #0x09 ;0x9
+    90eb:	4b 00       	push #0x00
+    90ed:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90f0:	85          	popw X
+    90f1:	5f          	clrw X
+    90f2:	89          	pushw X
+    90f3:	cd 8e 23    	call 0x8e23 ;0x8e23
+    90f6:	85          	popw X
+    90f7:	4b e1       	push #0xe1 ;0xe1
+    90f9:	4b 00       	push #0x00
+    90fb:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    90fe:	85          	popw X
+    90ff:	5f          	clrw X
+    9100:	89          	pushw X
+    9101:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9104:	85          	popw X
+    9105:	4b 0e       	push #0x0e ;0xe
+    9107:	4b 00       	push #0x00
+    9109:	cd 8e 23    	call 0x8e23 ;0x8e23
+    910c:	85          	popw X
+    910d:	4b 14       	push #0x14 ;0x14
+    910f:	4b 00       	push #0x00
+    9111:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9114:	85          	popw X
+    9115:	4b 03       	push #0x03 ;0x3
+    9117:	4b 00       	push #0x00
+    9119:	cd 8e 23    	call 0x8e23 ;0x8e23
+    911c:	85          	popw X
+    911d:	4b 11       	push #0x11 ;0x11
+    911f:	4b 00       	push #0x00
+    9121:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9124:	85          	popw X
+    9125:	4b 07       	push #0x07 ;0x7
+    9127:	4b 00       	push #0x00
+    9129:	cd 8e 23    	call 0x8e23 ;0x8e23
+    912c:	85          	popw X
+    912d:	4b 31       	push #0x31 ;0x31
+    912f:	4b 00       	push #0x00
+    9131:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9134:	85          	popw X
+    9135:	4b c1       	push #0xc1 ;0xc1
+    9137:	4b 00       	push #0x00
+    9139:	cd 8e 23    	call 0x8e23 ;0x8e23
+    913c:	85          	popw X
+    913d:	4b 48       	push #0x48 ;0x48
+    913f:	4b 00       	push #0x00
+    9141:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9144:	85          	popw X
+    9145:	4b 08       	push #0x08 ;0x8
+    9147:	4b 00       	push #0x00
+    9149:	cd 8e 23    	call 0x8e23 ;0x8e23
+    914c:	85          	popw X
+    914d:	4b 0f       	push #0x0f ;0xf
+    914f:	4b 00       	push #0x00
+    9151:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9154:	85          	popw X
+    9155:	4b 0c       	push #0x0c ;0xc
+    9157:	4b 00       	push #0x00
+    9159:	cd 8e 23    	call 0x8e23 ;0x8e23
+    915c:	85          	popw X
+    915d:	4b 31       	push #0x31 ;0x31
+    915f:	4b 00       	push #0x00
+    9161:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9164:	85          	popw X
+    9165:	4b 36       	push #0x36 ;0x36
+    9167:	4b 00       	push #0x00
+    9169:	cd 8e 23    	call 0x8e23 ;0x8e23
+    916c:	85          	popw X
+    916d:	4b 0f       	push #0x0f ;0xf
+    916f:	4b 00       	push #0x00
+    9171:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9174:	85          	popw X
+    9175:	4b 11       	push #0x11 ;0x11
+    9177:	4b 00       	push #0x00
+    9179:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    917c:	85          	popw X
+    917d:	4b a0       	push #0xa0 ;0xa0
+    917f:	4b 86       	push #0x86 ;0x86
+    9181:	4b 01       	push #0x01 ;0x1
+    9183:	4b 00       	push #0x00
+    9185:	cd 92 4a    	call 0x924a ;0x924a
+    9188:	5b 04       	addw SP,#0x04 ;0x4
+    918a:	4b 29       	push #0x29 ;0x29
+    918c:	4b 00       	push #0x00
+    918e:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    9191:	85          	popw X
+    9192:	4b 2c       	push #0x2c ;0x2c
+    9194:	4b 00       	push #0x00
+    9196:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    9199:	85          	popw X
+    919a:	81          	ret
+
+Дизассемблирование раздела .sec4:
+
+00008000 <.sec4>:
+    8000:	82 00 80 6b 	int 0x00806b ;0x806b
+    8004:	82 00 00 00 	int 0x000000
+    8008:	82 00 00 00 	int 0x000000
+    800c:	82 00 00 00 	int 0x000000
+    8010:	82 00 00 00 	int 0x000000
+    8014:	82 00 00 00 	int 0x000000
+    8018:	82 00 00 00 	int 0x000000
+    801c:	82 00 00 00 	int 0x000000
+    8020:	82 00 00 00 	int 0x000000
+    8024:	82 00 00 00 	int 0x000000
+    8028:	82 00 00 00 	int 0x000000
+    802c:	82 00 00 00 	int 0x000000
+    8030:	82 00 00 00 	int 0x000000
+    8034:	82 00 00 00 	int 0x000000
+    8038:	82 00 00 00 	int 0x000000
+    803c:	82 00 00 00 	int 0x000000
+    8040:	82 00 00 00 	int 0x000000
+    8044:	82 00 00 00 	int 0x000000
+    8048:	82 00 00 00 	int 0x000000
+    804c:	82 00 00 00 	int 0x000000
+    8050:	82 00 00 00 	int 0x000000
+    8054:	82 00 00 00 	int 0x000000
+    8058:	82 00 00 00 	int 0x000000
+    805c:	82 00 00 00 	int 0x000000
+    8060:	82 00 00 00 	int 0x000000
+    8064:	82 00 93 c3 	int 0x0093c3 ;0x93c3
+
+Дизассемблирование раздела .sec5:
+
+0000806b <.sec5>:
+    806b:	ae 00 00    	ldw X,#0x0000
+    806e:	27 07       	jreq 0x8077 ;0x8077
+    8070:	72 4f 00 00 	clr (0x0000,X)
+    8074:	5a          	decw X
+    8075:	26 f9       	jrne 0x8070 ;0x8070
+    8077:	ae 00 03    	ldw X,#0x0003 ;0x3
+    807a:	27 09       	jreq 0x8085 ;0x8085
+    807c:	d6 80 8b    	ld A,(0x808b,X) ;0x808b
+    807f:	d7 00 00    	ld (0x0000,X),A
+    8082:	5a          	decw X
+    8083:	26 f7       	jrne 0x807c ;0x807c
+    8085:	cc 80 68    	jp 0x8068 ;0x8068
+
+Дизассемблирование раздела .sec6:
+
+00008068 <.sec6>:
+    8068:	cc 91 9b    	jp 0x919b ;0x919b
+
+Дизассемблирование раздела .sec7:
+
+0000919b <.sec7>:
+    919b:	cd 92 74    	call 0x9274 ;0x9274
+    919e:	cd 92 f7    	call 0x92f7 ;0x92f7
+    91a1:	cd 93 8a    	call 0x938a ;0x938a
+    91a4:	cd 8d 93    	call 0x8d93 ;0x8d93
+    91a7:	cd 8e 66    	call 0x8e66 ;0x8e66
+    91aa:	cd 93 a9    	call 0x93a9 ;0x93a9
+    91ad:	9a          	rim
+    91ae:	4b 02       	push #0x02 ;0x2
+    91b0:	4b 0f       	push #0x0f ;0xf
+    91b2:	4b 50       	push #0x50 ;0x50
+    91b4:	cd 8a a5    	call 0x8aa5 ;0x8aa5
+    91b7:	5b 03       	addw SP,#0x03 ;0x3
+    91b9:	4d          	tnz A
+    91ba:	26 03       	jrne 0x91bf ;0x91bf
+    91bc:	cc 91 c9    	jp 0x91c9 ;0x91c9
+    91bf:	ae 00 01    	ldw X,#0x0001 ;0x1
+    91c2:	f6          	ld A,(X)
+    91c3:	aa 04       	or A,#0x04 ;0x4
+    91c5:	f7          	ld (X),A
+    91c6:	cc 91 d0    	jp 0x91d0 ;0x91d0
+    91c9:	ae 00 01    	ldw X,#0x0001 ;0x1
+    91cc:	a6 fb       	ld A,#0xfb ;0xfb
+    91ce:	f4          	and A,(X)
+    91cf:	f7          	ld (X),A
+    91d0:	4b 04       	push #0x04 ;0x4
+    91d2:	4b 0f       	push #0x0f ;0xf
+    91d4:	4b 50       	push #0x50 ;0x50
+    91d6:	cd 8a a5    	call 0x8aa5 ;0x8aa5
+    91d9:	5b 03       	addw SP,#0x03 ;0x3
+    91db:	4d          	tnz A
+    91dc:	26 03       	jrne 0x91e1 ;0x91e1
+    91de:	cc 91 eb    	jp 0x91eb ;0x91eb
+    91e1:	ae 00 01    	ldw X,#0x0001 ;0x1
+    91e4:	f6          	ld A,(X)
+    91e5:	aa 08       	or A,#0x08 ;0x8
+    91e7:	f7          	ld (X),A
+    91e8:	cc 91 f2    	jp 0x91f2 ;0x91f2
+    91eb:	ae 00 01    	ldw X,#0x0001 ;0x1
+    91ee:	a6 f7       	ld A,#0xf7 ;0xf7
+    91f0:	f4          	and A,(X)
+    91f1:	f7          	ld (X),A
+    91f2:	4b 20       	push #0x20 ;0x20
+    91f4:	4b 0f       	push #0x0f ;0xf
+    91f6:	4b 50       	push #0x50 ;0x50
+    91f8:	cd 8a a5    	call 0x8aa5 ;0x8aa5
+    91fb:	5b 03       	addw SP,#0x03 ;0x3
+    91fd:	4d          	tnz A
+    91fe:	26 03       	jrne 0x9203 ;0x9203
+    9200:	cc 92 0d    	jp 0x920d ;0x920d
+    9203:	ae 00 01    	ldw X,#0x0001 ;0x1
+    9206:	f6          	ld A,(X)
+    9207:	aa 01       	or A,#0x01 ;0x1
+    9209:	f7          	ld (X),A
+    920a:	cc 92 14    	jp 0x9214 ;0x9214
+    920d:	ae 00 01    	ldw X,#0x0001 ;0x1
+    9210:	a6 fe       	ld A,#0xfe ;0xfe
+    9212:	f4          	and A,(X)
+    9213:	f7          	ld (X),A
+    9214:	4b 40       	push #0x40 ;0x40
+    9216:	4b 0f       	push #0x0f ;0xf
+    9218:	4b 50       	push #0x50 ;0x50
+    921a:	cd 8a a5    	call 0x8aa5 ;0x8aa5
+    921d:	5b 03       	addw SP,#0x03 ;0x3
+    921f:	4d          	tnz A
+    9220:	26 03       	jrne 0x9225 ;0x9225
+    9222:	cc 92 2f    	jp 0x922f ;0x922f
+    9225:	ae 00 01    	ldw X,#0x0001 ;0x1
+    9228:	f6          	ld A,(X)
+    9229:	aa 02       	or A,#0x02 ;0x2
+    922b:	f7          	ld (X),A
+    922c:	cc 92 36    	jp 0x9236 ;0x9236
+    922f:	ae 00 01    	ldw X,#0x0001 ;0x1
+    9232:	a6 fd       	ld A,#0xfd ;0xfd
+    9234:	f4          	and A,(X)
+    9235:	f7          	ld (X),A
+    9236:	4b ff       	push #0xff ;0xff
+    9238:	4b 00       	push #0x00
+    923a:	cd 8d d5    	call 0x8dd5 ;0x8dd5
+    923d:	85          	popw X
+    923e:	4b ff       	push #0xff ;0xff
+    9240:	4b 00       	push #0x00
+    9242:	cd 8e 23    	call 0x8e23 ;0x8e23
+    9245:	85          	popw X
+    9246:	cc 91 ae    	jp 0x91ae ;0x91ae
+    9249:	81          	ret
+    924a:	52 04       	sub SP,#0x04 ;0x4
+    924c:	16 09       	ldw Y,(0x09,SP) ;0x9
+    924e:	1e 07       	ldw X,(0x07,SP) ;0x7
+    9250:	17 03       	ldw (0x03,SP),Y ;0x3
+    9252:	1f 01       	ldw (0x01,SP),X ;0x1
+    9254:	72 a2 00 01 	subw Y,#0x0001 ;0x1
+    9258:	9f          	ld A,XL
+    9259:	a2 00       	sbc A,#0x00
+    925b:	97          	ld XL,A
+    925c:	9e          	ld A,XH
+    925d:	a2 00       	sbc A,#0x00
+    925f:	95          	ld XH,A
+    9260:	4f          	clr A
+    9261:	11 04       	cp A,(0x04,SP) ;0x4
+    9263:	4f          	clr A
+    9264:	12 03       	sbc A,(0x03,SP) ;0x3
+    9266:	4f          	clr A
+    9267:	12 02       	sbc A,(0x02,SP) ;0x2
+    9269:	4f          	clr A
+    926a:	12 01       	sbc A,(0x01,SP) ;0x1
+    926c:	2e 03       	jrsge 0x9271 ;0x9271
+    926e:	cc 92 50    	jp 0x9250 ;0x9250
+    9271:	5b 04       	addw SP,#0x04 ;0x4
+    9273:	81          	ret
+    9274:	cd 85 88    	call 0x8588 ;0x8588
+    9277:	4b 00       	push #0x00
+    9279:	cd 85 da    	call 0x85da ;0x85da
+    927c:	84          	pop A
+    927d:	4b 00       	push #0x00
+    927f:	cd 86 0a    	call 0x860a ;0x860a
+    9282:	84          	pop A
+    9283:	4b 01       	push #0x01 ;0x1
+    9285:	cd 85 f2    	call 0x85f2 ;0x85f2
+    9288:	84          	pop A
+    9289:	4b 02       	push #0x02 ;0x2
+    928b:	4b 01       	push #0x01 ;0x1
+    928d:	cd 89 22    	call 0x8922 ;0x8922
+    9290:	85          	popw X
+    9291:	4d          	tnz A
+    9292:	26 03       	jrne 0x9297 ;0x9297
+    9294:	cc 92 89    	jp 0x9289 ;0x9289
+    9297:	4b 01       	push #0x01 ;0x1
+    9299:	cd 86 3a    	call 0x863a ;0x863a
+    929c:	84          	pop A
+    929d:	4b 18       	push #0x18 ;0x18
+    929f:	cd 87 c1    	call 0x87c1 ;0x87c1
+    92a2:	84          	pop A
+    92a3:	4b 80       	push #0x80 ;0x80
+    92a5:	cd 88 53    	call 0x8853 ;0x8853
+    92a8:	84          	pop A
+    92a9:	4b 01       	push #0x01 ;0x1
+    92ab:	4b 00       	push #0x00
+    92ad:	4b e1       	push #0xe1 ;0xe1
+    92af:	4b 01       	push #0x01 ;0x1
+    92b1:	cd 86 be    	call 0x86be ;0x86be
+    92b4:	5b 04       	addw SP,#0x04 ;0x4
+    92b6:	4b 01       	push #0x01 ;0x1
+    92b8:	4b 01       	push #0x01 ;0x1
+    92ba:	cd 86 6a    	call 0x866a ;0x866a
+    92bd:	85          	popw X
+    92be:	4b 00       	push #0x00
+    92c0:	4b 00       	push #0x00
+    92c2:	cd 86 6a    	call 0x866a ;0x866a
+    92c5:	85          	popw X
+    92c6:	4b 00       	push #0x00
+    92c8:	4b 13       	push #0x13 ;0x13
+    92ca:	cd 86 6a    	call 0x866a ;0x866a
+    92cd:	85          	popw X
+    92ce:	4b 00       	push #0x00
+    92d0:	4b 12       	push #0x12 ;0x12
+    92d2:	cd 86 6a    	call 0x866a ;0x866a
+    92d5:	85          	popw X
+    92d6:	4b 00       	push #0x00
+    92d8:	4b 03       	push #0x03 ;0x3
+    92da:	cd 86 6a    	call 0x866a ;0x866a
+    92dd:	85          	popw X
+    92de:	4b 00       	push #0x00
+    92e0:	4b 07       	push #0x07 ;0x7
+    92e2:	cd 86 6a    	call 0x866a ;0x866a
+    92e5:	85          	popw X
+    92e6:	4b 00       	push #0x00
+    92e8:	4b 05       	push #0x05 ;0x5
+    92ea:	cd 86 6a    	call 0x866a ;0x866a
+    92ed:	85          	popw X
+    92ee:	4b 01       	push #0x01 ;0x1
+    92f0:	4b 04       	push #0x04 ;0x4
+    92f2:	cd 86 6a    	call 0x866a ;0x866a
+    92f5:	85          	popw X
+    92f6:	81          	ret
+    92f7:	4b 0a       	push #0x0a ;0xa
+    92f9:	4b 50       	push #0x50 ;0x50
+    92fb:	cd 89 e0    	call 0x89e0 ;0x89e0
+    92fe:	85          	popw X
+    92ff:	4b 0f       	push #0x0f ;0xf
+    9301:	4b 50       	push #0x50 ;0x50
+    9303:	cd 89 e0    	call 0x89e0 ;0x89e0
+    9306:	85          	popw X
+    9307:	4b e0       	push #0xe0 ;0xe0
+    9309:	4b 08       	push #0x08 ;0x8
+    930b:	4b 0f       	push #0x0f ;0xf
+    930d:	4b 50       	push #0x50 ;0x50
+    930f:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9312:	5b 04       	addw SP,#0x04 ;0x4
+    9314:	4b f0       	push #0xf0 ;0xf0
+    9316:	4b 60       	push #0x60 ;0x60
+    9318:	4b 0a       	push #0x0a ;0xa
+    931a:	4b 50       	push #0x50 ;0x50
+    931c:	cd 89 f3    	call 0x89f3 ;0x89f3
+    931f:	5b 04       	addw SP,#0x04 ;0x4
+    9321:	4b 00       	push #0x00
+    9323:	4b 08       	push #0x08 ;0x8
+    9325:	4b 0a       	push #0x0a ;0xa
+    9327:	4b 50       	push #0x50 ;0x50
+    9329:	cd 89 f3    	call 0x89f3 ;0x89f3
+    932c:	5b 04       	addw SP,#0x04 ;0x4
+    932e:	4b e0       	push #0xe0 ;0xe0
+    9330:	4b 80       	push #0x80 ;0x80
+    9332:	4b 0a       	push #0x0a ;0xa
+    9334:	4b 50       	push #0x50 ;0x50
+    9336:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9339:	5b 04       	addw SP,#0x04 ;0x4
+    933b:	4b 00       	push #0x00
+    933d:	4b 02       	push #0x02 ;0x2
+    933f:	4b 0f       	push #0x0f ;0xf
+    9341:	4b 50       	push #0x50 ;0x50
+    9343:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9346:	5b 04       	addw SP,#0x04 ;0x4
+    9348:	4b 00       	push #0x00
+    934a:	4b 04       	push #0x04 ;0x4
+    934c:	4b 0f       	push #0x0f ;0xf
+    934e:	4b 50       	push #0x50 ;0x50
+    9350:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9353:	5b 04       	addw SP,#0x04 ;0x4
+    9355:	4b e0       	push #0xe0 ;0xe0
+    9357:	4b 08       	push #0x08 ;0x8
+    9359:	4b 0f       	push #0x0f ;0xf
+    935b:	4b 50       	push #0x50 ;0x50
+    935d:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9360:	5b 04       	addw SP,#0x04 ;0x4
+    9362:	4b e0       	push #0xe0 ;0xe0
+    9364:	4b 10       	push #0x10 ;0x10
+    9366:	4b 0f       	push #0x0f ;0xf
+    9368:	4b 50       	push #0x50 ;0x50
+    936a:	cd 89 f3    	call 0x89f3 ;0x89f3
+    936d:	5b 04       	addw SP,#0x04 ;0x4
+    936f:	4b 00       	push #0x00
+    9371:	4b 20       	push #0x20 ;0x20
+    9373:	4b 0f       	push #0x0f ;0xf
+    9375:	4b 50       	push #0x50 ;0x50
+    9377:	cd 89 f3    	call 0x89f3 ;0x89f3
+    937a:	5b 04       	addw SP,#0x04 ;0x4
+    937c:	4b 00       	push #0x00
+    937e:	4b 40       	push #0x40 ;0x40
+    9380:	4b 0f       	push #0x0f ;0xf
+    9382:	4b 50       	push #0x50 ;0x50
+    9384:	cd 89 f3    	call 0x89f3 ;0x89f3
+    9387:	5b 04       	addw SP,#0x04 ;0x4
+    9389:	81          	ret
+    938a:	cd 8a cc    	call 0x8acc ;0x8acc
+    938d:	4b 00       	push #0x00
+    938f:	4b 02       	push #0x02 ;0x2
+    9391:	4b c0       	push #0xc0 ;0xc0
+    9393:	4b 00       	push #0x00
+    9395:	4b 02       	push #0x02 ;0x2
+    9397:	4b 04       	push #0x04 ;0x4
+    9399:	4b 10       	push #0x10 ;0x10
+    939b:	4b 00       	push #0x00
+    939d:	cd 8a e1    	call 0x8ae1 ;0x8ae1
+    93a0:	5b 08       	addw SP,#0x08 ;0x8
+    93a2:	4b 01       	push #0x01 ;0x1
+    93a4:	cd 8b 26    	call 0x8b26 ;0x8b26
+    93a7:	84          	pop A
+    93a8:	81          	ret
+    93a9:	cd 8c 67    	call 0x8c67 ;0x8c67
+    93ac:	4b ff       	push #0xff ;0xff
+    93ae:	4b 07       	push #0x07 ;0x7
+    93b0:	cd 8c 80    	call 0x8c80 ;0x8c80
+    93b3:	85          	popw X
+    93b4:	4b 01       	push #0x01 ;0x1
+    93b6:	4b 01       	push #0x01 ;0x1
+    93b8:	cd 8c a5    	call 0x8ca5 ;0x8ca5
+    93bb:	85          	popw X
+    93bc:	4b 01       	push #0x01 ;0x1
+    93be:	cd 8c 8d    	call 0x8c8d ;0x8c8d
+    93c1:	84          	pop A
+    93c2:	81          	ret
+    93c3:	62          	div X,A
+    93c4:	4b 01       	push #0x01 ;0x1
+    93c6:	cd 8d 8c    	call 0x8d8c ;0x8d8c
+    93c9:	84          	pop A
+    93ca:	ce 00 02    	ldw X,0x0002 ;0x2
+    93cd:	27 03       	jreq 0x93d2 ;0x93d2
+    93cf:	cc 93 e6    	jp 0x93e6 ;0x93e6
+    93d2:	4b 08       	push #0x08 ;0x8
+    93d4:	4b 0f       	push #0x0f ;0xf
+    93d6:	4b 50       	push #0x50 ;0x50
+    93d8:	cd 8a 95    	call 0x8a95 ;0x8a95
+    93db:	5b 03       	addw SP,#0x03 ;0x3
+    93dd:	ae 00 46    	ldw X,#0x0046 ;0x46
+    93e0:	cf 00 02    	ldw 0x0002,X ;0x2
+    93e3:	cc 93 ed    	jp 0x93ed ;0x93ed
+    93e6:	ce 00 02    	ldw X,0x0002 ;0x2
+    93e9:	5a          	decw X
+    93ea:	cf 00 02    	ldw 0x0002,X ;0x2
+    93ed:	80          	iret
+
+Дизассемблирование раздела .sec8:
+
+0000808c <.sec8>:
+    808c:	2f 00       	jrslt 0x808e ;0x808e
+    808e:	46          	rrc A
+
+Дизассемблирование раздела .sec9:
+
+000093ee <.sec9>:
+    93ee:	80          	iret
+    93ef:	80          	iret
+    93f0:	80          	iret
+    93f1:	80          	iret
+    93f2:	80          	iret
+    93f3:	80          	iret
+    93f4:	80          	iret
+    93f5:	80          	iret
+    93f6:	80          	iret
+    93f7:	80          	iret
+    93f8:	80          	iret
+    93f9:	80          	iret
+    93fa:	80          	iret
+    93fb:	80          	iret
+    93fc:	80          	iret
+    93fd:	80          	iret
+    93fe:	80          	iret
+    93ff:	80          	iret
+    9400:	80          	iret
+    9401:	80          	iret
+    9402:	52 06       	sub SP,#0x06 ;0x6
+    9404:	5f          	clrw X
+    9405:	1f 05       	ldw (0x05,SP),X ;0x5
+    9407:	1f 03       	ldw (0x03,SP),X ;0x3
+    9409:	a6 20       	ld A,#0x20 ;0x20
+    940b:	6b 02       	ld (0x02,SP),A ;0x2
+    940d:	7b 09       	ld A,(0x09,SP) ;0x9
+    940f:	48          	sll A
+    9410:	4f          	clr A
+    9411:	49          	rlc A
+    9412:	6b 01       	ld (0x01,SP),A ;0x1
+    9414:	16 0b       	ldw Y,(0x0b,SP) ;0xb
+    9416:	1e 09       	ldw X,(0x09,SP) ;0x9
+    9418:	90 58       	sllw Y
+    941a:	59          	rlcw X
+    941b:	17 0b       	ldw (0x0b,SP),Y ;0xb
+    941d:	1f 09       	ldw (0x09,SP),X ;0x9
+    941f:	16 05       	ldw Y,(0x05,SP) ;0x5
+    9421:	1e 03       	ldw X,(0x03,SP) ;0x3
+    9423:	90 58       	sllw Y
+    9425:	59          	rlcw X
+    9426:	17 05       	ldw (0x05,SP),Y ;0x5
+    9428:	1f 03       	ldw (0x03,SP),X ;0x3
+    942a:	0d 01       	tnz (0x01,SP) ;0x1
+    942c:	27 06       	jreq 0x9434 ;0x9434
+    942e:	7b 06       	ld A,(0x06,SP) ;0x6
+    9430:	aa 01       	or A,#0x01 ;0x1
+    9432:	6b 06       	ld (0x06,SP),A ;0x6
+    9434:	1e 05       	ldw X,(0x05,SP) ;0x5
+    9436:	72 f0 0f    	subw X,(0x0f,SP) ;0xf
+    9439:	7b 04       	ld A,(0x04,SP) ;0x4
+    943b:	12 0e       	sbc A,(0x0e,SP) ;0xe
+    943d:	90 97       	ld YL,A
+    943f:	7b 03       	ld A,(0x03,SP) ;0x3
+    9441:	12 0d       	sbc A,(0x0d,SP) ;0xd
+    9443:	25 0c       	jrc 0x9451 ;0x9451
+    9445:	1f 05       	ldw (0x05,SP),X ;0x5
+    9447:	90 95       	ld YH,A
+    9449:	17 03       	ldw (0x03,SP),Y ;0x3
+    944b:	7b 0c       	ld A,(0x0c,SP) ;0xc
+    944d:	aa 01       	or A,#0x01 ;0x1
+    944f:	6b 0c       	ld (0x0c,SP),A ;0xc
+    9451:	0a 02       	dec (0x02,SP) ;0x2
+    9453:	26 b8       	jrne 0x940d ;0x940d
+    9455:	1e 0b       	ldw X,(0x0b,SP) ;0xb
+    9457:	16 09       	ldw Y,(0x09,SP) ;0x9
+    9459:	5b 06       	addw SP,#0x06 ;0x6
+    945b:	81          	ret

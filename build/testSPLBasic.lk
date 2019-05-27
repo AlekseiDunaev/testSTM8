@@ -1,0 +1,19 @@
+-muwx
+-i ./build/testSPLBasic.ihx
+-Y
+-b HOME = 0x8000
+-b DATA = 0x0001
+-b SSEG = 0xffffffff
+-k /usr/local/bin/../share/sdcc/lib/stm8
+-k /usr/local/Cellar/sdcc/3.8.0/share/sdcc/lib/stm8
+-l stm8
+build/stm8s_adc1.rel
+build/stm8s_clk.rel
+build/stm8s_gpio.rel
+build/stm8s_spi.rel
+build/stm8s_tim4.rel
+build/ILI9341.rel
+build/main.rel
+build/stm8s_it.rel
+
+-e

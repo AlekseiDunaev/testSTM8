@@ -1,0 +1,1031 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.8.0 #10562 (Mac OS X x86_64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module ILI9341
+                                      6 	.optsdcc -mstm8
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _delay
+                                     12 	.globl _SPI_GetFlagStatus
+                                     13 	.globl _SPI_SendData
+                                     14 	.globl _GPIO_WriteLow
+                                     15 	.globl _GPIO_WriteHigh
+                                     16 	.globl _GPIO_Init
+                                     17 	.globl _ILI9341_setup
+                                     18 	.globl _ILI9341_Write_Command
+                                     19 	.globl _ILI9341_Write_Data
+                                     20 	.globl _ILI9341_Init_Display
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DATA
+                                     25 ;--------------------------------------------------------
+                                     26 ; ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area INITIALIZED
+                                     29 ;--------------------------------------------------------
+                                     30 ; absolute external ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area DABS (ABS)
+                                     33 
+                                     34 ; default segment ordering for linker
+                                     35 	.area HOME
+                                     36 	.area GSINIT
+                                     37 	.area GSFINAL
+                                     38 	.area CONST
+                                     39 	.area INITIALIZER
+                                     40 	.area CODE
+                                     41 
+                                     42 ;--------------------------------------------------------
+                                     43 ; global & static initialisations
+                                     44 ;--------------------------------------------------------
+                                     45 	.area HOME
+                                     46 	.area GSINIT
+                                     47 	.area GSFINAL
+                                     48 	.area GSINIT
+                                     49 ;--------------------------------------------------------
+                                     50 ; Home
+                                     51 ;--------------------------------------------------------
+                                     52 	.area HOME
+                                     53 	.area HOME
+                                     54 ;--------------------------------------------------------
+                                     55 ; code
+                                     56 ;--------------------------------------------------------
+                                     57 	.area CODE
+                                     58 ;	./Src/ILI9341.c: 5: void ILI9341_setup(void) {
+                                     59 ; genLabel
+                                     60 ;	-----------------------------------------
+                                     61 ;	 function ILI9341_setup
+                                     62 ;	-----------------------------------------
+                                     63 ;	Register assignment is optimal.
+                                     64 ;	Stack space usage: 0 bytes.
+      000000                         65 _ILI9341_setup:
+                                     66 ;	./Src/ILI9341.c: 7: GPIO_Init(ILI9341_DS_Port, ILI9341_DS_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+                                     67 ; genIPush
+      000000 4B E0            [ 1]   68 	push	#0xe0
+                                     69 ; genIPush
+      000002 4B 10            [ 1]   70 	push	#0x10
+                                     71 ; genIPush
+      000004 4B 05            [ 1]   72 	push	#0x05
+      000006 4B 50            [ 1]   73 	push	#0x50
+                                     74 ; genCall
+      000008 CDr00r00         [ 4]   75 	call	_GPIO_Init
+      00000B 5B 04            [ 2]   76 	addw	sp, #4
+                                     77 ;	./Src/ILI9341.c: 8: GPIO_Init(ILI9341_CS_Port, ILI9341_CS_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+                                     78 ; genIPush
+      00000D 4B E0            [ 1]   79 	push	#0xe0
+                                     80 ; genIPush
+      00000F 4B 08            [ 1]   81 	push	#0x08
+                                     82 ; genIPush
+      000011 4B 0A            [ 1]   83 	push	#0x0a
+      000013 4B 50            [ 1]   84 	push	#0x50
+                                     85 ; genCall
+      000015 CDr00r00         [ 4]   86 	call	_GPIO_Init
+      000018 5B 04            [ 2]   87 	addw	sp, #4
+                                     88 ;	./Src/ILI9341.c: 9: GPIO_Init(ILI9341_Reset_Port, ILI9341_Reset_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+                                     89 ; genIPush
+      00001A 4B E0            [ 1]   90 	push	#0xe0
+                                     91 ; genIPush
+      00001C 4B 20            [ 1]   92 	push	#0x20
+                                     93 ; genIPush
+      00001E 4B 05            [ 1]   94 	push	#0x05
+      000020 4B 50            [ 1]   95 	push	#0x50
+                                     96 ; genCall
+      000022 CDr00r00         [ 4]   97 	call	_GPIO_Init
+      000025 5B 04            [ 2]   98 	addw	sp, #4
+                                     99 ;	./Src/ILI9341.c: 10: GPIO_Init(ILI9341_CS_Port, ILI9341_CS_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+                                    100 ; genIPush
+      000027 4B E0            [ 1]  101 	push	#0xe0
+                                    102 ; genIPush
+      000029 4B 08            [ 1]  103 	push	#0x08
+                                    104 ; genIPush
+      00002B 4B 0A            [ 1]  105 	push	#0x0a
+      00002D 4B 50            [ 1]  106 	push	#0x50
+                                    107 ; genCall
+      00002F CDr00r00         [ 4]  108 	call	_GPIO_Init
+      000032 5B 04            [ 2]  109 	addw	sp, #4
+                                    110 ;	./Src/ILI9341.c: 11: GPIO_Init(ILI9341_LED_Port, ILI9341_LED_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+                                    111 ; genIPush
+      000034 4B E0            [ 1]  112 	push	#0xe0
+                                    113 ; genIPush
+      000036 4B 10            [ 1]  114 	push	#0x10
+                                    115 ; genIPush
+      000038 4B 0A            [ 1]  116 	push	#0x0a
+      00003A 4B 50            [ 1]  117 	push	#0x50
+                                    118 ; genCall
+      00003C CDr00r00         [ 4]  119 	call	_GPIO_Init
+      00003F 5B 04            [ 2]  120 	addw	sp, #4
+                                    121 ; genLabel
+      000041                        122 00101$:
+                                    123 ;	./Src/ILI9341.c: 13: }
+                                    124 ; genEndFunction
+      000041 81               [ 4]  125 	ret
+                                    126 ;	./Src/ILI9341.c: 15: void ILI9341_Write_Command(int command) {
+                                    127 ; genLabel
+                                    128 ;	-----------------------------------------
+                                    129 ;	 function ILI9341_Write_Command
+                                    130 ;	-----------------------------------------
+                                    131 ;	Register assignment is optimal.
+                                    132 ;	Stack space usage: 0 bytes.
+      000042                        133 _ILI9341_Write_Command:
+                                    134 ;	./Src/ILI9341.c: 16: while(SPI_GetFlagStatus(SPI_FLAG_BSY));
+                                    135 ; genLabel
+      000042                        136 00101$:
+                                    137 ; genIPush
+      000042 4B 80            [ 1]  138 	push	#0x80
+                                    139 ; genCall
+      000044 CDr00r00         [ 4]  140 	call	_SPI_GetFlagStatus
+      000047 5B 01            [ 2]  141 	addw	sp, #1
+                                    142 ; genIfx
+      000049 4D               [ 1]  143 	tnz	a
+      00004A 27 03            [ 1]  144 	jreq	00129$
+      00004C CCr00r42         [ 2]  145 	jp	00101$
+      00004F                        146 00129$:
+                                    147 ;	./Src/ILI9341.c: 17: GPIO_WriteLow(ILI9341_CS_Port, ILI9341_CS_PIN);
+                                    148 ; genIPush
+      00004F 4B 08            [ 1]  149 	push	#0x08
+                                    150 ; genIPush
+      000051 4B 0A            [ 1]  151 	push	#0x0a
+      000053 4B 50            [ 1]  152 	push	#0x50
+                                    153 ; genCall
+      000055 CDr00r00         [ 4]  154 	call	_GPIO_WriteLow
+      000058 5B 03            [ 2]  155 	addw	sp, #3
+                                    156 ;	./Src/ILI9341.c: 18: GPIO_WriteLow(ILI9341_DS_Port, ILI9341_DS_PIN);
+                                    157 ; genIPush
+      00005A 4B 10            [ 1]  158 	push	#0x10
+                                    159 ; genIPush
+      00005C 4B 05            [ 1]  160 	push	#0x05
+      00005E 4B 50            [ 1]  161 	push	#0x50
+                                    162 ; genCall
+      000060 CDr00r00         [ 4]  163 	call	_GPIO_WriteLow
+      000063 5B 03            [ 2]  164 	addw	sp, #3
+                                    165 ;	./Src/ILI9341.c: 20: SPI_SendData(command);
+                                    166 ; genCast
+                                    167 ; genAssign
+      000065 7B 04            [ 1]  168 	ld	a, (0x04, sp)
+                                    169 ; genIPush
+      000067 88               [ 1]  170 	push	a
+                                    171 ; genCall
+      000068 CDr00r00         [ 4]  172 	call	_SPI_SendData
+      00006B 84               [ 1]  173 	pop	a
+                                    174 ;	./Src/ILI9341.c: 21: while(!SPI_GetFlagStatus(SPI_FLAG_TXE));
+                                    175 ; genLabel
+      00006C                        176 00104$:
+                                    177 ; genIPush
+      00006C 4B 02            [ 1]  178 	push	#0x02
+                                    179 ; genCall
+      00006E CDr00r00         [ 4]  180 	call	_SPI_GetFlagStatus
+      000071 5B 01            [ 2]  181 	addw	sp, #1
+                                    182 ; genIfx
+      000073 4D               [ 1]  183 	tnz	a
+      000074 26 03            [ 1]  184 	jrne	00130$
+      000076 CCr00r6C         [ 2]  185 	jp	00104$
+      000079                        186 00130$:
+                                    187 ;	./Src/ILI9341.c: 23: GPIO_WriteHigh(ILI9341_CS_Port, ILI9341_CS_PIN);
+                                    188 ; genIPush
+      000079 4B 08            [ 1]  189 	push	#0x08
+                                    190 ; genIPush
+      00007B 4B 0A            [ 1]  191 	push	#0x0a
+      00007D 4B 50            [ 1]  192 	push	#0x50
+                                    193 ; genCall
+      00007F CDr00r00         [ 4]  194 	call	_GPIO_WriteHigh
+      000082 5B 03            [ 2]  195 	addw	sp, #3
+                                    196 ;	./Src/ILI9341.c: 24: GPIO_WriteHigh(ILI9341_DS_Port, ILI9341_DS_PIN);
+                                    197 ; genIPush
+      000084 4B 10            [ 1]  198 	push	#0x10
+                                    199 ; genIPush
+      000086 4B 05            [ 1]  200 	push	#0x05
+      000088 4B 50            [ 1]  201 	push	#0x50
+                                    202 ; genCall
+      00008A CDr00r00         [ 4]  203 	call	_GPIO_WriteHigh
+      00008D 5B 03            [ 2]  204 	addw	sp, #3
+                                    205 ; genLabel
+      00008F                        206 00107$:
+                                    207 ;	./Src/ILI9341.c: 25: }
+                                    208 ; genEndFunction
+      00008F 81               [ 4]  209 	ret
+                                    210 ;	./Src/ILI9341.c: 27: void ILI9341_Write_Data(int data) {
+                                    211 ; genLabel
+                                    212 ;	-----------------------------------------
+                                    213 ;	 function ILI9341_Write_Data
+                                    214 ;	-----------------------------------------
+                                    215 ;	Register assignment is optimal.
+                                    216 ;	Stack space usage: 0 bytes.
+      000090                        217 _ILI9341_Write_Data:
+                                    218 ;	./Src/ILI9341.c: 28: while(SPI_GetFlagStatus(SPI_FLAG_BSY));
+                                    219 ; genLabel
+      000090                        220 00101$:
+                                    221 ; genIPush
+      000090 4B 80            [ 1]  222 	push	#0x80
+                                    223 ; genCall
+      000092 CDr00r00         [ 4]  224 	call	_SPI_GetFlagStatus
+      000095 5B 01            [ 2]  225 	addw	sp, #1
+                                    226 ; genIfx
+      000097 4D               [ 1]  227 	tnz	a
+      000098 27 03            [ 1]  228 	jreq	00129$
+      00009A CCr00r90         [ 2]  229 	jp	00101$
+      00009D                        230 00129$:
+                                    231 ;	./Src/ILI9341.c: 29: GPIO_WriteLow(ILI9341_CS_Port, ILI9341_CS_PIN);
+                                    232 ; genIPush
+      00009D 4B 08            [ 1]  233 	push	#0x08
+                                    234 ; genIPush
+      00009F 4B 0A            [ 1]  235 	push	#0x0a
+      0000A1 4B 50            [ 1]  236 	push	#0x50
+                                    237 ; genCall
+      0000A3 CDr00r00         [ 4]  238 	call	_GPIO_WriteLow
+      0000A6 5B 03            [ 2]  239 	addw	sp, #3
+                                    240 ;	./Src/ILI9341.c: 30: GPIO_WriteHigh(ILI9341_DS_Port, ILI9341_DS_PIN);
+                                    241 ; genIPush
+      0000A8 4B 10            [ 1]  242 	push	#0x10
+                                    243 ; genIPush
+      0000AA 4B 05            [ 1]  244 	push	#0x05
+      0000AC 4B 50            [ 1]  245 	push	#0x50
+                                    246 ; genCall
+      0000AE CDr00r00         [ 4]  247 	call	_GPIO_WriteHigh
+      0000B1 5B 03            [ 2]  248 	addw	sp, #3
+                                    249 ;	./Src/ILI9341.c: 32: SPI_SendData(data);
+                                    250 ; genCast
+                                    251 ; genAssign
+      0000B3 7B 04            [ 1]  252 	ld	a, (0x04, sp)
+                                    253 ; genIPush
+      0000B5 88               [ 1]  254 	push	a
+                                    255 ; genCall
+      0000B6 CDr00r00         [ 4]  256 	call	_SPI_SendData
+      0000B9 84               [ 1]  257 	pop	a
+                                    258 ;	./Src/ILI9341.c: 33: while(!SPI_GetFlagStatus(SPI_FLAG_TXE));
+                                    259 ; genLabel
+      0000BA                        260 00104$:
+                                    261 ; genIPush
+      0000BA 4B 02            [ 1]  262 	push	#0x02
+                                    263 ; genCall
+      0000BC CDr00r00         [ 4]  264 	call	_SPI_GetFlagStatus
+      0000BF 5B 01            [ 2]  265 	addw	sp, #1
+                                    266 ; genIfx
+      0000C1 4D               [ 1]  267 	tnz	a
+      0000C2 26 03            [ 1]  268 	jrne	00130$
+      0000C4 CCr00rBA         [ 2]  269 	jp	00104$
+      0000C7                        270 00130$:
+                                    271 ;	./Src/ILI9341.c: 35: GPIO_WriteHigh(ILI9341_CS_Port, ILI9341_CS_PIN);
+                                    272 ; genIPush
+      0000C7 4B 08            [ 1]  273 	push	#0x08
+                                    274 ; genIPush
+      0000C9 4B 0A            [ 1]  275 	push	#0x0a
+      0000CB 4B 50            [ 1]  276 	push	#0x50
+                                    277 ; genCall
+      0000CD CDr00r00         [ 4]  278 	call	_GPIO_WriteHigh
+      0000D0 5B 03            [ 2]  279 	addw	sp, #3
+                                    280 ; genLabel
+      0000D2                        281 00107$:
+                                    282 ;	./Src/ILI9341.c: 36: }
+                                    283 ; genEndFunction
+      0000D2 81               [ 4]  284 	ret
+                                    285 ;	./Src/ILI9341.c: 38: void ILI9341_Init_Display() {
+                                    286 ; genLabel
+                                    287 ;	-----------------------------------------
+                                    288 ;	 function ILI9341_Init_Display
+                                    289 ;	-----------------------------------------
+                                    290 ;	Register assignment is optimal.
+                                    291 ;	Stack space usage: 0 bytes.
+      0000D3                        292 _ILI9341_Init_Display:
+                                    293 ;	./Src/ILI9341.c: 39: GPIO_WriteHigh(ILI9341_CS_Port, ILI9341_CS_PIN);
+                                    294 ; genIPush
+      0000D3 4B 08            [ 1]  295 	push	#0x08
+                                    296 ; genIPush
+      0000D5 4B 0A            [ 1]  297 	push	#0x0a
+      0000D7 4B 50            [ 1]  298 	push	#0x50
+                                    299 ; genCall
+      0000D9 CDr00r00         [ 4]  300 	call	_GPIO_WriteHigh
+      0000DC 5B 03            [ 2]  301 	addw	sp, #3
+                                    302 ;	./Src/ILI9341.c: 40: GPIO_WriteLow(ILI9341_Reset_Port, ILI9341_Reset_PIN);
+                                    303 ; genIPush
+      0000DE 4B 20            [ 1]  304 	push	#0x20
+                                    305 ; genIPush
+      0000E0 4B 05            [ 1]  306 	push	#0x05
+      0000E2 4B 50            [ 1]  307 	push	#0x50
+                                    308 ; genCall
+      0000E4 CDr00r00         [ 4]  309 	call	_GPIO_WriteLow
+      0000E7 5B 03            [ 2]  310 	addw	sp, #3
+                                    311 ;	./Src/ILI9341.c: 41: delay(100000);
+                                    312 ; genIPush
+      0000E9 4B A0            [ 1]  313 	push	#0xa0
+      0000EB 4B 86            [ 1]  314 	push	#0x86
+      0000ED 4B 01            [ 1]  315 	push	#0x01
+      0000EF 4B 00            [ 1]  316 	push	#0x00
+                                    317 ; genCall
+      0000F1 CDr00r00         [ 4]  318 	call	_delay
+      0000F4 5B 04            [ 2]  319 	addw	sp, #4
+                                    320 ;	./Src/ILI9341.c: 43: GPIO_WriteHigh(ILI9341_Reset_Port, ILI9341_Reset_PIN);
+                                    321 ; genIPush
+      0000F6 4B 20            [ 1]  322 	push	#0x20
+                                    323 ; genIPush
+      0000F8 4B 05            [ 1]  324 	push	#0x05
+      0000FA 4B 50            [ 1]  325 	push	#0x50
+                                    326 ; genCall
+      0000FC CDr00r00         [ 4]  327 	call	_GPIO_WriteHigh
+      0000FF 5B 03            [ 2]  328 	addw	sp, #3
+                                    329 ;	./Src/ILI9341.c: 44: GPIO_WriteHigh(ILI9341_LED_Port, ILI9341_LED_PIN);
+                                    330 ; genIPush
+      000101 4B 10            [ 1]  331 	push	#0x10
+                                    332 ; genIPush
+      000103 4B 0A            [ 1]  333 	push	#0x0a
+      000105 4B 50            [ 1]  334 	push	#0x50
+                                    335 ; genCall
+      000107 CDr00r00         [ 4]  336 	call	_GPIO_WriteHigh
+      00010A 5B 03            [ 2]  337 	addw	sp, #3
+                                    338 ;	./Src/ILI9341.c: 45: delay(100000);
+                                    339 ; genIPush
+      00010C 4B A0            [ 1]  340 	push	#0xa0
+      00010E 4B 86            [ 1]  341 	push	#0x86
+      000110 4B 01            [ 1]  342 	push	#0x01
+      000112 4B 00            [ 1]  343 	push	#0x00
+                                    344 ; genCall
+      000114 CDr00r00         [ 4]  345 	call	_delay
+      000117 5B 04            [ 2]  346 	addw	sp, #4
+                                    347 ;	./Src/ILI9341.c: 47: ILI9341_Write_Command(ILI9341_RESET);
+                                    348 ; genIPush
+      000119 4B 01            [ 1]  349 	push	#0x01
+      00011B 4B 00            [ 1]  350 	push	#0x00
+                                    351 ; genCall
+      00011D CDr00r42         [ 4]  352 	call	_ILI9341_Write_Command
+      000120 85               [ 2]  353 	popw	x
+                                    354 ;	./Src/ILI9341.c: 48: delay(100000);
+                                    355 ; genIPush
+      000121 4B A0            [ 1]  356 	push	#0xa0
+      000123 4B 86            [ 1]  357 	push	#0x86
+      000125 4B 01            [ 1]  358 	push	#0x01
+      000127 4B 00            [ 1]  359 	push	#0x00
+                                    360 ; genCall
+      000129 CDr00r00         [ 4]  361 	call	_delay
+      00012C 5B 04            [ 2]  362 	addw	sp, #4
+                                    363 ;	./Src/ILI9341.c: 51: ILI9341_Write_Command(ILI9341_POWERA);
+                                    364 ; genIPush
+      00012E 4B CB            [ 1]  365 	push	#0xcb
+      000130 4B 00            [ 1]  366 	push	#0x00
+                                    367 ; genCall
+      000132 CDr00r42         [ 4]  368 	call	_ILI9341_Write_Command
+      000135 85               [ 2]  369 	popw	x
+                                    370 ;	./Src/ILI9341.c: 52: ILI9341_Write_Data(0x39);
+                                    371 ; genIPush
+      000136 4B 39            [ 1]  372 	push	#0x39
+      000138 4B 00            [ 1]  373 	push	#0x00
+                                    374 ; genCall
+      00013A CDr00r90         [ 4]  375 	call	_ILI9341_Write_Data
+      00013D 85               [ 2]  376 	popw	x
+                                    377 ;	./Src/ILI9341.c: 53: ILI9341_Write_Data(0x2C);
+                                    378 ; genIPush
+      00013E 4B 2C            [ 1]  379 	push	#0x2c
+      000140 4B 00            [ 1]  380 	push	#0x00
+                                    381 ; genCall
+      000142 CDr00r90         [ 4]  382 	call	_ILI9341_Write_Data
+      000145 85               [ 2]  383 	popw	x
+                                    384 ;	./Src/ILI9341.c: 54: ILI9341_Write_Data(0x00);
+                                    385 ; genIPush
+      000146 5F               [ 1]  386 	clrw	x
+      000147 89               [ 2]  387 	pushw	x
+                                    388 ; genCall
+      000148 CDr00r90         [ 4]  389 	call	_ILI9341_Write_Data
+      00014B 85               [ 2]  390 	popw	x
+                                    391 ;	./Src/ILI9341.c: 55: ILI9341_Write_Data(0x34);
+                                    392 ; genIPush
+      00014C 4B 34            [ 1]  393 	push	#0x34
+      00014E 4B 00            [ 1]  394 	push	#0x00
+                                    395 ; genCall
+      000150 CDr00r90         [ 4]  396 	call	_ILI9341_Write_Data
+      000153 85               [ 2]  397 	popw	x
+                                    398 ;	./Src/ILI9341.c: 56: ILI9341_Write_Data(0x02);
+                                    399 ; genIPush
+      000154 4B 02            [ 1]  400 	push	#0x02
+      000156 4B 00            [ 1]  401 	push	#0x00
+                                    402 ; genCall
+      000158 CDr00r90         [ 4]  403 	call	_ILI9341_Write_Data
+      00015B 85               [ 2]  404 	popw	x
+                                    405 ;	./Src/ILI9341.c: 57: ILI9341_Write_Command(ILI9341_POWERB);
+                                    406 ; genIPush
+      00015C 4B CF            [ 1]  407 	push	#0xcf
+      00015E 4B 00            [ 1]  408 	push	#0x00
+                                    409 ; genCall
+      000160 CDr00r42         [ 4]  410 	call	_ILI9341_Write_Command
+      000163 85               [ 2]  411 	popw	x
+                                    412 ;	./Src/ILI9341.c: 58: ILI9341_Write_Data(0x00);
+                                    413 ; genIPush
+      000164 5F               [ 1]  414 	clrw	x
+      000165 89               [ 2]  415 	pushw	x
+                                    416 ; genCall
+      000166 CDr00r90         [ 4]  417 	call	_ILI9341_Write_Data
+      000169 85               [ 2]  418 	popw	x
+                                    419 ;	./Src/ILI9341.c: 59: ILI9341_Write_Data(0xC1);
+                                    420 ; genIPush
+      00016A 4B C1            [ 1]  421 	push	#0xc1
+      00016C 4B 00            [ 1]  422 	push	#0x00
+                                    423 ; genCall
+      00016E CDr00r90         [ 4]  424 	call	_ILI9341_Write_Data
+      000171 85               [ 2]  425 	popw	x
+                                    426 ;	./Src/ILI9341.c: 60: ILI9341_Write_Data(0x30);
+                                    427 ; genIPush
+      000172 4B 30            [ 1]  428 	push	#0x30
+      000174 4B 00            [ 1]  429 	push	#0x00
+                                    430 ; genCall
+      000176 CDr00r90         [ 4]  431 	call	_ILI9341_Write_Data
+      000179 85               [ 2]  432 	popw	x
+                                    433 ;	./Src/ILI9341.c: 61: ILI9341_Write_Command(ILI9341_DTCA);
+                                    434 ; genIPush
+      00017A 4B E8            [ 1]  435 	push	#0xe8
+      00017C 4B 00            [ 1]  436 	push	#0x00
+                                    437 ; genCall
+      00017E CDr00r42         [ 4]  438 	call	_ILI9341_Write_Command
+      000181 85               [ 2]  439 	popw	x
+                                    440 ;	./Src/ILI9341.c: 62: ILI9341_Write_Data(0x85);
+                                    441 ; genIPush
+      000182 4B 85            [ 1]  442 	push	#0x85
+      000184 4B 00            [ 1]  443 	push	#0x00
+                                    444 ; genCall
+      000186 CDr00r90         [ 4]  445 	call	_ILI9341_Write_Data
+      000189 85               [ 2]  446 	popw	x
+                                    447 ;	./Src/ILI9341.c: 63: ILI9341_Write_Data(0x00);
+                                    448 ; genIPush
+      00018A 5F               [ 1]  449 	clrw	x
+      00018B 89               [ 2]  450 	pushw	x
+                                    451 ; genCall
+      00018C CDr00r90         [ 4]  452 	call	_ILI9341_Write_Data
+      00018F 85               [ 2]  453 	popw	x
+                                    454 ;	./Src/ILI9341.c: 64: ILI9341_Write_Data(0x78);
+                                    455 ; genIPush
+      000190 4B 78            [ 1]  456 	push	#0x78
+      000192 4B 00            [ 1]  457 	push	#0x00
+                                    458 ; genCall
+      000194 CDr00r90         [ 4]  459 	call	_ILI9341_Write_Data
+      000197 85               [ 2]  460 	popw	x
+                                    461 ;	./Src/ILI9341.c: 65: ILI9341_Write_Command(ILI9341_DTCB);
+                                    462 ; genIPush
+      000198 4B EA            [ 1]  463 	push	#0xea
+      00019A 4B 00            [ 1]  464 	push	#0x00
+                                    465 ; genCall
+      00019C CDr00r42         [ 4]  466 	call	_ILI9341_Write_Command
+      00019F 85               [ 2]  467 	popw	x
+                                    468 ;	./Src/ILI9341.c: 66: ILI9341_Write_Data(0x00);
+                                    469 ; genIPush
+      0001A0 5F               [ 1]  470 	clrw	x
+      0001A1 89               [ 2]  471 	pushw	x
+                                    472 ; genCall
+      0001A2 CDr00r90         [ 4]  473 	call	_ILI9341_Write_Data
+      0001A5 85               [ 2]  474 	popw	x
+                                    475 ;	./Src/ILI9341.c: 67: ILI9341_Write_Data(0x00);
+                                    476 ; genIPush
+      0001A6 5F               [ 1]  477 	clrw	x
+      0001A7 89               [ 2]  478 	pushw	x
+                                    479 ; genCall
+      0001A8 CDr00r90         [ 4]  480 	call	_ILI9341_Write_Data
+      0001AB 85               [ 2]  481 	popw	x
+                                    482 ;	./Src/ILI9341.c: 68: ILI9341_Write_Command(ILI9341_POWER_SEQ);
+                                    483 ; genIPush
+      0001AC 4B ED            [ 1]  484 	push	#0xed
+      0001AE 4B 00            [ 1]  485 	push	#0x00
+                                    486 ; genCall
+      0001B0 CDr00r42         [ 4]  487 	call	_ILI9341_Write_Command
+      0001B3 85               [ 2]  488 	popw	x
+                                    489 ;	./Src/ILI9341.c: 69: ILI9341_Write_Data(0x64);
+                                    490 ; genIPush
+      0001B4 4B 64            [ 1]  491 	push	#0x64
+      0001B6 4B 00            [ 1]  492 	push	#0x00
+                                    493 ; genCall
+      0001B8 CDr00r90         [ 4]  494 	call	_ILI9341_Write_Data
+      0001BB 85               [ 2]  495 	popw	x
+                                    496 ;	./Src/ILI9341.c: 70: ILI9341_Write_Data(0x03);
+                                    497 ; genIPush
+      0001BC 4B 03            [ 1]  498 	push	#0x03
+      0001BE 4B 00            [ 1]  499 	push	#0x00
+                                    500 ; genCall
+      0001C0 CDr00r90         [ 4]  501 	call	_ILI9341_Write_Data
+      0001C3 85               [ 2]  502 	popw	x
+                                    503 ;	./Src/ILI9341.c: 71: ILI9341_Write_Data(0x12);
+                                    504 ; genIPush
+      0001C4 4B 12            [ 1]  505 	push	#0x12
+      0001C6 4B 00            [ 1]  506 	push	#0x00
+                                    507 ; genCall
+      0001C8 CDr00r90         [ 4]  508 	call	_ILI9341_Write_Data
+      0001CB 85               [ 2]  509 	popw	x
+                                    510 ;	./Src/ILI9341.c: 72: ILI9341_Write_Data(0x81);
+                                    511 ; genIPush
+      0001CC 4B 81            [ 1]  512 	push	#0x81
+      0001CE 4B 00            [ 1]  513 	push	#0x00
+                                    514 ; genCall
+      0001D0 CDr00r90         [ 4]  515 	call	_ILI9341_Write_Data
+      0001D3 85               [ 2]  516 	popw	x
+                                    517 ;	./Src/ILI9341.c: 73: ILI9341_Write_Command(ILI9341_PRC);
+                                    518 ; genIPush
+      0001D4 4B F7            [ 1]  519 	push	#0xf7
+      0001D6 4B 00            [ 1]  520 	push	#0x00
+                                    521 ; genCall
+      0001D8 CDr00r42         [ 4]  522 	call	_ILI9341_Write_Command
+      0001DB 85               [ 2]  523 	popw	x
+                                    524 ;	./Src/ILI9341.c: 74: ILI9341_Write_Data(0x20);
+                                    525 ; genIPush
+      0001DC 4B 20            [ 1]  526 	push	#0x20
+      0001DE 4B 00            [ 1]  527 	push	#0x00
+                                    528 ; genCall
+      0001E0 CDr00r90         [ 4]  529 	call	_ILI9341_Write_Data
+      0001E3 85               [ 2]  530 	popw	x
+                                    531 ;	./Src/ILI9341.c: 75: ILI9341_Write_Command(ILI9341_POWER1);
+                                    532 ; genIPush
+      0001E4 4B C0            [ 1]  533 	push	#0xc0
+      0001E6 4B 00            [ 1]  534 	push	#0x00
+                                    535 ; genCall
+      0001E8 CDr00r42         [ 4]  536 	call	_ILI9341_Write_Command
+      0001EB 85               [ 2]  537 	popw	x
+                                    538 ;	./Src/ILI9341.c: 76: ILI9341_Write_Data(0x23);
+                                    539 ; genIPush
+      0001EC 4B 23            [ 1]  540 	push	#0x23
+      0001EE 4B 00            [ 1]  541 	push	#0x00
+                                    542 ; genCall
+      0001F0 CDr00r90         [ 4]  543 	call	_ILI9341_Write_Data
+      0001F3 85               [ 2]  544 	popw	x
+                                    545 ;	./Src/ILI9341.c: 77: ILI9341_Write_Command(ILI9341_POWER2);
+                                    546 ; genIPush
+      0001F4 4B C1            [ 1]  547 	push	#0xc1
+      0001F6 4B 00            [ 1]  548 	push	#0x00
+                                    549 ; genCall
+      0001F8 CDr00r42         [ 4]  550 	call	_ILI9341_Write_Command
+      0001FB 85               [ 2]  551 	popw	x
+                                    552 ;	./Src/ILI9341.c: 78: ILI9341_Write_Data(0x10);
+                                    553 ; genIPush
+      0001FC 4B 10            [ 1]  554 	push	#0x10
+      0001FE 4B 00            [ 1]  555 	push	#0x00
+                                    556 ; genCall
+      000200 CDr00r90         [ 4]  557 	call	_ILI9341_Write_Data
+      000203 85               [ 2]  558 	popw	x
+                                    559 ;	./Src/ILI9341.c: 79: ILI9341_Write_Command(ILI9341_VCOM1);
+                                    560 ; genIPush
+      000204 4B C5            [ 1]  561 	push	#0xc5
+      000206 4B 00            [ 1]  562 	push	#0x00
+                                    563 ; genCall
+      000208 CDr00r42         [ 4]  564 	call	_ILI9341_Write_Command
+      00020B 85               [ 2]  565 	popw	x
+                                    566 ;	./Src/ILI9341.c: 80: ILI9341_Write_Data(0x3E);
+                                    567 ; genIPush
+      00020C 4B 3E            [ 1]  568 	push	#0x3e
+      00020E 4B 00            [ 1]  569 	push	#0x00
+                                    570 ; genCall
+      000210 CDr00r90         [ 4]  571 	call	_ILI9341_Write_Data
+      000213 85               [ 2]  572 	popw	x
+                                    573 ;	./Src/ILI9341.c: 81: ILI9341_Write_Data(0x28);
+                                    574 ; genIPush
+      000214 4B 28            [ 1]  575 	push	#0x28
+      000216 4B 00            [ 1]  576 	push	#0x00
+                                    577 ; genCall
+      000218 CDr00r90         [ 4]  578 	call	_ILI9341_Write_Data
+      00021B 85               [ 2]  579 	popw	x
+                                    580 ;	./Src/ILI9341.c: 82: ILI9341_Write_Command(ILI9341_VCOM2);
+                                    581 ; genIPush
+      00021C 4B C7            [ 1]  582 	push	#0xc7
+      00021E 4B 00            [ 1]  583 	push	#0x00
+                                    584 ; genCall
+      000220 CDr00r42         [ 4]  585 	call	_ILI9341_Write_Command
+      000223 85               [ 2]  586 	popw	x
+                                    587 ;	./Src/ILI9341.c: 83: ILI9341_Write_Data(0x86);
+                                    588 ; genIPush
+      000224 4B 86            [ 1]  589 	push	#0x86
+      000226 4B 00            [ 1]  590 	push	#0x00
+                                    591 ; genCall
+      000228 CDr00r90         [ 4]  592 	call	_ILI9341_Write_Data
+      00022B 85               [ 2]  593 	popw	x
+                                    594 ;	./Src/ILI9341.c: 84: ILI9341_Write_Command(ILI9341_MAC);
+                                    595 ; genIPush
+      00022C 4B 36            [ 1]  596 	push	#0x36
+      00022E 4B 00            [ 1]  597 	push	#0x00
+                                    598 ; genCall
+      000230 CDr00r42         [ 4]  599 	call	_ILI9341_Write_Command
+      000233 85               [ 2]  600 	popw	x
+                                    601 ;	./Src/ILI9341.c: 85: ILI9341_Write_Data(0x48);
+                                    602 ; genIPush
+      000234 4B 48            [ 1]  603 	push	#0x48
+      000236 4B 00            [ 1]  604 	push	#0x00
+                                    605 ; genCall
+      000238 CDr00r90         [ 4]  606 	call	_ILI9341_Write_Data
+      00023B 85               [ 2]  607 	popw	x
+                                    608 ;	./Src/ILI9341.c: 86: ILI9341_Write_Command(ILI9341_PIXEL_FORMAT);
+                                    609 ; genIPush
+      00023C 4B 3A            [ 1]  610 	push	#0x3a
+      00023E 4B 00            [ 1]  611 	push	#0x00
+                                    612 ; genCall
+      000240 CDr00r42         [ 4]  613 	call	_ILI9341_Write_Command
+      000243 85               [ 2]  614 	popw	x
+                                    615 ;	./Src/ILI9341.c: 87: ILI9341_Write_Data(0x55);
+                                    616 ; genIPush
+      000244 4B 55            [ 1]  617 	push	#0x55
+      000246 4B 00            [ 1]  618 	push	#0x00
+                                    619 ; genCall
+      000248 CDr00r90         [ 4]  620 	call	_ILI9341_Write_Data
+      00024B 85               [ 2]  621 	popw	x
+                                    622 ;	./Src/ILI9341.c: 88: ILI9341_Write_Command(ILI9341_FRC);
+                                    623 ; genIPush
+      00024C 4B B1            [ 1]  624 	push	#0xb1
+      00024E 4B 00            [ 1]  625 	push	#0x00
+                                    626 ; genCall
+      000250 CDr00r42         [ 4]  627 	call	_ILI9341_Write_Command
+      000253 85               [ 2]  628 	popw	x
+                                    629 ;	./Src/ILI9341.c: 89: ILI9341_Write_Data(0x00);
+                                    630 ; genIPush
+      000254 5F               [ 1]  631 	clrw	x
+      000255 89               [ 2]  632 	pushw	x
+                                    633 ; genCall
+      000256 CDr00r90         [ 4]  634 	call	_ILI9341_Write_Data
+      000259 85               [ 2]  635 	popw	x
+                                    636 ;	./Src/ILI9341.c: 90: ILI9341_Write_Data(0x18);
+                                    637 ; genIPush
+      00025A 4B 18            [ 1]  638 	push	#0x18
+      00025C 4B 00            [ 1]  639 	push	#0x00
+                                    640 ; genCall
+      00025E CDr00r90         [ 4]  641 	call	_ILI9341_Write_Data
+      000261 85               [ 2]  642 	popw	x
+                                    643 ;	./Src/ILI9341.c: 91: ILI9341_Write_Command(ILI9341_DFC);
+                                    644 ; genIPush
+      000262 4B B6            [ 1]  645 	push	#0xb6
+      000264 4B 00            [ 1]  646 	push	#0x00
+                                    647 ; genCall
+      000266 CDr00r42         [ 4]  648 	call	_ILI9341_Write_Command
+      000269 85               [ 2]  649 	popw	x
+                                    650 ;	./Src/ILI9341.c: 92: ILI9341_Write_Data(0x08);
+                                    651 ; genIPush
+      00026A 4B 08            [ 1]  652 	push	#0x08
+      00026C 4B 00            [ 1]  653 	push	#0x00
+                                    654 ; genCall
+      00026E CDr00r90         [ 4]  655 	call	_ILI9341_Write_Data
+      000271 85               [ 2]  656 	popw	x
+                                    657 ;	./Src/ILI9341.c: 93: ILI9341_Write_Data(0x82);
+                                    658 ; genIPush
+      000272 4B 82            [ 1]  659 	push	#0x82
+      000274 4B 00            [ 1]  660 	push	#0x00
+                                    661 ; genCall
+      000276 CDr00r90         [ 4]  662 	call	_ILI9341_Write_Data
+      000279 85               [ 2]  663 	popw	x
+                                    664 ;	./Src/ILI9341.c: 94: ILI9341_Write_Data(0x27);
+                                    665 ; genIPush
+      00027A 4B 27            [ 1]  666 	push	#0x27
+      00027C 4B 00            [ 1]  667 	push	#0x00
+                                    668 ; genCall
+      00027E CDr00r90         [ 4]  669 	call	_ILI9341_Write_Data
+      000281 85               [ 2]  670 	popw	x
+                                    671 ;	./Src/ILI9341.c: 95: ILI9341_Write_Command(ILI9341_3GAMMA_EN);
+                                    672 ; genIPush
+      000282 4B F2            [ 1]  673 	push	#0xf2
+      000284 4B 00            [ 1]  674 	push	#0x00
+                                    675 ; genCall
+      000286 CDr00r42         [ 4]  676 	call	_ILI9341_Write_Command
+      000289 85               [ 2]  677 	popw	x
+                                    678 ;	./Src/ILI9341.c: 96: ILI9341_Write_Data(0x00);
+                                    679 ; genIPush
+      00028A 5F               [ 1]  680 	clrw	x
+      00028B 89               [ 2]  681 	pushw	x
+                                    682 ; genCall
+      00028C CDr00r90         [ 4]  683 	call	_ILI9341_Write_Data
+      00028F 85               [ 2]  684 	popw	x
+                                    685 ;	./Src/ILI9341.c: 97: ILI9341_Write_Command(ILI9341_COLUMN_ADDR);
+                                    686 ; genIPush
+      000290 4B 2A            [ 1]  687 	push	#0x2a
+      000292 4B 00            [ 1]  688 	push	#0x00
+                                    689 ; genCall
+      000294 CDr00r42         [ 4]  690 	call	_ILI9341_Write_Command
+      000297 85               [ 2]  691 	popw	x
+                                    692 ;	./Src/ILI9341.c: 98: ILI9341_Write_Data(0x00);
+                                    693 ; genIPush
+      000298 5F               [ 1]  694 	clrw	x
+      000299 89               [ 2]  695 	pushw	x
+                                    696 ; genCall
+      00029A CDr00r90         [ 4]  697 	call	_ILI9341_Write_Data
+      00029D 85               [ 2]  698 	popw	x
+                                    699 ;	./Src/ILI9341.c: 99: ILI9341_Write_Data(0x00);
+                                    700 ; genIPush
+      00029E 5F               [ 1]  701 	clrw	x
+      00029F 89               [ 2]  702 	pushw	x
+                                    703 ; genCall
+      0002A0 CDr00r90         [ 4]  704 	call	_ILI9341_Write_Data
+      0002A3 85               [ 2]  705 	popw	x
+                                    706 ;	./Src/ILI9341.c: 100: ILI9341_Write_Data(0x00);
+                                    707 ; genIPush
+      0002A4 5F               [ 1]  708 	clrw	x
+      0002A5 89               [ 2]  709 	pushw	x
+                                    710 ; genCall
+      0002A6 CDr00r90         [ 4]  711 	call	_ILI9341_Write_Data
+      0002A9 85               [ 2]  712 	popw	x
+                                    713 ;	./Src/ILI9341.c: 101: ILI9341_Write_Data(0xEF);
+                                    714 ; genIPush
+      0002AA 4B EF            [ 1]  715 	push	#0xef
+      0002AC 4B 00            [ 1]  716 	push	#0x00
+                                    717 ; genCall
+      0002AE CDr00r90         [ 4]  718 	call	_ILI9341_Write_Data
+      0002B1 85               [ 2]  719 	popw	x
+                                    720 ;	./Src/ILI9341.c: 102: ILI9341_Write_Command(ILI9341_PAGE_ADDR);
+                                    721 ; genIPush
+      0002B2 4B 2B            [ 1]  722 	push	#0x2b
+      0002B4 4B 00            [ 1]  723 	push	#0x00
+                                    724 ; genCall
+      0002B6 CDr00r42         [ 4]  725 	call	_ILI9341_Write_Command
+      0002B9 85               [ 2]  726 	popw	x
+                                    727 ;	./Src/ILI9341.c: 103: ILI9341_Write_Data(0x00);
+                                    728 ; genIPush
+      0002BA 5F               [ 1]  729 	clrw	x
+      0002BB 89               [ 2]  730 	pushw	x
+                                    731 ; genCall
+      0002BC CDr00r90         [ 4]  732 	call	_ILI9341_Write_Data
+      0002BF 85               [ 2]  733 	popw	x
+                                    734 ;	./Src/ILI9341.c: 104: ILI9341_Write_Data(0x00);
+                                    735 ; genIPush
+      0002C0 5F               [ 1]  736 	clrw	x
+      0002C1 89               [ 2]  737 	pushw	x
+                                    738 ; genCall
+      0002C2 CDr00r90         [ 4]  739 	call	_ILI9341_Write_Data
+      0002C5 85               [ 2]  740 	popw	x
+                                    741 ;	./Src/ILI9341.c: 105: ILI9341_Write_Data(0x01);
+                                    742 ; genIPush
+      0002C6 4B 01            [ 1]  743 	push	#0x01
+      0002C8 4B 00            [ 1]  744 	push	#0x00
+                                    745 ; genCall
+      0002CA CDr00r90         [ 4]  746 	call	_ILI9341_Write_Data
+      0002CD 85               [ 2]  747 	popw	x
+                                    748 ;	./Src/ILI9341.c: 106: ILI9341_Write_Data(0x3F);
+                                    749 ; genIPush
+      0002CE 4B 3F            [ 1]  750 	push	#0x3f
+      0002D0 4B 00            [ 1]  751 	push	#0x00
+                                    752 ; genCall
+      0002D2 CDr00r90         [ 4]  753 	call	_ILI9341_Write_Data
+      0002D5 85               [ 2]  754 	popw	x
+                                    755 ;	./Src/ILI9341.c: 107: ILI9341_Write_Command(ILI9341_GAMMA);
+                                    756 ; genIPush
+      0002D6 4B 26            [ 1]  757 	push	#0x26
+      0002D8 4B 00            [ 1]  758 	push	#0x00
+                                    759 ; genCall
+      0002DA CDr00r42         [ 4]  760 	call	_ILI9341_Write_Command
+      0002DD 85               [ 2]  761 	popw	x
+                                    762 ;	./Src/ILI9341.c: 108: ILI9341_Write_Data(0x01);
+                                    763 ; genIPush
+      0002DE 4B 01            [ 1]  764 	push	#0x01
+      0002E0 4B 00            [ 1]  765 	push	#0x00
+                                    766 ; genCall
+      0002E2 CDr00r90         [ 4]  767 	call	_ILI9341_Write_Data
+      0002E5 85               [ 2]  768 	popw	x
+                                    769 ;	./Src/ILI9341.c: 109: ILI9341_Write_Command(ILI9341_PGAMMA);
+                                    770 ; genIPush
+      0002E6 4B E0            [ 1]  771 	push	#0xe0
+      0002E8 4B 00            [ 1]  772 	push	#0x00
+                                    773 ; genCall
+      0002EA CDr00r42         [ 4]  774 	call	_ILI9341_Write_Command
+      0002ED 85               [ 2]  775 	popw	x
+                                    776 ;	./Src/ILI9341.c: 110: ILI9341_Write_Data(0x0F);
+                                    777 ; genIPush
+      0002EE 4B 0F            [ 1]  778 	push	#0x0f
+      0002F0 4B 00            [ 1]  779 	push	#0x00
+                                    780 ; genCall
+      0002F2 CDr00r90         [ 4]  781 	call	_ILI9341_Write_Data
+      0002F5 85               [ 2]  782 	popw	x
+                                    783 ;	./Src/ILI9341.c: 111: ILI9341_Write_Data(0x31);
+                                    784 ; genIPush
+      0002F6 4B 31            [ 1]  785 	push	#0x31
+      0002F8 4B 00            [ 1]  786 	push	#0x00
+                                    787 ; genCall
+      0002FA CDr00r90         [ 4]  788 	call	_ILI9341_Write_Data
+      0002FD 85               [ 2]  789 	popw	x
+                                    790 ;	./Src/ILI9341.c: 112: ILI9341_Write_Data(0x2B);
+                                    791 ; genIPush
+      0002FE 4B 2B            [ 1]  792 	push	#0x2b
+      000300 4B 00            [ 1]  793 	push	#0x00
+                                    794 ; genCall
+      000302 CDr00r90         [ 4]  795 	call	_ILI9341_Write_Data
+      000305 85               [ 2]  796 	popw	x
+                                    797 ;	./Src/ILI9341.c: 113: ILI9341_Write_Data(0x0C);
+                                    798 ; genIPush
+      000306 4B 0C            [ 1]  799 	push	#0x0c
+      000308 4B 00            [ 1]  800 	push	#0x00
+                                    801 ; genCall
+      00030A CDr00r90         [ 4]  802 	call	_ILI9341_Write_Data
+      00030D 85               [ 2]  803 	popw	x
+                                    804 ;	./Src/ILI9341.c: 114: ILI9341_Write_Data(0x0E);
+                                    805 ; genIPush
+      00030E 4B 0E            [ 1]  806 	push	#0x0e
+      000310 4B 00            [ 1]  807 	push	#0x00
+                                    808 ; genCall
+      000312 CDr00r90         [ 4]  809 	call	_ILI9341_Write_Data
+      000315 85               [ 2]  810 	popw	x
+                                    811 ;	./Src/ILI9341.c: 115: ILI9341_Write_Data(0x08);
+                                    812 ; genIPush
+      000316 4B 08            [ 1]  813 	push	#0x08
+      000318 4B 00            [ 1]  814 	push	#0x00
+                                    815 ; genCall
+      00031A CDr00r90         [ 4]  816 	call	_ILI9341_Write_Data
+      00031D 85               [ 2]  817 	popw	x
+                                    818 ;	./Src/ILI9341.c: 116: ILI9341_Write_Data(0x4E);
+                                    819 ; genIPush
+      00031E 4B 4E            [ 1]  820 	push	#0x4e
+      000320 4B 00            [ 1]  821 	push	#0x00
+                                    822 ; genCall
+      000322 CDr00r90         [ 4]  823 	call	_ILI9341_Write_Data
+      000325 85               [ 2]  824 	popw	x
+                                    825 ;	./Src/ILI9341.c: 117: ILI9341_Write_Data(0xF1);
+                                    826 ; genIPush
+      000326 4B F1            [ 1]  827 	push	#0xf1
+      000328 4B 00            [ 1]  828 	push	#0x00
+                                    829 ; genCall
+      00032A CDr00r90         [ 4]  830 	call	_ILI9341_Write_Data
+      00032D 85               [ 2]  831 	popw	x
+                                    832 ;	./Src/ILI9341.c: 118: ILI9341_Write_Data(0x37);
+                                    833 ; genIPush
+      00032E 4B 37            [ 1]  834 	push	#0x37
+      000330 4B 00            [ 1]  835 	push	#0x00
+                                    836 ; genCall
+      000332 CDr00r90         [ 4]  837 	call	_ILI9341_Write_Data
+      000335 85               [ 2]  838 	popw	x
+                                    839 ;	./Src/ILI9341.c: 119: ILI9341_Write_Data(0x07);
+                                    840 ; genIPush
+      000336 4B 07            [ 1]  841 	push	#0x07
+      000338 4B 00            [ 1]  842 	push	#0x00
+                                    843 ; genCall
+      00033A CDr00r90         [ 4]  844 	call	_ILI9341_Write_Data
+      00033D 85               [ 2]  845 	popw	x
+                                    846 ;	./Src/ILI9341.c: 120: ILI9341_Write_Data(0x10);
+                                    847 ; genIPush
+      00033E 4B 10            [ 1]  848 	push	#0x10
+      000340 4B 00            [ 1]  849 	push	#0x00
+                                    850 ; genCall
+      000342 CDr00r90         [ 4]  851 	call	_ILI9341_Write_Data
+      000345 85               [ 2]  852 	popw	x
+                                    853 ;	./Src/ILI9341.c: 121: ILI9341_Write_Data(0x03);
+                                    854 ; genIPush
+      000346 4B 03            [ 1]  855 	push	#0x03
+      000348 4B 00            [ 1]  856 	push	#0x00
+                                    857 ; genCall
+      00034A CDr00r90         [ 4]  858 	call	_ILI9341_Write_Data
+      00034D 85               [ 2]  859 	popw	x
+                                    860 ;	./Src/ILI9341.c: 122: ILI9341_Write_Data(0x0E);
+                                    861 ; genIPush
+      00034E 4B 0E            [ 1]  862 	push	#0x0e
+      000350 4B 00            [ 1]  863 	push	#0x00
+                                    864 ; genCall
+      000352 CDr00r90         [ 4]  865 	call	_ILI9341_Write_Data
+      000355 85               [ 2]  866 	popw	x
+                                    867 ;	./Src/ILI9341.c: 123: ILI9341_Write_Data(0x09);
+                                    868 ; genIPush
+      000356 4B 09            [ 1]  869 	push	#0x09
+      000358 4B 00            [ 1]  870 	push	#0x00
+                                    871 ; genCall
+      00035A CDr00r90         [ 4]  872 	call	_ILI9341_Write_Data
+      00035D 85               [ 2]  873 	popw	x
+                                    874 ;	./Src/ILI9341.c: 124: ILI9341_Write_Data(0x00);
+                                    875 ; genIPush
+      00035E 5F               [ 1]  876 	clrw	x
+      00035F 89               [ 2]  877 	pushw	x
+                                    878 ; genCall
+      000360 CDr00r90         [ 4]  879 	call	_ILI9341_Write_Data
+      000363 85               [ 2]  880 	popw	x
+                                    881 ;	./Src/ILI9341.c: 125: ILI9341_Write_Command(ILI9341_NGAMMA);
+                                    882 ; genIPush
+      000364 4B E1            [ 1]  883 	push	#0xe1
+      000366 4B 00            [ 1]  884 	push	#0x00
+                                    885 ; genCall
+      000368 CDr00r42         [ 4]  886 	call	_ILI9341_Write_Command
+      00036B 85               [ 2]  887 	popw	x
+                                    888 ;	./Src/ILI9341.c: 126: ILI9341_Write_Data(0x00);
+                                    889 ; genIPush
+      00036C 5F               [ 1]  890 	clrw	x
+      00036D 89               [ 2]  891 	pushw	x
+                                    892 ; genCall
+      00036E CDr00r90         [ 4]  893 	call	_ILI9341_Write_Data
+      000371 85               [ 2]  894 	popw	x
+                                    895 ;	./Src/ILI9341.c: 127: ILI9341_Write_Data(0x0E);
+                                    896 ; genIPush
+      000372 4B 0E            [ 1]  897 	push	#0x0e
+      000374 4B 00            [ 1]  898 	push	#0x00
+                                    899 ; genCall
+      000376 CDr00r90         [ 4]  900 	call	_ILI9341_Write_Data
+      000379 85               [ 2]  901 	popw	x
+                                    902 ;	./Src/ILI9341.c: 128: ILI9341_Write_Data(0x14);
+                                    903 ; genIPush
+      00037A 4B 14            [ 1]  904 	push	#0x14
+      00037C 4B 00            [ 1]  905 	push	#0x00
+                                    906 ; genCall
+      00037E CDr00r90         [ 4]  907 	call	_ILI9341_Write_Data
+      000381 85               [ 2]  908 	popw	x
+                                    909 ;	./Src/ILI9341.c: 129: ILI9341_Write_Data(0x03);
+                                    910 ; genIPush
+      000382 4B 03            [ 1]  911 	push	#0x03
+      000384 4B 00            [ 1]  912 	push	#0x00
+                                    913 ; genCall
+      000386 CDr00r90         [ 4]  914 	call	_ILI9341_Write_Data
+      000389 85               [ 2]  915 	popw	x
+                                    916 ;	./Src/ILI9341.c: 130: ILI9341_Write_Data(0x11);
+                                    917 ; genIPush
+      00038A 4B 11            [ 1]  918 	push	#0x11
+      00038C 4B 00            [ 1]  919 	push	#0x00
+                                    920 ; genCall
+      00038E CDr00r90         [ 4]  921 	call	_ILI9341_Write_Data
+      000391 85               [ 2]  922 	popw	x
+                                    923 ;	./Src/ILI9341.c: 131: ILI9341_Write_Data(0x07);
+                                    924 ; genIPush
+      000392 4B 07            [ 1]  925 	push	#0x07
+      000394 4B 00            [ 1]  926 	push	#0x00
+                                    927 ; genCall
+      000396 CDr00r90         [ 4]  928 	call	_ILI9341_Write_Data
+      000399 85               [ 2]  929 	popw	x
+                                    930 ;	./Src/ILI9341.c: 132: ILI9341_Write_Data(0x31);
+                                    931 ; genIPush
+      00039A 4B 31            [ 1]  932 	push	#0x31
+      00039C 4B 00            [ 1]  933 	push	#0x00
+                                    934 ; genCall
+      00039E CDr00r90         [ 4]  935 	call	_ILI9341_Write_Data
+      0003A1 85               [ 2]  936 	popw	x
+                                    937 ;	./Src/ILI9341.c: 133: ILI9341_Write_Data(0xC1);
+                                    938 ; genIPush
+      0003A2 4B C1            [ 1]  939 	push	#0xc1
+      0003A4 4B 00            [ 1]  940 	push	#0x00
+                                    941 ; genCall
+      0003A6 CDr00r90         [ 4]  942 	call	_ILI9341_Write_Data
+      0003A9 85               [ 2]  943 	popw	x
+                                    944 ;	./Src/ILI9341.c: 134: ILI9341_Write_Data(0x48);
+                                    945 ; genIPush
+      0003AA 4B 48            [ 1]  946 	push	#0x48
+      0003AC 4B 00            [ 1]  947 	push	#0x00
+                                    948 ; genCall
+      0003AE CDr00r90         [ 4]  949 	call	_ILI9341_Write_Data
+      0003B1 85               [ 2]  950 	popw	x
+                                    951 ;	./Src/ILI9341.c: 135: ILI9341_Write_Data(0x08);
+                                    952 ; genIPush
+      0003B2 4B 08            [ 1]  953 	push	#0x08
+      0003B4 4B 00            [ 1]  954 	push	#0x00
+                                    955 ; genCall
+      0003B6 CDr00r90         [ 4]  956 	call	_ILI9341_Write_Data
+      0003B9 85               [ 2]  957 	popw	x
+                                    958 ;	./Src/ILI9341.c: 136: ILI9341_Write_Data(0x0F);
+                                    959 ; genIPush
+      0003BA 4B 0F            [ 1]  960 	push	#0x0f
+      0003BC 4B 00            [ 1]  961 	push	#0x00
+                                    962 ; genCall
+      0003BE CDr00r90         [ 4]  963 	call	_ILI9341_Write_Data
+      0003C1 85               [ 2]  964 	popw	x
+                                    965 ;	./Src/ILI9341.c: 137: ILI9341_Write_Data(0x0C);
+                                    966 ; genIPush
+      0003C2 4B 0C            [ 1]  967 	push	#0x0c
+      0003C4 4B 00            [ 1]  968 	push	#0x00
+                                    969 ; genCall
+      0003C6 CDr00r90         [ 4]  970 	call	_ILI9341_Write_Data
+      0003C9 85               [ 2]  971 	popw	x
+                                    972 ;	./Src/ILI9341.c: 138: ILI9341_Write_Data(0x31);
+                                    973 ; genIPush
+      0003CA 4B 31            [ 1]  974 	push	#0x31
+      0003CC 4B 00            [ 1]  975 	push	#0x00
+                                    976 ; genCall
+      0003CE CDr00r90         [ 4]  977 	call	_ILI9341_Write_Data
+      0003D1 85               [ 2]  978 	popw	x
+                                    979 ;	./Src/ILI9341.c: 139: ILI9341_Write_Data(0x36);
+                                    980 ; genIPush
+      0003D2 4B 36            [ 1]  981 	push	#0x36
+      0003D4 4B 00            [ 1]  982 	push	#0x00
+                                    983 ; genCall
+      0003D6 CDr00r90         [ 4]  984 	call	_ILI9341_Write_Data
+      0003D9 85               [ 2]  985 	popw	x
+                                    986 ;	./Src/ILI9341.c: 140: ILI9341_Write_Data(0x0F);
+                                    987 ; genIPush
+      0003DA 4B 0F            [ 1]  988 	push	#0x0f
+      0003DC 4B 00            [ 1]  989 	push	#0x00
+                                    990 ; genCall
+      0003DE CDr00r90         [ 4]  991 	call	_ILI9341_Write_Data
+      0003E1 85               [ 2]  992 	popw	x
+                                    993 ;	./Src/ILI9341.c: 142: ILI9341_Write_Command(ILI9341_SLEEP_OUT);
+                                    994 ; genIPush
+      0003E2 4B 11            [ 1]  995 	push	#0x11
+      0003E4 4B 00            [ 1]  996 	push	#0x00
+                                    997 ; genCall
+      0003E6 CDr00r42         [ 4]  998 	call	_ILI9341_Write_Command
+      0003E9 85               [ 2]  999 	popw	x
+                                   1000 ;	./Src/ILI9341.c: 144: delay(100000);
+                                   1001 ; genIPush
+      0003EA 4B A0            [ 1] 1002 	push	#0xa0
+      0003EC 4B 86            [ 1] 1003 	push	#0x86
+      0003EE 4B 01            [ 1] 1004 	push	#0x01
+      0003F0 4B 00            [ 1] 1005 	push	#0x00
+                                   1006 ; genCall
+      0003F2 CDr00r00         [ 4] 1007 	call	_delay
+      0003F5 5B 04            [ 2] 1008 	addw	sp, #4
+                                   1009 ;	./Src/ILI9341.c: 146: ILI9341_Write_Command(ILI9341_DISPLAY_ON);
+                                   1010 ; genIPush
+      0003F7 4B 29            [ 1] 1011 	push	#0x29
+      0003F9 4B 00            [ 1] 1012 	push	#0x00
+                                   1013 ; genCall
+      0003FB CDr00r42         [ 4] 1014 	call	_ILI9341_Write_Command
+      0003FE 85               [ 2] 1015 	popw	x
+                                   1016 ;	./Src/ILI9341.c: 147: ILI9341_Write_Command(ILI9341_GRAM);
+                                   1017 ; genIPush
+      0003FF 4B 2C            [ 1] 1018 	push	#0x2c
+      000401 4B 00            [ 1] 1019 	push	#0x00
+                                   1020 ; genCall
+      000403 CDr00r42         [ 4] 1021 	call	_ILI9341_Write_Command
+      000406 85               [ 2] 1022 	popw	x
+                                   1023 ; genLabel
+      000407                       1024 00101$:
+                                   1025 ;	./Src/ILI9341.c: 149: }
+                                   1026 ; genEndFunction
+      000407 81               [ 4] 1027 	ret
+                                   1028 	.area CODE
+                                   1029 	.area CONST
+                                   1030 	.area INITIALIZER
+                                   1031 	.area CABS (ABS)
