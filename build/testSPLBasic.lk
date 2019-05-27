@@ -1,6 +1,7 @@
 -muwx
--i ./build/testSPLBasic.ihx
+-E ./build/testSPLBasic.elf
 -Y
+-y
 -b HOME = 0x8000
 -b DATA = 0x0001
 -b SSEG = 0xffffffff

@@ -926,7 +926,7 @@ _ADC1_GetBufferValue:
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
 ; genPointerGet
 	ld	a, 0x5402
-	ld	(0x0b, sp), a
+	ld	(0x01, sp), a
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
 ; genCast
 ; genAssign
@@ -967,7 +967,7 @@ _ADC1_GetBufferValue:
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
 ; genAnd
 	push	a
-	ld	a, (0x0c, sp)
+	ld	a, (0x02, sp)
 	bcp	a, #0x08
 	pop	a
 	jrne	00111$
@@ -980,18 +980,18 @@ _ADC1_GetBufferValue:
 ; genAssign
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 481: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
 ; genLeftShiftLiteral
-	clr	(0x04, sp)
+	clr	(0x0b, sp)
 ; genCast
 ; genAssign
-	clr	(0x01, sp)
+	clr	(0x08, sp)
 ; genOr
-	or	a, (0x01, sp)
+	or	a, (0x08, sp)
 	ld	xh, a
 	ld	a, xl
-	or	a, (0x04, sp)
+	or	a, (0x0b, sp)
 	ld	xl, a
 ; genAssign
-	ldw	(0x09, sp), x
+	ldw	(0x06, sp), x
 ; genGoto
 	jp	00103$
 ; genLabel
@@ -1013,24 +1013,24 @@ _ADC1_GetBufferValue:
 	sllw	x
 	sllw	x
 	sllw	x
-	ldw	(0x07, sp), x
+	ldw	(0x04, sp), x
 ; genLeftShiftLiteral
 	ld	xl, a
 	clr	a
 ; genOr
-	or	a, (0x08, sp)
-	ld	(0x06, sp), a
+	or	a, (0x05, sp)
+	ld	(0x03, sp), a
 	ld	a, xl
-	or	a, (0x07, sp)
+	or	a, (0x04, sp)
 ; genAssign
-	ld	(0x09, sp), a
-	ld	a, (0x06, sp)
-	ld	(0x0a, sp), a
+	ld	(0x06, sp), a
+	ld	a, (0x03, sp)
+	ld	(0x07, sp), a
 ; genLabel
 00103$:
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 493: return ((uint16_t)temph);
 ; genReturn
-	ldw	x, (0x09, sp)
+	ldw	x, (0x06, sp)
 ; genLabel
 00104$:
 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 494: }
@@ -1061,17 +1061,17 @@ _ADC1_GetAWDChannelStatus:
 ; genLeftShift
 	push	a
 	ld	a, #0x01
-	ld	(0x03, sp), a
+	ld	(0x02, sp), a
 	ld	a, (0x06, sp)
 	jreq	00113$
 00112$:
-	sll	(0x03, sp)
+	sll	(0x02, sp)
 	dec	a
 	jrne	00112$
 00113$:
 	pop	a
 ; genAnd
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 ; genAssign
 ; genGoto
 	jp	00103$
@@ -1087,18 +1087,18 @@ _ADC1_GetAWDChannelStatus:
 ; genLeftShift
 	push	a
 	ld	a, #0x01
-	ld	(0x02, sp), a
+	ld	(0x03, sp), a
 	pop	a
 	tnz	a
 	jreq	00115$
 00114$:
-	sll	(0x01, sp)
+	sll	(0x02, sp)
 	dec	a
 	jrne	00114$
 00115$:
 ; genAnd
 	ld	a, xl
-	and	a, (0x01, sp)
+	and	a, (0x02, sp)
 ; genAssign
 ; genLabel
 00103$:

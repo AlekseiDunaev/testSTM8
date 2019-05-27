@@ -1,2 +1,9 @@
 # testSTM8
-test project for STM8 for compile in macOS 
+test project for STM8 for compile in macOS
+
+Переделан проект, который собирал библиотеку из файлов SPL на компиляторе SDCC.
+Сейчас собирает проект компилирую файли необходимой перефирии, которые необходимо указывать в списке SPL_SOURCE в Makefile.
+
+Проект под контроллер STM8S003F3P6, при применении другого меняем название в переменных DEVICE и DEVICE_FLASH.
+
+Прошивка контроллера make flash.

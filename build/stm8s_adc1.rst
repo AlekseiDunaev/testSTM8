@@ -926,7 +926,7 @@
                                     926 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
                                     927 ; genPointerGet
       008337 C6 54 02         [ 1]  928 	ld	a, 0x5402
-      00833A 6B 0B            [ 1]  929 	ld	(0x0b, sp), a
+      00833A 6B 01            [ 1]  929 	ld	(0x01, sp), a
                                     930 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
                                     931 ; genCast
                                     932 ; genAssign
@@ -967,7 +967,7 @@
                                     967 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
                                     968 ; genAnd
       008350 88               [ 1]  969 	push	a
-      008351 7B 0C            [ 1]  970 	ld	a, (0x0c, sp)
+      008351 7B 02            [ 1]  970 	ld	a, (0x02, sp)
       008353 A5 08            [ 1]  971 	bcp	a, #0x08
       008355 84               [ 1]  972 	pop	a
       008356 26 03            [ 1]  973 	jrne	00111$
@@ -980,18 +980,18 @@
                                     980 ; genAssign
                                     981 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 481: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
                                     982 ; genLeftShiftLiteral
-      00835B 0F 04            [ 1]  983 	clr	(0x04, sp)
+      00835B 0F 0B            [ 1]  983 	clr	(0x0b, sp)
                                     984 ; genCast
                                     985 ; genAssign
-      00835D 0F 01            [ 1]  986 	clr	(0x01, sp)
+      00835D 0F 08            [ 1]  986 	clr	(0x08, sp)
                                     987 ; genOr
-      00835F 1A 01            [ 1]  988 	or	a, (0x01, sp)
+      00835F 1A 08            [ 1]  988 	or	a, (0x08, sp)
       008361 95               [ 1]  989 	ld	xh, a
       008362 9F               [ 1]  990 	ld	a, xl
-      008363 1A 04            [ 1]  991 	or	a, (0x04, sp)
+      008363 1A 0B            [ 1]  991 	or	a, (0x0b, sp)
       008365 97               [ 1]  992 	ld	xl, a
                                     993 ; genAssign
-      008366 1F 09            [ 2]  994 	ldw	(0x09, sp), x
+      008366 1F 06            [ 2]  994 	ldw	(0x06, sp), x
                                     995 ; genGoto
       008368 CC 83 85         [ 2]  996 	jp	00103$
                                     997 ; genLabel
@@ -1013,24 +1013,24 @@
       008371 58               [ 2] 1013 	sllw	x
       008372 58               [ 2] 1014 	sllw	x
       008373 58               [ 2] 1015 	sllw	x
-      008374 1F 07            [ 2] 1016 	ldw	(0x07, sp), x
+      008374 1F 04            [ 2] 1016 	ldw	(0x04, sp), x
                                    1017 ; genLeftShiftLiteral
       008376 97               [ 1] 1018 	ld	xl, a
       008377 4F               [ 1] 1019 	clr	a
                                    1020 ; genOr
-      008378 1A 08            [ 1] 1021 	or	a, (0x08, sp)
-      00837A 6B 06            [ 1] 1022 	ld	(0x06, sp), a
+      008378 1A 05            [ 1] 1021 	or	a, (0x05, sp)
+      00837A 6B 03            [ 1] 1022 	ld	(0x03, sp), a
       00837C 9F               [ 1] 1023 	ld	a, xl
-      00837D 1A 07            [ 1] 1024 	or	a, (0x07, sp)
+      00837D 1A 04            [ 1] 1024 	or	a, (0x04, sp)
                                    1025 ; genAssign
-      00837F 6B 09            [ 1] 1026 	ld	(0x09, sp), a
-      008381 7B 06            [ 1] 1027 	ld	a, (0x06, sp)
-      008383 6B 0A            [ 1] 1028 	ld	(0x0a, sp), a
+      00837F 6B 06            [ 1] 1026 	ld	(0x06, sp), a
+      008381 7B 03            [ 1] 1027 	ld	a, (0x03, sp)
+      008383 6B 07            [ 1] 1028 	ld	(0x07, sp), a
                                    1029 ; genLabel
       008385                       1030 00103$:
                                    1031 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 493: return ((uint16_t)temph);
                                    1032 ; genReturn
-      008385 1E 09            [ 2] 1033 	ldw	x, (0x09, sp)
+      008385 1E 06            [ 2] 1033 	ldw	x, (0x06, sp)
                                    1034 ; genLabel
       008387                       1035 00104$:
                                    1036 ;	./STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 494: }
@@ -1061,17 +1061,17 @@
                                    1061 ; genLeftShift
       008397 88               [ 1] 1062 	push	a
       008398 A6 01            [ 1] 1063 	ld	a, #0x01
-      00839A 6B 03            [ 1] 1064 	ld	(0x03, sp), a
+      00839A 6B 02            [ 1] 1064 	ld	(0x02, sp), a
       00839C 7B 06            [ 1] 1065 	ld	a, (0x06, sp)
       00839E 27 05            [ 1] 1066 	jreq	00113$
       0083A0                       1067 00112$:
-      0083A0 08 03            [ 1] 1068 	sll	(0x03, sp)
+      0083A0 08 02            [ 1] 1068 	sll	(0x02, sp)
       0083A2 4A               [ 1] 1069 	dec	a
       0083A3 26 FB            [ 1] 1070 	jrne	00112$
       0083A5                       1071 00113$:
       0083A5 84               [ 1] 1072 	pop	a
                                    1073 ; genAnd
-      0083A6 14 02            [ 1] 1074 	and	a, (0x02, sp)
+      0083A6 14 01            [ 1] 1074 	and	a, (0x01, sp)
                                    1075 ; genAssign
                                    1076 ; genGoto
       0083A8 CC 83 C4         [ 2] 1077 	jp	00103$
@@ -1087,18 +1087,18 @@
                                    1087 ; genLeftShift
       0083B3 88               [ 1] 1088 	push	a
       0083B4 A6 01            [ 1] 1089 	ld	a, #0x01
-      0083B6 6B 02            [ 1] 1090 	ld	(0x02, sp), a
+      0083B6 6B 03            [ 1] 1090 	ld	(0x03, sp), a
       0083B8 84               [ 1] 1091 	pop	a
       0083B9 4D               [ 1] 1092 	tnz	a
       0083BA 27 05            [ 1] 1093 	jreq	00115$
       0083BC                       1094 00114$:
-      0083BC 08 01            [ 1] 1095 	sll	(0x01, sp)
+      0083BC 08 02            [ 1] 1095 	sll	(0x02, sp)
       0083BE 4A               [ 1] 1096 	dec	a
       0083BF 26 FB            [ 1] 1097 	jrne	00114$
       0083C1                       1098 00115$:
                                    1099 ; genAnd
       0083C1 9F               [ 1] 1100 	ld	a, xl
-      0083C2 14 01            [ 1] 1101 	and	a, (0x01, sp)
+      0083C2 14 02            [ 1] 1101 	and	a, (0x02, sp)
                                    1102 ; genAssign
                                    1103 ; genLabel
       0083C4                       1104 00103$:
