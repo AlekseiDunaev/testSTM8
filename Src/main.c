@@ -64,9 +64,9 @@ int main() {
       status.sel2 = 0;
     }
 
-    //delay(100000);
-    //GPIOD->ODR ^= GPIO_PIN_3;
-    //GPIO_WriteReverse(GPIOD, GPIO_PIN_3);
+    delay(100000);
+    GPIOD->ODR ^= GPIO_PIN_3;
+    GPIO_WriteReverse(GPIOD, GPIO_PIN_3);
     ILI9341_Write_Command(0xFF);
     ILI9341_Write_Data(0xFF);
   }

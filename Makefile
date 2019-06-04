@@ -2,7 +2,7 @@
 DEVICE=STM8S003
 DEVICE_FLASH=stm8s003f3
 
-TARGETNAME = testSPLBasic
+TARGETNAME = testSTM8
 
 # trap handling requires SDCC >=v3.4.3
 SKIP_TRAPS = 0
@@ -53,7 +53,10 @@ stm8s_tim4.c
 
 SPL_OBJECTS := $(addprefix $(OUTPUT_DIR)/, $(SPL_SOURCE:.c=.rel))
 
-# set compiler path & parameters 
+# collect all include folders
+INCLUDE = -I$(SPL_INC_DIR) -I$(PRJ_INC_DIR)
+
+# set compiler path & parameters
 SIZE = stm8-size
 CC  = sdcc
 AR 	= sdar
@@ -67,21 +70,18 @@ else
     TARGET = $(OUTPUT_DIR)/$(TARGETNAME).elf
 endif
 
-# collect all include folders
-INCLUDE = -I$(SPL_INC_DIR) -I$(PRJ_INC_DIR)
-
 # collect all source directories
 VPATH=$(SPL_SRC_DIR):$(PRJ_SRC_DIR)
 
 .PHONY: all output clean
 
 all: $(TARGET)
-	
+
 $(OUTPUT_DIR)/%.rel: %.c
 	$(CC) $(CFLAGS) -c $? -o $@
 
 $(TARGET): $(SPL_OBJECTS) $(PRJ_OBJECTS)
-	$(CC) $(CFLAGS) -o $(TARGET) $^ 
+	$(CC) $(CFLAGS) -o $(TARGET) $^
 	$(SIZE) $(TARGET)
 
 output:
